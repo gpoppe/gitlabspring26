@@ -15,6 +15,7 @@
 
 //place function prototypes here
 
+void room49game(void);
 
 void jbInit(void);
 
@@ -307,6 +308,7 @@ int main(int argc, char *argv[])
 			case 49:
 			{
 				puts("room49");
+				room49game();	
 				break;
 			}
 			case 50:
@@ -457,6 +459,11 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+void room49game()
+{
+	printf("G.C.");
+}
+
 void folksamEV(void) 
 {
 	printf("EV\n");
