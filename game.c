@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void afFun(void);
 
 
 
@@ -288,7 +288,7 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 52:
-			{
+			{	afFun();
 				puts("room52");
 				break;
 			}
@@ -418,8 +418,13 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
+
 	puts("Game Over");
 	return EXIT_SUCCESS;
 }
 
-//place functions here
+//place functions her
+void afFun(void)
+{ 
+	puts("AFroom52");
+}
