@@ -14,6 +14,10 @@
 #include <unistd.h>
 
 //place function prototypes here
+
+
+void theSigmaMethod(void);
+
 void jgFun(void);
 
 
@@ -170,6 +174,7 @@ int main(int argc, char *argv[])
 			case 27:
 			{
 				puts("room27");
+        theSigmaMethod();
 				break;
 			}
 			case 28:
@@ -424,6 +429,13 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+
+
+
+void theSigmaMethod(void)
+{
+  printf("J.Q.\n");
+}
 void jgFun(void)
 {
 	printf("JGB");	
