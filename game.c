@@ -16,6 +16,11 @@
 //place function prototypes here
 
 
+void jbInit(void);
+
+void ip21(void);
+
+
 void folksamEV(void);
 
 void ip21(void);
@@ -31,6 +36,7 @@ void printStudent30(void);
 void printInitialsAjewett(void);
 
 void jgFun(void);
+
 
 
 
@@ -141,6 +147,7 @@ int main(int argc, char *argv[])
 			}
 			case 17:
 			{
+				jbInit();
 				puts("room17");
 				break;
 			}
@@ -453,6 +460,11 @@ int main(int argc, char *argv[])
 void folksamEV(void) 
 {
 	printf("EV\n");
+}
+
+void jbInit()
+{
+	puts("jbRoom17");
 }
 
 void ip21(void)
