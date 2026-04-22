@@ -40,7 +40,7 @@ void jgFun(void);
 
 
 
-
+void brooklynstitt(void);
 
 
 
@@ -287,6 +287,7 @@ int main(int argc, char *argv[])
 			case 45:
 			{
 				puts("room45");
+				brooklynstitt();
 				break;
 			}
 			case 46:
@@ -467,6 +468,12 @@ void jbInit()
 	puts("jbRoom17");
 }
 
+// Case 45:
+void brooklynstitt(void)
+{
+	printf("Initials: BAS\n\n");
+}
+
 void ip21(void)
 {
 	printf("IP\n");
@@ -485,6 +492,7 @@ void JLeyva(void)
 void fish(void) 
 {
 	printf("JF");
+
 }
 
 void printStudent30(void)
@@ -492,6 +500,7 @@ void printStudent30(void)
 	printf("Student initials CP\n");
 	return;
 }
+
 void printInitialsAjewett(void)
 {
 	printf("AJ\n");
