@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-void amFun(void);
+void aMadFun(void);
 
 
 
@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
 			}
 			case 20:
 			{
-				amFun();
+				aMadFun();
 				puts("room20");
 				break;
 			}
@@ -424,7 +424,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
-void amFun(void)
+void aMadFun(void)
 {
-	printf("AM");
+	printf("AMad");
 }
