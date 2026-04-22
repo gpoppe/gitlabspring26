@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void rgarcia_fun(void);
 
 
 
@@ -264,6 +264,7 @@ int main(int argc, char *argv[])
 			}
 			case 47:
 			{
+				rgarcia_fun();
 				puts("room47");
 				break;
 			}
@@ -423,3 +424,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+void rgarcia_fun(void)
+{
+	printf("RJG");
+}
