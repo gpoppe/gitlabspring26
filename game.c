@@ -3,8 +3,6 @@
 //
 //
 
-
-
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
@@ -14,6 +12,8 @@
 #include <unistd.h>
 
 //place function prototypes here
+
+void cpFun(void);
 
 
 void jbInit(void);
@@ -36,6 +36,7 @@ void printStudent30(void);
 void printInitialsAjewett(void);
 
 void jgFun(void);
+
 
 
 
@@ -74,6 +75,8 @@ int main(int argc, char *argv[])
 			}
 			case 3:
 			{
+				cpFun();
+
 				puts("room3");
 				break;
 			}
@@ -457,6 +460,11 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+
+void cpFun(void)
+{
+	printf("C. P. \n");
+
 void folksamEV(void) 
 {
 	printf("EV\n");
@@ -500,4 +508,5 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+
 }
