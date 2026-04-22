@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void jpbFun(void);
 
 
 
@@ -294,7 +294,7 @@ int main(int argc, char *argv[])
 			}
 			case 53:
 			{
-				puts("room53");
+				jpbFun();
 				break;
 			}
 			case 54:
@@ -423,3 +423,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+void jpbFun(void)
+{
+	puts("JPBroom53");
+}
