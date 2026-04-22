@@ -16,6 +16,31 @@
 //place function prototypes here
 void jpbFun(void);
 
+void jbInit(void);
+
+void ip21(void);
+
+
+void folksamEV(void);
+
+void ip21(void);
+
+void rtFun(void);
+
+void JLeyva(void);
+
+void fish(void);
+
+void printStudent30(void);
+
+void printInitialsAjewett(void);
+
+void jgFun(void);
+
+
+
+
+
 
 
 
@@ -74,16 +99,19 @@ int main(int argc, char *argv[])
 			}
 			case 8:
 			{
+				folksamEV();
 				puts("room8");
 				break;
 			}
 			case 9:
 			{
 				puts("room9");
+				printInitialsAjewett();
 				break;
 			}
 			case 10:
 			{
+				fish();
 				puts("room10");
 				break;
 			}
@@ -119,6 +147,7 @@ int main(int argc, char *argv[])
 			}
 			case 17:
 			{
+				jbInit();
 				puts("room17");
 				break;
 			}
@@ -139,6 +168,7 @@ int main(int argc, char *argv[])
 			}
 			case 21:
 			{
+				ip21();
 				puts("room21");
 				break;
 			}
@@ -185,6 +215,7 @@ int main(int argc, char *argv[])
 			case 30:
 			{
 				puts("room30");
+				printStudent30();
 				break;
 			}
 			case 31:
@@ -239,6 +270,7 @@ int main(int argc, char *argv[])
 			}
 			case 42:
 			{
+				jgFun();
 				puts("room42");
 				break;
 			}
@@ -309,11 +341,13 @@ int main(int argc, char *argv[])
 			}
 			case 56:
                         {
-                                puts("room56");
+                                JLeyva();
+				puts("room56");
                                 break;
                         }
 			case 57:
                         {
+				rtFun();
                                 puts("room57");
                                 break;
                         }
@@ -423,7 +457,53 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+<<<<<<< HEAD
 void jpbFun(void)
 {
 	puts("JPBroom53");
+=======
+void folksamEV(void) 
+{
+	printf("EV\n");
+}
+
+void jbInit()
+{
+	puts("jbRoom17");
+}
+
+void ip21(void)
+{
+	printf("IP\n");
+}
+
+void rtFun(void)
+{
+	printf("RT");
+}
+
+void JLeyva(void)
+{
+	printf("JL");
+}
+
+void fish(void) 
+{
+	printf("JF");
+}
+
+void printStudent30(void)
+{
+	printf("Student initials CP\n");
+	return;
+}
+void printInitialsAjewett(void)
+{
+	printf("AJ\n");
+}
+
+void jgFun(void)
+{
+	printf("JGB");	
+>>>>>>> upstream/main
 }
