@@ -31,7 +31,7 @@ void printInitialsAjewett(void);
 void jgFun(void);
 
 
-
+void HAO(void);
 
 
 
@@ -481,4 +481,10 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+}
+
+
+void HAO(void)
+{
+	printf("HAO");
 }
