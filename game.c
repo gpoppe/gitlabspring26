@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void khprinter(void);
 
 void jbInit(void);
 
@@ -281,6 +281,7 @@ int main(int argc, char *argv[])
 			}
 			case 44:
 			{
+				khprinter();
 				puts("room44");
 				break;
 			}
@@ -457,6 +458,12 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+
+void khprinter(void)
+{
+	printf("KDH");
+}
+
 void folksamEV(void) 
 {
 	printf("EV\n");
