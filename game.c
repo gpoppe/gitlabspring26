@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void jgFun(void);
 
 
 
@@ -239,6 +239,7 @@ int main(int argc, char *argv[])
 			}
 			case 42:
 			{
+				jgFun();
 				puts("room42");
 				break;
 			}
@@ -423,3 +424,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+void jgFun(void)
+{
+	printf("JGB");	
+}
