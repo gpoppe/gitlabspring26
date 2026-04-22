@@ -501,3 +501,8 @@ void jgFun(void)
 {
 	printf("JGB");	
 }
+
+void thisistheAAfortnitebattlepass(void)
+}
+        print("AA");
+}
