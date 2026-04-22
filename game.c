@@ -14,6 +14,9 @@
 #include <unistd.h>
 
 //place function prototypes here
+
+void stanFunc(void);
+
 void JLeyva(void);
 
 void fish(void);
@@ -259,6 +262,7 @@ int main(int argc, char *argv[])
 			case 43:
 			{
 				puts("room43");
+				stanFunc(); 
 				break;
 			}
 			case 44:
@@ -438,7 +442,10 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
-
+void stanFunc(void)
+{
+	printf("something12");
+}
 void JLeyva(void)
 {
 	printf("JL");
