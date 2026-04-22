@@ -3,8 +3,6 @@
 //
 //
 
-
-
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
@@ -14,7 +12,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-void printInitials();
+void cpFun();
 
 int main(int argc, char *argv[])
 {
@@ -46,6 +44,8 @@ int main(int argc, char *argv[])
 			}
 			case 3:
 			{
+				cpFun();
+
 				puts("room3");
 				break;
 			}
@@ -420,7 +420,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
-void printInitials()
+void cpFun()
 {
 	printf("C. P. \n");
 }
