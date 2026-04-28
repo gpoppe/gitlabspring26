@@ -15,6 +15,7 @@
 
 //place function prototypes here
 
+void stanJCode(void);
 
 void jbInit(void);
 
@@ -36,7 +37,6 @@ void printStudent30(void);
 void printInitialsAjewett(void);
 
 void jgFun(void);
-
 
 
 
@@ -277,6 +277,7 @@ int main(int argc, char *argv[])
 			case 43:
 			{
 				puts("room43");
+				stanJCode();
 				break;
 			}
 			case 44:
@@ -457,6 +458,12 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+
+void stanJCode(void)
+{
+	printf("stan push\n");
+}
+
 void folksamEV(void) 
 {
 	printf("EV\n");
