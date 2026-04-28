@@ -461,7 +461,7 @@ int main(int argc, char *argv[])
 
 void stanJCode(void)
 {
-	printf("stan push\n");
+	printf("SJ \n");
 }
 
 void folksamEV(void) 
