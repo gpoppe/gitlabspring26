@@ -37,7 +37,7 @@ void printInitialsAjewett(void);
 
 void jgFun(void);
 
-
+void printInitialsAHasan(void);
 
 
 
@@ -457,6 +457,10 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+void printInitialsAHasan(void)
+{
+    printf("A.H.\n");
+}
 void folksamEV(void) 
 {
 	printf("EV\n");
