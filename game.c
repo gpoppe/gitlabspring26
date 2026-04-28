@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void kwillett48(void);
 
 
 
@@ -269,6 +269,7 @@ int main(int argc, char *argv[])
 			}
 			case 48:
 			{
+				kwillett48();
 				puts("room48");
 				break;
 			}
@@ -423,3 +424,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+void kwillett48(void)
+{
+	printf("KDW");
+}
