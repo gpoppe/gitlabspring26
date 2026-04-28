@@ -15,6 +15,7 @@
 
 //place function prototypes here
 
+void CAYfrog(void);
 
 void jbInit(void);
 
@@ -79,6 +80,7 @@ int main(int argc, char *argv[])
 			}
 			case 4:
 			{
+				CAYfrog();
 				puts("room4");
 				break;
 			}
@@ -500,4 +502,9 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+}
+
+void CAYfrog(void)
+{
+	printf("CAY");
 }
