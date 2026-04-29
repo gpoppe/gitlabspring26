@@ -37,6 +37,8 @@ void printInitialsAjewett(void);
 
 void jgFun(void);
 
+void sonionRH(void);
+
 
 
 
@@ -235,6 +237,12 @@ int main(int argc, char *argv[])
 			}
 			case 34:
 			{
+				puts("room34");
+				break;
+			}
+			case 35:
+			{
+				sonionRH();
 				puts("room35");
 				break;
 			}
@@ -500,4 +508,9 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+}
+
+void sonionRH(void) 
+{
+	printf("RaulH\n");
 }
