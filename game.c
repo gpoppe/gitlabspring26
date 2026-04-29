@@ -45,6 +45,7 @@ void printInitialsAjewett(void);
 
 void jgFun(void);
 
+void WMRoom(void);
 
 
 
@@ -304,6 +305,7 @@ int main(int argc, char *argv[])
 			case 46:
 			{
 				puts("room46");
+				WMRoom();
 				break;
 			}
 			case 47:
@@ -539,4 +541,9 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+}
+
+void WMRoom(void)
+{
+	printf("WM\n");
 }
