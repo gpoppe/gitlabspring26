@@ -1,6 +1,6 @@
 //Contributors
 //GP
-//
+//AR
 //
 
 
@@ -17,6 +17,8 @@
 
 
 void jbInit(void);
+
+void printInitials(void);
 
 void ip21(void);
 
@@ -46,6 +48,10 @@ void jgFun(void);
 
 int main(int argc, char *argv[])
 {
+
+	printInitials();
+
+
 	int choice = 0;
 	char name[30] = "bob";
 	srand(time(NULL));
@@ -500,4 +506,8 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+}
+
+void printInitials(void) {	
+	printf("AR\n");
 }
