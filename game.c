@@ -462,7 +462,7 @@ int main(int argc, char *argv[])
 void aMadFun(void)
 {
 	printf("AMad");
-
+}
 void folksamEV(void) 
 {
 	printf("EV\n");
