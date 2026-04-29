@@ -264,8 +264,8 @@ int main(int argc, char *argv[])
 			}
 			case 47:
 			{
-				rgarcia_fun();
 				puts("room47");
+				rgarcia_fun();
 				break;
 			}
 			case 48:
