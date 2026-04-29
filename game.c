@@ -1,6 +1,6 @@
 //Contributors
 //GP
-//
+//Ryan Rodriguez
 //
 
 
@@ -14,6 +14,9 @@
 #include <unistd.h>
 
 //place function prototypes here
+
+void RRlab(void);
+
 
 void jwFunc(void);
 
@@ -32,6 +35,7 @@ void function13AG(void);
 
 
 void theSigmaMethod(void);
+
 
 
 void jbInit(void);
@@ -398,6 +402,7 @@ int main(int argc, char *argv[])
                         }
 			case 61:
                         {
+				RRlab();
                                 puts("room61");
                                 break;
                         }
@@ -489,41 +494,10 @@ int main(int argc, char *argv[])
 //place functions here
 
 
-void RT_room57(void)
+void RRlab(void)
 {
-    int choice = 0;
-
-    while(choice != 3)
-    {
-        printf("\nWelcome to Room 57: Find the Ball\n");
-        printf("1. View rules\n");
-        printf("2. Play a round\n");
-        printf("3. Leave room\n");
-
-        printf("Enter choice: ");
-        scanf("%d", &choice);
-
-        if(choice == 1)
-        {
-            printf("One ball is hidden under one of three cups.\n");
-            printf("Pick the correct cup to win.\n");
-        }
-        else if(choice == 2)
-        {
-            RT_playCupRound();
-        }
-        else if(choice == 3)
-        {
-            printf("Leaving Room 57...\n");
-        }
-        else
-        {
-            printf("Invalid choice.\n");
-        }
-    }
+	printf("RRroom61\n");
 }
-
-
 
 void jwFunc(void)
 {
@@ -590,6 +564,39 @@ void ip21(void)
 	printf("IP\n");
 }
 
+void RT_room57(void)
+{
+    int choice = 0;
+
+    while(choice != 3)
+    {
+        printf("\nWelcome to Room 57: Find the Ball\n");
+        printf("1. View rules\n");
+        printf("2. Play a round\n");
+        printf("3. Leave room\n");
+
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        if(choice == 1)
+        {
+            printf("One ball is hidden under one of three cups.\n");
+            printf("Pick the correct cup to win.\n");
+        }
+        else if(choice == 2)
+        {
+            RT_playCupRound();
+        }
+        else if(choice == 3)
+        {
+            printf("Leaving Room 57...\n");
+        }
+        else
+        {
+            printf("Invalid choice.\n");
+        }
+    }
+}
 void RT_playCupRound(void)
 {
 	int cups [3] = {0, 0, 0};
@@ -631,7 +638,6 @@ void fish(void)
 void printStudent30(void)
 {
 	printf("Student initials CP\n");
-	return;
 }
 
 void printInitialsAjewett(void)
