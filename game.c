@@ -27,7 +27,8 @@ void printInitialsAjewett(void);
 
 void jgFun(void);
 
-
+void RT_room57(void);
+void RT_playCupRound(void);
 
 
 
@@ -332,8 +333,7 @@ int main(int argc, char *argv[])
                         }
 			case 57:
                         {
-				rtFun();
-                                puts("room57");
+				RT_room57();
                                 break;
                         }
 			case 58:
@@ -443,9 +443,65 @@ int main(int argc, char *argv[])
 
 //place functions here
 
-void rtFun(void)
+void RT_room57(void)
 {
-	printf("RT");
+    int choice = 0;
+
+    while(choice != 3)
+    {
+        printf("\nWelcome to Room 57: Find the Ball\n");
+        printf("1. View rules\n");
+        printf("2. Play a round\n");
+        printf("3. Leave room\n");
+
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        if(choice == 1)
+        {
+            printf("One ball is hidden under one of three cups.\n");
+            printf("Pick the correct cup to win.\n");
+        }
+        else if(choice == 2)
+        {
+            RT_playCupRound();
+        }
+        else if(choice == 3)
+        {
+            printf("Leaving Room 57...\n");
+        }
+        else
+        {
+            printf("Invalid choice.\n");
+        }
+    }
+}
+
+void RT_playCupRound(void)
+{
+	int cups [3] = {0, 0, 0};
+	int ballSpot;
+	int guess;
+	
+	ballSpot = rand() % 3;
+	cups[ballSpot] = 1;
+	
+	printf("\nChoose a cup from 1-3: ");
+	scanf("%d", &guess);
+	
+	if(guess < 1 || guess > 3)
+	{
+		printf("Invalid cup choice. \n");
+		return;
+	}
+	if(cups[guess - 1] == 1)
+	{
+		printf("You found the ball!");
+	}
+	else
+	{
+		printf("Wrong cup. The ball was under cup %d.\n", ballSpot + 1);
+	}
 }
 
 void JLeyva(void)
