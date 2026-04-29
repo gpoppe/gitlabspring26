@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void aMadFun(void);
 
 void jbInit(void);
 
@@ -163,6 +163,7 @@ int main(int argc, char *argv[])
 			}
 			case 20:
 			{
+				aMadFun();
 				puts("room20");
 				break;
 			}
@@ -457,6 +458,11 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+
+void aMadFun(void)
+{
+	printf("AMad");
+}
 void folksamEV(void) 
 {
 	printf("EV\n");
@@ -500,4 +506,5 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+
 }
