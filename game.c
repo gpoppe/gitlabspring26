@@ -506,5 +506,5 @@ void jgFun(void)
 
 void jmItsGoTime(void)
 {
-	printf("JM");
+	printf("JM\n");
 }
