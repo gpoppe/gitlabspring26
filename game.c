@@ -41,6 +41,7 @@ void printInitialsAjewett(void);
 
 void jgFun(void);
 
+void jmItsGoTime(void);
 
 
 
@@ -343,6 +344,7 @@ int main(int argc, char *argv[])
 			}
 			case 55:
 			{
+				jmItsGoTime();
 				puts("room55");
 				break;
 			}
@@ -528,4 +530,9 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+}
+
+void jmItsGoTime(void)
+{
+	printf("JM\n");
 }
