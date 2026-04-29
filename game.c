@@ -270,6 +270,7 @@ int main(int argc, char *argv[])
 			}
 			case 35:
 			{
+				sonionRH();
 				puts("room35");
 				break;
 			}
