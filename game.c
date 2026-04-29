@@ -37,6 +37,7 @@ void printInitialsAjewett(void);
 
 void jgFun(void);
 
+void jhFun(Void);
 
 
 
@@ -398,6 +399,7 @@ int main(int argc, char *argv[])
                         }
 			case 67:
                         {
+								jhFun();
                                 puts("room67");
                                 break;
                         }
@@ -500,4 +502,9 @@ void printInitialsAjewett(void)
 void jgFun(void)
 {
 	printf("JGB");	
+}
+
+void jhFun(void)
+{
+	printf("JH");
 }
