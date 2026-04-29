@@ -1,3 +1,14 @@
 #include <stdio.h>
 
-void ncfun()
+int ncfun() 
+{
+  printf("NC");
+  return 0;
+}
+
+int main() 
+{
+  ncfun();
+  return 0;
+}
+
