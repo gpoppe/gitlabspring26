@@ -1,6 +1,6 @@
 //Contributors
 //GP
-//
+//AM
 //
 
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-
+void printInitialsAngelM(void);
 
 
 
@@ -209,6 +209,7 @@ int main(int argc, char *argv[])
 			}
 			case 36:
 			{
+				printInitialsAngelM();
 				puts("room36");
 				break;
 			}
@@ -423,3 +424,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+void printInitialsAngelM(void)
+{
+	printf("AM\n");
+}
