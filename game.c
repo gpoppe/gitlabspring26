@@ -74,7 +74,7 @@ void printInitialsSMarkos(void);
 
 void brooklynstitt(void);
 
-
+void GuckMan(void);
 
 void PogoAM(void);
 
@@ -234,6 +234,7 @@ int main(int argc, char *argv[])
 			}
 			case 26:
 			{
+				GuckMan();
 				puts("room26");
 				break;
 			}
@@ -636,7 +637,10 @@ void printInitialsSMarkos(void)
 	printf("SM\n");
 }
 
-
+void GuckMan(void)
+{
+	printf("Eduardo \n");
+}
 
 
 
