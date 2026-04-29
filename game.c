@@ -1,5 +1,6 @@
 //Contributors
 //GP
+//LS
 //Ryan Rodriguez
 //
 
@@ -13,7 +14,14 @@
 #include <stdbool.h>
 #include <unistd.h>
 
+
 //place function prototypes here
+void ls(void);
+
+void mnFun(void);
+
+void JMfun(void);
+
 
 void RRlab(void);
 
@@ -60,8 +68,11 @@ void printInitialsAjewett(void);
 
 void jgFun(void);
 
+
 void RT_room57(void);
 void RT_playCupRound(void);
+void printInitialsSMarkos(void);
+
 
 
 void brooklynstitt(void);
@@ -213,11 +224,14 @@ int main(int argc, char *argv[])
 			}
 			case 24:
 			{
+				JMfun();
 				puts("room24");
 				break;
 			}
 			case 25:
 			{
+
+				mnFun(); 
 				puts("room25");
 				break;
 			}
@@ -292,7 +306,8 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 40:
-			{
+			{      
+                                ls();
 				puts("room40");
 				break;
 			}
@@ -386,6 +401,7 @@ int main(int argc, char *argv[])
                         }
 			case 58:
                         {
+				printInitialsSMarkos();
                                 puts("room58");
                                 break;
                         }
@@ -491,6 +507,15 @@ int main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
+
+
+
+void mnFun(void)
+{
+	puts("MNroom25");
+}
+
+
 //place functions here
 
 
@@ -542,6 +567,7 @@ void theSigmaMethod(void)
   printf("J.Q.\n");
 
 }
+
 
 void folksamEV(void) 
 {
@@ -650,6 +676,14 @@ void jgFun(void)
 	printf("JGB");	
 
 }
+
+void printInitialsSMarkos(void) 
+{
+	printf("SM\n");
+}
+
+
+
 
 
 
