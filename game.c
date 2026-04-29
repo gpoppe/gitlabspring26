@@ -2,7 +2,7 @@
 //GP
 //
 //
-
+//anthony farris
 
 
 #include <stdlib.h>
@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 //place function prototypes here
-void afFun(void);
+void thanos1v9(void);
 
 
 
@@ -288,7 +288,7 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 52:
-			{	afFun();
+			{	thanos1v9();
 				puts("room52");
 				break;
 			}
@@ -302,7 +302,7 @@ int main(int argc, char *argv[])
 				puts("room54");
 				break;
 			}
-			case 55:
+		        case 55:
 			{
 				puts("room55");
 				break;
@@ -424,7 +424,7 @@ int main(int argc, char *argv[])
 }
 
 //place functions her
-void afFun(void)
+void thanos1v9(void)
 { 
 	puts("AFroom52");
 }
