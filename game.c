@@ -464,6 +464,7 @@ int main(int argc, char *argv[])
 void cpFun(void)
 {
 	printf("C. P. \n");
+}
 
 void folksamEV(void) 
 {
