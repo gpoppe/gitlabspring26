@@ -15,6 +15,9 @@
 
 //place function prototypes here
 
+void dcFunc(void);
+
+
 void RRlab(void);
 
 
@@ -186,6 +189,7 @@ int main(int argc, char *argv[])
 			}
 			case 19:
 			{
+				dcFunc();
 				puts("room19");
 				break;
 			}
@@ -492,6 +496,11 @@ int main(int argc, char *argv[])
 }
 
 //place functions here
+
+void dcFunc(void)
+{
+    printf("DCroom19\n");
+}
 
 void RRlab(void)
 {
