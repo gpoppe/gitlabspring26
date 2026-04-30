@@ -1,5 +1,5 @@
 //Contributors
-//GP
+//GP+
 //LS
 //Ryan Rodriguez
 //
@@ -17,56 +17,26 @@
 
 //place function prototypes here
 void ls(void);
-
 void mnFun(void);
-
 void JMfun(void);
-
-
 void RRlab(void);
-
-
 void jwFunc(void);
-
-
 void jsl();
-
-
-
 void dcFun(void);
-
-
 void abFun(void);
-
-
 void function13AG(void);
-
-
 void theSigmaMethod(void);
-
-
-
 void jbInit(void);
-
 void ip21(void);
-
 void folksamEV(void);
-
 void ip21(void);
-
-
 void rtFun(void);
-
 void JLeyva(void);
-
 void fish(void);
-
 void printStudent30(void);
-
 void printInitialsAjewett(void);
-
-
 void jgFun(void);
+
 
 
 void RT_room57(void);
@@ -75,10 +45,10 @@ void printInitialsSMarkos(void);
 
 
 
+
+void printInitialsSMarkos(void);
+
 void brooklynstitt(void);
-
-
-
 void PogoAM(void);
 
 int main(int argc, char *argv[])
@@ -89,7 +59,7 @@ int main(int argc, char *argv[])
 	
 	printf("Please enter your name: ");
 	scanf("%s",name);
-	printf("Hello %s welcome to the RPG Game!\n",name);
+	printf("Hello %s welcome to THE RPG Game!\n",name);
 	while(choice != 99)
 	{
 		puts("You find yourself in a dark room and you are not sure how you got here.");
@@ -243,7 +213,7 @@ int main(int argc, char *argv[])
 			case 27:
 			{
 				puts("room27");
-        theSigmaMethod();
+     				theSigmaMethod();
 				break;
 			}
 			case 28:
@@ -389,74 +359,76 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 56:
-                        {
+			{
                                 JLeyva();
 				puts("room56");
                                 break;
-                        }
+			}
 			case 57:
-                        {
+
+      {
 				RT_room57();
-                                break;
-                        }
+        puts("room57");
+        break;
+			}
 			case 58:
-                        {
+			{
 				printInitialsSMarkos();
                                 puts("room58");
                                 break;
-                        }
+			}
 			case 59:
-                        {
+			{
 				jsl();
                                 puts("room59");
                                 break;
-                        }
+			}
 			case 60:
-                        {
-                                puts("room60");
+			{
+				puts("room60");
                                 break;
-                        }
+			}
 			case 61:
-                        {
+			{
 				RRlab();
                                 puts("room61");
                                 break;
-                        }
+			}
 			case 62:
-                        {
+			{
                                 puts("room62");
                                 break;
-                        }
+			}
 			case 63:
-                        {
+			{
                                 puts("room63");
                                 break;
-                        }
+			}
 			case 64:
-                        {
+			{
                                 puts("room64");
                                 break;
-                        }
+			}
 			case 65:
-                        {
+			{
                                 puts("room65");
                                 break;
-                        }
+			}
 			case 66:
-                        {
+			{
                                 puts("room66");
                                 break;
-                        }
+			}
 			case 67:
-                        {
+			{
                                 puts("room67");
                                 break;
-                        }
+			}
 			case 68:
-                        {
+			{
                                 puts("room68");
                                 break;
-                        }
+			}
 			case 69:
                         {
                                 puts("room69");
@@ -507,7 +479,7 @@ int main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
-
+//place function definitions below this comment
 
 
 void mnFun(void)
@@ -516,7 +488,6 @@ void mnFun(void)
 }
 
 
-//place functions here
 
 
 void RRlab(void)
@@ -642,7 +613,7 @@ void RT_playCupRound(void)
 	}
 	if(cups[guess - 1] == 1)
 	{
-		printf("You found the ball!");
+		printf("You found the ball!\n");
 	}
 	else
 	{
