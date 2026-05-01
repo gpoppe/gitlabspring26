@@ -52,6 +52,8 @@ void PogoAM(void);
 void aaGM(void);
 void room49game(void);
 void dleyva14(void);
+
+void sgarcia6(void);
 void stanPush(void);
 void printdAfeworkIntials(void);
 void kwillett48(void);
@@ -103,6 +105,7 @@ int main(int argc, char *argv[])
 			}
 			case 6:
 			{
+				sgarcia6();
 				puts("room6");
 				break;
 			}
@@ -667,6 +670,11 @@ void dleyva14(void)
 	printf("DL\n");
 }
 
+
+void sgarcia6(void)
+   {
+       printf("SG");
+   }
 void printdAfeworkIntials(void)
 {
 	puts("DA");
