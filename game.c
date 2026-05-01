@@ -2,7 +2,7 @@
 //GP+
 //LS
 //Ryan Rodriguez
-//
+//stanley J.
 
 
 
@@ -16,6 +16,8 @@
 
 
 //place function prototypes here
+//
+void stanPush(void);
 void ls(void);
 void mnFun(void);
 void JMfun(void);
@@ -284,6 +286,7 @@ int main(int argc, char *argv[])
 			case 43:
 			{
 				puts("room43");
+				stanPush();
 				break;
 			}
 			case 44:
@@ -468,8 +471,10 @@ int main(int argc, char *argv[])
 }
 
 //place function definitions below this comment
-
-
+void stanPush(void)
+{
+	puts("S J \n");
+}
 void mnFun(void)
 {
 	puts("MNroom25");
