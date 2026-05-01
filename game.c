@@ -2,10 +2,12 @@
 //GP+
 //LS
 //Ryan Rodriguez
+//Charles Parker
 //Kristopher Willett
 //
 //
 //
+
 void ANFUN(void);
 
 
@@ -19,6 +21,8 @@ void ANFUN(void);
 
 
 //place function prototypes here
+
+void cparkerFun(void);
 void rgarcia_fun(void);
 
 void ls(void);
@@ -87,6 +91,7 @@ int main(int argc, char *argv[])
 			}
 			case 3:
 			{
+				cparkerFun();
 				puts("room3");
 				break;
 			}
@@ -513,6 +518,11 @@ void mnFun(void)
 
 
 //place functions here
+//
+void cparkerFun(void)
+{
+	printf("C P\n");
+}
 void rgarcia_fun(void)
 {
 	printf("RJG");
