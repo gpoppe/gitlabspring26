@@ -667,6 +667,12 @@ void dleyva14(void)
 }
 
 
-
-
+void JMfun(void)
+{
+	printf("JM\n");
+}
+void ls(void)
+{
+	printf("JM\n");
+}
 
