@@ -1,7 +1,7 @@
 //Contributors
 //GP
 //
-//
+//Charles Parker
 
 #include <stdlib.h>
 #include <ctype.h>
