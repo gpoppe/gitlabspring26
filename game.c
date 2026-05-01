@@ -23,6 +23,8 @@
 
 
 //place function prototypes here
+void khprinter(void);
+
 void ANFUN(void);
 void dcFunc(void);
 void cparkerFun(void);
@@ -331,6 +333,7 @@ int main(int argc, char *argv[])
 			}
 			case 44:
 			{
+				khprinter();
 				puts("room44");
 				break;
 			}
@@ -588,7 +591,10 @@ void jsl(void)
 	printf("JSL\n");
 }
 
-
+void khprinter(void)
+{
+	printf("KDH");
+}
 
 
 void PogoAM(void)
