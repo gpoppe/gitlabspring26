@@ -457,6 +457,7 @@ int main(int argc, char *argv[])
 			case 68:
                         {
                                 puts("room68");
+				hOsuna();
                                 break;
                         }
 			case 69:
