@@ -1,6 +1,7 @@
 //Contributors
-//GP
-//
+//GP+
+//LS
+//Ryan Rodriguez
 //
 
 
@@ -13,58 +14,31 @@
 #include <stdbool.h>
 #include <unistd.h>
 
+
 //place function prototypes here
-
+void ls(void);
+void mnFun(void);
+void JMfun(void);
+void RRlab(void);
 void jwFunc(void);
-
-
 void jsl();
-
-
-
 void dcFun(void);
-
-
 void abFun(void);
-
-
 void function13AG(void);
-
-
 void theSigmaMethod(void);
-
-
 void jbInit(void);
-
 void ip21(void);
-
 void folksamEV(void);
-
 void sonionRH(void);
-
 void ip21(void);
-
-
 void rtFun(void);
-
 void JLeyva(void);
-
 void fish(void);
-
 void printStudent30(void);
-
 void printInitialsAjewett(void);
-
-
 void jgFun(void);
-
-
-
-
+void printInitialsSMarkos(void);
 void brooklynstitt(void);
-
-
-
 void PogoAM(void);
 
 int main(int argc, char *argv[])
@@ -75,7 +49,7 @@ int main(int argc, char *argv[])
 	
 	printf("Please enter your name: ");
 	scanf("%s",name);
-	printf("Hello %s welcome to the RPG Game!\n",name);
+	printf("Hello %s welcome to THE RPG Game!\n",name);
 	while(choice != 99)
 	{
 		puts("You find yourself in a dark room and you are not sure how you got here.");
@@ -210,11 +184,14 @@ int main(int argc, char *argv[])
 			}
 			case 24:
 			{
+				JMfun();
 				puts("room24");
 				break;
 			}
 			case 25:
 			{
+
+				mnFun(); 
 				puts("room25");
 				break;
 			}
@@ -226,7 +203,7 @@ int main(int argc, char *argv[])
 			case 27:
 			{
 				puts("room27");
-        theSigmaMethod();
+     				theSigmaMethod();
 				break;
 			}
 			case 28:
@@ -295,7 +272,8 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 40:
-			{
+			{      
+                                ls();
 				puts("room40");
 				break;
 			}
@@ -377,73 +355,75 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 56:
-                        {
+			{
                                 JLeyva();
 				puts("room56");
                                 break;
-                        }
+			}
 			case 57:
-                        {
+			{
 				rtFun();
                                 puts("room57");
                                 break;
-                        }
+			}
 			case 58:
-                        {
+			{
+				printInitialsSMarkos();
                                 puts("room58");
                                 break;
-                        }
+			}
 			case 59:
-                        {
+			{
 				jsl();
                                 puts("room59");
                                 break;
-                        }
+			}
 			case 60:
-                        {
-                                puts("room60");
+			{
+				puts("room60");
                                 break;
-                        }
+			}
 			case 61:
-                        {
+			{
+				RRlab();
                                 puts("room61");
                                 break;
-                        }
+			}
 			case 62:
-                        {
+			{
                                 puts("room62");
                                 break;
-                        }
+			}
 			case 63:
-                        {
+			{
                                 puts("room63");
                                 break;
-                        }
+			}
 			case 64:
-                        {
+			{
                                 puts("room64");
                                 break;
-                        }
+			}
 			case 65:
-                        {
+			{
                                 puts("room65");
                                 break;
-                        }
+			}
 			case 66:
-                        {
+			{
                                 puts("room66");
                                 break;
-                        }
+			}
 			case 67:
-                        {
+			{
                                 puts("room67");
                                 break;
-                        }
+			}
 			case 68:
-                        {
+			{
                                 puts("room68");
                                 break;
-                        }
+			}
 			case 69:
                         {
                                 puts("room69");
@@ -494,7 +474,32 @@ int main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
-//place functions here
+//place function definitions below this comment
+
+
+void mnFun(void)
+{
+	puts("MNroom25");
+}
+
+
+
+void ls(void)
+{
+	printf("LS\n");
+       
+}
+void JMfun(void)
+{
+	printf("JM");
+}
+
+
+void RRlab(void)
+{
+	printf("RRroom61\n");
+}
+
 
 void jwFunc(void)
 {
@@ -539,6 +544,7 @@ void theSigmaMethod(void)
   printf("J.Q.\n");
 
 }
+
 
 void folksamEV(void) 
 {
@@ -585,7 +591,6 @@ void fish(void)
 void printStudent30(void)
 {
 	printf("Student initials CP\n");
-	return;
 }
 
 void printInitialsAjewett(void)
@@ -598,6 +603,14 @@ void jgFun(void)
 	printf("JGB");	
 
 }
+
+void printInitialsSMarkos(void) 
+{
+	printf("SM\n");
+}
+
+
+
 
 
 
