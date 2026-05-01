@@ -17,7 +17,6 @@
 
 //place function prototypes here
 //
-void stanPush(void);
 void ls(void);
 void mnFun(void);
 void JMfun(void);
@@ -41,6 +40,7 @@ void jgFun(void);
 void printInitialsSMarkos(void);
 void brooklynstitt(void);
 void PogoAM(void);
+void stanPush(void);
 
 int main(int argc, char *argv[])
 {
