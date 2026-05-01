@@ -36,6 +36,13 @@ void fish(void);
 void printStudent30(void);
 void printInitialsAjewett(void);
 void jgFun(void);
+
+void printInitialsAHasan(void);
+
+
+
+
+
 void printInitialsSMarkos(void);
 void brooklynstitt(void);
 void PogoAM(void);
@@ -469,6 +476,11 @@ int main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
+//place functions here
+void printInitialsAHasan(void)
+{
+    printf("AH\n");
+}
 //place function definitions below this comment
 
 
