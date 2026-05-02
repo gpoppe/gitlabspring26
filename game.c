@@ -23,6 +23,8 @@
 
 
 //place function prototypes here
+void jkFun(void);
+
 void khprinter(void);
 
 void ANFUN(void);
@@ -316,11 +318,16 @@ int main(int argc, char *argv[])
 			}
 			case 41:
 			{
+				
 				puts("room41");
 				break;
 			}
 			case 42:
 			{
+    				jkFun();
+    				puts("room42");
+    				break;
+				
 				jgFun();
 				puts("room42");
 				break;
@@ -520,6 +527,11 @@ int main(int argc, char *argv[])
 }
 
 //place function definitions below this comment
+void jkFun(void)
+{
+    printf("PSG\n");
+}
+
 
 
 void afFun(void)
