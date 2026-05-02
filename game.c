@@ -324,7 +324,6 @@ int main(int argc, char *argv[])
 			}
 			case 42:
 			{
-				// keep any existing student function here
     				jkFun();
     				puts("room42");
     				break;
