@@ -668,6 +668,10 @@ void fish(void)
 	printf("JF");
 
 }
+void aaGM(void)
+{
+    printf("AA\n");
+}
 
 void printStudent30(void)
 {
