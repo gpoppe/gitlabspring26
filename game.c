@@ -5,7 +5,7 @@
 //Anthony Farris
 //Charles Parker
 //Kristopher Willett
-//
+//Angel Martinez
 //
 //
 
@@ -66,7 +66,7 @@ void kwillett48(void);
 void ncInitial(void);
 void mtorres(void);
 void hOsuna(void);
-
+void printInitialsAngelM(void);
 
 int main(int argc, char *argv[])
 {
@@ -289,6 +289,7 @@ int main(int argc, char *argv[])
 			}
 			case 36:
 			{
+				printInitialsAngelM();
 				puts("room36");
 				break;
 			}
@@ -748,4 +749,7 @@ void stanPush(void)
 	puts(" S J \n");
 }
 
-
+void printInitialsAngelM(void)
+{
+	printf("AM\n");
+}
