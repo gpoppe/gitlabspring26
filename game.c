@@ -529,7 +529,7 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 			    return false;
 		}
         
-        printf("\t\tINCOMING STAGE HAZARD\n\nIt's the magic piano. What is it doing?\n\n\t\t*plays beethoven's music*\n\n");
+        printf("\t\tINCOMING STAGE HAZARD\n\nIt's the magic piano. What is it doing?\n\n\t\t*plays Beethoven's music*\n\n");
         
         int random_number = rand() % (3 - 1 + 1) + 1;
         
