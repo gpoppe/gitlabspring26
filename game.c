@@ -4,7 +4,8 @@
 //Ryan Rodriguez
 //Anthony Farris
 //Charles Parker
-//Kristopher Willett
+//Kristopher Willet
+//Albert Bautista
 //
 //
 //
@@ -248,8 +249,8 @@ int main(int argc, char *argv[])
 			}
 			case 29:
 			{	
-				abFun();
 				puts("room29");
+				abFun();
 				break;
 			}
 			case 30:
@@ -615,7 +616,194 @@ void function13AG(void)
 }
 void abFun(void)
 {
-	printf("AB");
+	printf("AB\n");
+
+	int choice = 0;
+	int danger[5] = {1, 2, 3, 4, 5};
+	int health = 100;
+
+	printf("\nYou find yourself in a zombie apocalypse.\n");
+	printf("Make the right choices to survive!\n");
+	printf("Health: %d\n", health);
+
+	// Choice 1
+	printf("\nYou hear a survivor screaming for help\n");
+	printf("1. Help the survivor? (1 = yes, 0 = no)\n");
+	printf("Enter your choice: ");
+	scanf("%d", &choice);
+	while(choice != 0 && choice != 1)
+	{
+		printf("Invalid input. Enter 1 or 0: ");
+		scanf("%d", &choice);
+	}
+
+	if(choice == 1)
+	{
+		if(danger[rand() % 5] <= 4)
+		{
+			printf("\nYou save the survivor. He thanks you and gives you a health pack for your help\n");
+			printf("You gain +20 health\n");
+			health += 20;
+			printf("Health: %d\n", health);
+		}
+		else
+                {
+                        printf("\nYou try to save the survivor but he is overrun and killed by zombies. You get hurt, but manage to escape.\n");
+			printf("You lose -20 health\n");
+                        health -= 20;
+                        printf("Health: %d\n", health);
+                }
+	}
+	else
+	{
+		printf("The survivor is overrun by zombies and dies\n");
+	}
+
+	// Choice 2
+        printf("\nIt's starting to get dark, and you need to rest. You stumble upon an eerie building that you could potentially sleep for the night. \n");
+        printf("2. Sleep at this building? (1 = yes, 0 = no)\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        while(choice != 0 && choice != 1)
+        {
+                printf("Invalid input. Enter 1 or 0: ");
+                scanf("%d", &choice);
+        }
+
+        if(choice == 1)
+        {
+                if(danger[rand() % 5] <= 3)
+                {
+                        printf("\nYou enter the building and sleep soundly. You wake up the next morning and feel well rested\n");
+                        printf("You gain +20 health\n");
+                        health += 20;
+                        printf("Health: %d\n", health);
+                }
+                else
+                {
+                        printf("\nYou enter the building and sleep. Your sleep is interrupted by a loud growl, you were not alone...\n");
+			printf("You swiftly try to escape the building, but are bit by a zombie on the way out.\n");
+                        printf("You lose -20 health\n");
+                        health -= 20;
+                        printf("Health: %d\n", health);
+                }
+        }
+        else
+        {
+                printf("You do not get sleep for the night, and feel weak by next morning.\n");
+		printf("You lose -10 health\n");
+		health -= 10;
+        }
+	
+	// Choice 3
+        printf("\nAs you explore the city, you begin to feel hungry. You stumble across a convenience store. While looting the scarce supplies, you find some expired canned food\n");
+        printf("3. Eat the expired food? (1 = yes, 0 = no)\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        while(choice != 0 && choice != 1)
+        {
+                printf("Invalid input. Enter 1 or 0: ");
+                scanf("%d", &choice);
+        }
+
+        if(choice == 1)
+        {
+                if(danger[rand() % 5] <= 2)
+                {
+                        printf("\nYou eat the food and feel feel satiated. The food was expired, but still edible.\n");
+                        printf("You gain +20 health\n");
+                        health += 20;
+                        printf("Health: %d\n", health);
+                }
+                else
+                {
+                        printf("\nYou eat the food and feel satiated. Later in the day you begin to feel sick, and you throw up the food you ate.\n");
+                        printf("You lose -20 health\n");
+                        health -= 20;
+                        printf("Health: %d\n", health);
+                }
+        }
+        else
+        {
+                printf("You do not eat the expired food, but your hunger remains.\n");
+                printf("You lose -10 health\n");
+                health -= 10;
+        }
+
+	// Choice 4
+        printf("\nAfter days of roaming, you eventually find yourself in the woods in the dead of night. You feel cold, and see some sticks you could use to make a campfire.\n");
+        printf("4. Make a campfire? (1 = yes, 0 = no)\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        while(choice != 0 && choice != 1)
+        {
+                printf("Invalid input. Enter 1 or 0: ");
+                scanf("%d", &choice);
+        }
+
+        if(choice == 1)
+        {
+                if(danger[rand() % 5] <= 3)
+                {
+                        printf("\nYou make a campfire and stay warm for the night.\n");
+                        printf("You gain +20 health\n");
+                        health += 20;
+                        printf("Health: %d\n", health);
+                }
+                else
+                {
+                        printf("\nYou make a campfire. The campfire attracts the attention of bandits. The bandits attack you and steal your belongings, but you make it out alive.\n");
+                        printf("You lose -20 health\n");
+                        health -= 20;
+                        printf("Health: %d\n", health);
+                }
+        }
+        else
+        {
+                printf("You do not make a campfire, and shiver through the cold night.\n");
+                printf("You lose -10 health\n");
+                health -= 10;
+
+        }
+	
+	 // Choice 5
+        printf("\nYou see flyers and posters about a CDC evacuation site. You hear rumors that only those who are healthy are allowed entry.\n");
+        printf("5. Go to the evacuation site? (1 = yes, 0 = no)\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        while(choice != 0 && choice != 1)
+        {
+                printf("Invalid input. Enter 1 or 0: ");
+                scanf("%d", &choice);
+        }
+
+        if(choice == 1)
+        {
+                if(health >= 100)
+                {
+                        printf("\nYou make it to the CDC evacuation site. You are inspected people in hazmat suits, and they determine you are infected.\n");
+			printf("However, you have good health. You are given the cure, and escorted to a helicopter. You escape the Zombie Apocalypse Alive!\n");
+                }
+                else
+                {
+                        printf("\nYou make it to the CDC evacuation site. You are inspected people in hazmat suits, and they determine you are infected.\n");
+			printf("However, you have bad health. You are denied the cure and entry to the evacuation site.\n");
+		       	printf("You are devastated, and begin to feel like you are losing control over your body...\n");
+                }
+        }
+        else
+        {
+                if(health >= 100)
+		{
+			printf("You choose to not go to the evacuation site, and continue living as a nomad in this Zombie Apocalypse.\n");
+			printf("You don't know where you're heading, but you know you have what it takes to survive...\n");
+		}
+		else
+		{
+			printf("You choose to not go to the evacuation site, but you feel like you are beginning to lose control over your body.\n");
+			printf("You barricade yourself inside of a safe room, as you wait for the worst...\n");
+		}
+        }	
 }
 
 
