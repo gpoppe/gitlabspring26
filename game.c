@@ -5,7 +5,7 @@
 //Anthony Farris
 //Charles Parker
 //Kristopher Willett
-//
+//Fernando Gomez
 //
 //
 
@@ -67,6 +67,16 @@ void ncInitial(void);
 void mtorres(void);
 void hOsuna(void);
 
+void printInFG(void);
+void showStats(int Intelligence, int Reconnaissance, int fleetStrength, int Midway, int carrierDamage, int carrierLocated, int fighterSupport, int midwayCaptured);
+void intelligenceRoom(int *Intelligence, int *fleetStrength);
+void reconnaissanceRoom(int *Reconnaissance, int *carrierLocated, int *fleetStrength, int carrierDamage);
+int calCarrierAttack(int Intelligence, int Reconnaissance, int carrierLocated, int fighterSupport);
+void carrierDeck(int Intelligence, int Reconnaissance, int carrierLocated, int fighterSupport, int *carrierDamage, int *midwaydDamage, int *fleetStrength);
+void fighterCommand(int *fighterSupport, int *fleetStrength);
+void invasionPlanningRoom(int *midwayDamage, int carrierDamage, int *fleetStrength, int *midwayCaptured);
+void enemyCounterAttack(int *fleetStrength, int Intelligence, int Reconnaissance, int fighterSupport);
+void showFinalResult(int fleetStrength, int midwayDamage, int carrierDamage, int carrierLocated, int midwayCaptured);
 
 int main(int argc, char *argv[])
 {
@@ -451,6 +461,7 @@ int main(int argc, char *argv[])
 			case 65:
 			{
                                 puts("room65");
+				printInFG();
                                 break;
 			}
 			case 66:
@@ -513,8 +524,9 @@ int main(int argc, char *argv[])
 			{
 				puts("invalid choice");
 			}
-		}
-	}
+		
+			}
+              }
 	puts("Game Over");
 	return EXIT_SUCCESS;
 }
@@ -748,4 +760,429 @@ void stanPush(void)
 	puts(" S J \n");
 }
 
+void printInFG(void)
+{
 
+
+	int intelligence = 0;
+	int reconnaissance = 0;
+	int midwayDamage = 0;
+	int carrierDamage = 0;
+	int carrierLocated = 0;
+	int fighterSupport = 0;
+	int midwayCaptured = 0;
+	int fleetStrength = 10;
+
+	int Order = 0;
+	printf("As you walked in Room 65 You are transported back to a pivotal moment in World War II: The Battle of Midway.\n You are place in Command of the Japanese Carrier Strike Force under Vice Admiral Chuichi Nagumo.\nYour mission is too make strategic decisions that could change the outcome of the war.A Victory at Midway could give Japan hope for a peace Deal. Defeat would only accelerate Japans defeat.\nGoal: Locate and Destroy American Carriers (USS Enterprise, USS Hornet USS Yorktown) and take the Island of Midway.\n Junior Officers advise cautious approach by checking with intelligence and reconnaissance. Others advise a more aggressive approach arguing for one blow against American Carriers.");
+
+	while(Order != 7)
+	{
+		printf("\n===== MIDWAY COMMAND MENU ====\n");
+		printf("1) Carrier Deck\n");
+		printf("2) Reconnaissance Room\n");
+		printf("3) Invasion Planning Room\n");
+		printf("4) Fighter Hangar\n");
+		printf("5) Intelligence Room\n");
+		printf("6) Show Stats\n");
+		printf("7) End Mission. See Results\n");
+		printf("Choose your Order: ");
+		scanf("%d", &Order);
+
+		if(Order ==1)
+		{
+		carrierDeck(intelligence, reconnaissance, carrierLocated, fighterSupport, &carrierDamage, &midwayDamage, &fleetStrength);
+
+		}
+		if(Order ==2)
+		{
+		reconnaissanceRoom(&reconnaissance, &carrierLocated, &fleetStrength, carrierDamage);
+		}
+		if(Order ==3)
+		{
+		invasionPlanningRoom(&midwayDamage, carrierDamage, &fleetStrength, &midwayCaptured);
+		}
+		if(Order ==4)
+		{
+		fighterCommand(&fighterSupport, &fleetStrength);
+		}
+		if(Order ==5)
+		{
+		intelligenceRoom(&intelligence, &fleetStrength);
+		}
+		if(Order ==6)
+		{
+		showStats(intelligence, reconnaissance, fleetStrength, midwayDamage, carrierDamage, carrierLocated, fighterSupport, midwayCaptured);
+		}
+		if(Order ==7)
+		{
+		showFinalResult(fleetStrength, midwayDamage, carrierDamage, carrierLocated, midwayCaptured);
+		}
+
+
+
+	}
+
+}
+
+void showStats(int Intelligence, int Reconnaissance, int fleetStrength, int Midway, int carrierDamage, int carrierLocated, int fighterSupport, int midwayCaptured)
+{
+	printf("\nCurrent Command Status\n");
+
+	printf("Intelligence Level:  %d\n", Intelligence);
+	printf("Reconnaissance Level:  %d\n", Reconnaissance);
+	printf("Japanese Fleet Strength:  %d\n", fleetStrength);
+	printf("Midway Island Damage:  %d\n", Midway);
+	printf("American Carriers Destroyed: %d out of 3\n", carrierDamage);
+
+	if(carrierLocated>0)
+	{
+	printf("Enemy Carrier Location: Location\n");
+	printf("American Carriers Located: %d out of 3\n", carrierLocated);
+	}
+	else
+	{
+	printf("Enemy Carrier Location: Unknown\n");
+	printf("American Carriers Located: 0 out of 3\n");
+	}
+
+	if(midwayCaptured ==1)
+	{
+	printf("Midway Status:   Captured\n");
+	}
+	else
+	{
+	printf("Midway Status:  Not Captured\n");
+	}
+}
+
+void intelligenceRoom(int *Intelligence, int*fleetStrength)
+{
+	int Order;
+	printf("\n=== INTELLIGENCE ROOM === \n");
+	printf("1)Reports suggest American Carriers could be nearby.\n");
+	printf("2) Ignore the Report and focus on Midway\n");
+	printf("Choose your decision: ");
+	scanf("%d", &Order);
+
+	if(Order ==1)
+	{
+	*Intelligence +=2;
+	printf("Your officers begin preparing for an enemy carrier attack...\n");
+	printf("Intelligence increased by 2.\n");
+	}
+	else if(Order ==2)
+	{
+	*Intelligence -=1;
+	*fleetStrength-=1;
+	printf("Intelligence decreased by 1.\n");
+	printf("Fleet Strength decreased by 1.\n");
+	}
+}
+
+void reconnaissanceRoom(int *Reconnaissance, int *carrierLocated, int *fleetStrength, int carrierDamage)
+{
+	int Order;
+	int found;
+	int i;
+	int remainingCarriers;
+
+	char *AmericanCarriers[] = {"USS Enterprise", "USS Hornet", "USS Yorktown"};
+
+	printf("\n=== RECONNAISSANCE ROOM ===\n");
+	printf("Scout pilots are waiting for orders.\n");
+	printf("1) Send scout planes far east\n");
+	printf("2) Keep scout planes close to save fuel and protect the fleet\n");
+	printf("Choose your decision: ");
+	scanf("%d", &Order);
+
+	if(Order ==1)
+	{
+	*Reconnaissance +=1;
+
+	remainingCarriers = 3-carrierDamage;
+		if(remainingCarriers <=0)
+		{
+		printf("\nAll American Carriers have already been destroyed.\n");
+		*carrierLocated = 0;
+		return;
+		}
+
+	found = rand() % remainingCarriers + 1;
+	*carrierLocated = found;
+	printf("\nYou send scout planes across the Pacific.\n");
+	printf("Reconnaissance increased by 1.\n");
+	printf("Your scouts located %d American Carriers:\n", found);
+
+		for( i = 0; i< found; i++)
+		{
+		printf("- %s\n", AmericanCarriers[carrierDamage + i]);
+		}
+	}
+	else if(Order ==2)
+	{
+		*Reconnaissance -=1;
+		*fleetStrength-=1;
+		*carrierLocated = 0;
+		printf("\nYou keep scout planes close to defend the fleet.\n");
+		printf("Your carriers are safer for now, but the enemy carrier locations remains unknown.\n");
+		printf("Reconnaissance decreased by 1.\n");
+	}
+		
+}
+
+int calCarrierAttack(int Intelligence, int Reconnaissance, int carrierLocated, int fighterSupport)
+{
+	int chance = 20;
+	chance += Intelligence * 10;
+	chance +=Reconnaissance*10;
+	chance +=carrierLocated*15;
+	chance += fighterSupport * 5;
+
+	if(carrierLocated == 0)
+	{
+	chance -=25;
+	}
+	if(chance > 90)
+	{
+	chance = 90;
+	}
+	if(chance < 10)
+	{
+	chance = 10;
+	}
+
+	return chance;
+}
+
+void carrierDeck(int intelligence, int reconnaissance, int carrierLocated, int fighterSupport, int *carrierDamage, int *midwayDamage, int *fleetStrength)
+{
+char *AmericanCarriers[] = {"USS Enterprise", "USS Hornet", "USS Yorktown"};
+int Order;
+int attackChance;
+int dice;
+
+printf("\n=== CARRIER DECK ===\n");
+printf("Bombers are ready to launch from Akagi, Kaga, Soryu, and Hiryu.\n");
+printf("1) Launch bombers against American carriers\n");
+printf("2) Launch bombers against Midway Island\n");
+printf("Choose your decision: ");
+scanf("%d", &Order);
+
+if(Order ==1)
+{
+	attackChance = calCarrierAttack(intelligence, reconnaissance, carrierLocated, fighterSupport);
+	dice = rand()%100;
+	if(dice < attackChance)
+	{
+		if(*carrierDamage<3)
+		{
+		printf("Success! Your bombers destroy %s!\n", AmericanCarriers[*carrierDamage]);
+		*carrierDamage+=1;
+		}
+		else
+		{
+		printf("All American carriers have already been destroyed.\n");
+		}
+	}
+	else
+	{
+	printf("Failure! The strike fails to hit the American carriers.\n");
+	printf("Enemy counterattacks weaken your fleet.\n");
+	*fleetStrength -=2;
+	}
+
+}
+else if(Order ==2)
+{
+	printf("\nYou order a bombing attack on Midway Island.\n");
+	if(intelligence < 0 || reconnaissance < 0)
+	{
+	printf("The attack damages Midway, but your fleet is exposed to danger.\n");
+	*midwayDamage +=1;
+	*fleetStrength -=1;
+	}
+	else
+	{
+	printf("The attack successfully damages Midway's defense.\n");
+	*midwayDamage+=2;
+	}
+}
+enemyCounterAttack(fleetStrength, intelligence, reconnaissance, fighterSupport);
+}
+
+void fighterCommand(int *fighterSupport, int *fleetStrength)
+{
+	int Order;
+	printf("\n=== FIGHTER COMMAND ===\n");
+	printf("Fighters are ready too launch from Akagi, Kaga, Soryu and Hiryu.\n");
+	printf("1) Launch Fighters too protect Bombers\n");
+	printf("2) Keep Fighters too defend Carriers\n");
+	printf("Choose your decision: ");
+	scanf("%d", &Order);
+
+	if(Order ==1)
+	{
+	*fighterSupport+=2;
+	*fleetStrength-=1;
+	printf("\nYou send fighters to escrot the bombers.\n");
+	printf("Future air attacks will have better support.\n");
+	printf("Fighter support increased by 2.\n");
+	printf("Fleet strength decreased by 1 because fewer fighters are defending the carriers.\n");
+	}
+	else if(Order ==2)
+	{
+	*fleetStrength +=2;
+	*fighterSupport -=1;
+	printf("\nYou keep fighters close to defend the carrier fleet.\n");
+	printf("Your carriers are better protected from enemy attacks.\n");
+	printf("Fleet strength increased by 2.\n");
+	}
+}
+
+void invasionPlanningRoom(int *midwayDamage, int carrierDamage, int * fleetStrength, int *midwayCaptured)
+{
+int Order;
+int dice;
+	
+	if(*midwayCaptured ==1)
+	{
+	printf("Midway has already been captured.\n");
+	printf("Returning to the command menu...\n");
+	printf("Your offiercs are waiting for your invasion orders.\n");
+	printf("Midway Island Damage: %d\n", carrierDamage);
+	printf("Fleet Strength: %d\n\n", *fleetStrength);
+	}
+
+	printf("\n=== INVASION PLANNING ROOOM ===\n");
+	printf("Your Officers are waiting for your invasion Orders.\n");
+	printf("Midway Island Damage: %d\n" , *midwayDamage);
+	printf("American Carrier Damage: %d\n", carrierDamage);
+	printf("Fleet Strength: %d\n\n", *fleetStrength);
+
+	printf("1) Begin invasion of Midway\n");
+	printf("2) Delay invasion and continue air attacks\n");
+	scanf("%d", &Order);
+
+	if(Order ==1)
+	{
+	printf("\nYou order the invasion force to begin the assault on Midway...\n");
+		if(*midwayDamage >=3 && carrierDamage >=2)
+		{
+		printf("The island defense are weakened and the American Carriers are badly damaged.\n");
+		printf("Success! Your forces capture Midway Island.\n");
+		*midwayCaptured =1;
+		}
+		else if(*midwayDamage >=2 && carrierDamage >=1)
+		{
+			printf("The invasion is risky, but possible.\n");
+
+			dice = rand()% 100;
+
+			if(dice < 60)
+			{
+			printf("Success! After heavy fighting your foces Capture Midway Island.\n");
+			*midwayCaptured =1;
+			}
+			else
+			{
+			printf("Failure! The invasion stalls under American resistance.\n");
+			printf("Fleet Strength decreased by 2.\n");
+			*fleetStrength -=2;
+			}
+		}
+	}
+
+	else if(Order ==2)
+	{
+		printf("\nYou delay the invasion and order more air attacks against Midway.\n");
+		printf("Midway island Damage incrased by 1.\n");
+		printf("Fleet Strength decreased by 1.\n");
+
+		*midwayDamage +=1;
+		*fleetStrength -=1;
+	}
+
+}
+void enemyCounterAttack(int *fleetStrength, int Intelligence, int Reconnaissance, int fighterSupport)
+{
+	int chance = 40;
+	int dice;
+	
+	chance -= Intelligence * 5;
+	chance -= Reconnaissance * 5;
+	chance -= fighterSupport * 5;
+
+	if(chance <10)
+	{
+	chance =10;
+	}
+	if(chance > 80)
+	{
+	chance =80;
+	}
+
+	dice = rand()% 100;
+
+	printf("\nAmerican Aircraft attempt a counterattack\n");
+	printf("Enemy counterattack chance: %d%%\n", chance);
+
+	if (dice < chance)
+	{
+	printf("The counterattack hits your fleet!\n");
+	printf("Fleet strength decreased by 1. \n");
+	*fleetStrength -=1;
+	}
+	else
+	{
+	printf("Your defenses hold. The counterattack fails.\n");
+	}
+}
+
+void showFinalResult(int fleetStrength, int midwayDamage, int carrierDamage, int carrierLocated, int midwayCaptured)
+{
+	if(midwayCaptured ==1)
+	{
+	printf("Midway Status:    Captured\n");
+	}
+	else
+	{
+	printf("Midway Status:   Not Captured\n");
+	}
+
+	printf("\n");
+
+	if(fleetStrength <= 0)
+	{
+	printf("RESULT: DEFEAT\n");
+	printf("You lost Akagi, Kaga, Soryu and Hiryu marking a crushing defeat. Time is now against Japan\n");
+	}
+	else if(carrierDamage>=3 && midwayCaptured ==1)
+	{
+	printf("RESULT: DECISIVE VICTORY\n");
+        printf("You destroyed the American carrier threat and captured Midway.\n");
+        printf("The operation is a major success.\n");
+	}
+	else if(carrierDamage>=2 && midwayCaptured ==1)
+	{
+	printf("RESULT: STRATEGIC VICTORY\n");
+        printf("You captured Midway and badly damaged the American carrier force buying Japan more time\n");
+	}
+	else if(carrierDamage>=2 && midwayCaptured ==0)
+	{
+	printf("RESULT: PARTIAL SUCCESS\n");
+        printf("You damaged the American carriers, but failed to capture Midway.\n");
+	}
+
+	
+	else if (carrierDamage < 2 && midwayCaptured == 1)
+       	{
+        printf("RESULT: RISKY VICTORY\n");
+        printf("You captured Midway, but the American carriers remain a serious threat.\n");
+	}
+	else
+	{
+	printf("RESULT: DEFEAT\n");
+	printf("You failed to destroy the American Carrier force or Capture Midway. Go Home.");
+	}
+}
