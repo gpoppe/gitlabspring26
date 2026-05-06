@@ -78,7 +78,7 @@ void hOsuna(void);
 void WMGwent(void);
 void nhfun(void);
 void printInitialsAngelM(void);
-
+void jkFun(void);
 
 int main(int argc, char *argv[])
 {
@@ -339,6 +339,7 @@ int main(int argc, char *argv[])
 			case 42:
 			{
 				jgFun();
+				jkFun(); 
 				puts("room42");
 				break;
 			}
@@ -624,6 +625,10 @@ void dcFun(void)
 	printf("DC\n");
 }
 
+void jkFun(void)
+{
+    printf("PSG\n");
+}
 
 
 
