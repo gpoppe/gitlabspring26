@@ -98,7 +98,12 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotions);
 bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions);
 
-
+void room31TwentyOneGame(void);
+int room31DrawCard(int used[]);
+int room31HitOrStand();
+int room31GetCardValue(int cardIndex, int *currentTotal);
+void room31PlayerTurn(int used[], char deck[][30], int *playerTotal);
+void room31DealerTurn(int used[], char deck[][30], int *dealerTotal,int dealerCard1, int dealerCard2);
 
 
 int main(int argc, char *argv[])
@@ -374,9 +379,12 @@ int main(int argc, char *argv[])
 			}
 			case 31:
 			{
-				PogoAM();
+				printf("\nWhen you  enter the room you see a man sitting down at a table.\n");
+				printf("As you approach the man he asks you to play a game of 21 with him.\n");
 
-				puts("room31");
+				room31TwentyOneGame();
+
+				puts("\nroom31\n");
 				break;
 			}
 			case 32:
@@ -3324,4 +3332,216 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
      }
 }
 
+void room31TwentyOneGame(void)
+{
+	printf("\nThe goal of the game is to get a hand closest to 21 without going over(bust) or else you'll lose.\n");
+	printf("Youll start off with $5000 and each time you lose or bust youll lose $1000, each time you win you earn $2500 each time you tie you lose $500;\n");
+	printf("You are unable to leave this room unless you lose all your money or if you have $17500.\n");
+	printf("Cards 2-10 keep their face value, Queens, Kings, and Jokers are worth 10, Ace is worth 1 or 11 depending on your choice.\n");
+	printf("We both start with 2 cards, yours are face up while I hace one face up and one face down.\n");
+	printf("'Hit' means you take another card\n");
+	printf("'Stand' means you keep your total\n");
 
+	char *ranks[] = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
+	char *suits[] = {"Hearts", "Diamonds", "Clubs","Spades"};
+
+	char standardDeckOfCards[52][30];
+
+	int index =0;
+	int money = 5000;
+	int game = 1;
+	for(int i = 0; i < 4;i++)
+	{
+		for(int r = 0; r < 13; r++)
+		{
+			sprintf(standardDeckOfCards[index],"%s of %s", ranks[r], suits[i]);
+			index++;
+		}
+	}
+	
+	char continueGame[10] = "yes";
+	srand(time(NULL));
+	int userHitOrStand;
+	while(money > 0 && money < 17500)
+	{
+		int cardUsed[52] = {0};
+		int userTotal = 0;
+		int dealerTotal =0;
+		int userCard1 = room31DrawCard(cardUsed);
+		int userCard2 = room31DrawCard(cardUsed);
+		int dealerCard1 = room31DrawCard(cardUsed);
+	        int dealerCard2 = room31DrawCard(cardUsed);
+
+		userTotal += room31GetCardValue(userCard1, &userTotal);
+		userTotal += room31GetCardValue(userCard2, &userTotal);
+		dealerTotal = room31GetCardValue(dealerCard1 , &dealerTotal);
+		dealerTotal = room31GetCardValue(dealerCard2 ,  &dealerTotal);
+		printf("\n---------- Game: %d ----------\n",game);
+		printf("\nYour first card: %s\n", standardDeckOfCards[userCard1]);
+		printf("Your second card: %s\n", standardDeckOfCards[userCard2]);
+		printf("Your total = %d\n",userTotal);
+		printf("The dealers first card: %s\n", standardDeckOfCards[dealerCard1]);
+		printf("The dealers second card is hidden.\n");
+
+
+		room31PlayerTurn(cardUsed, standardDeckOfCards, &userTotal);
+		if(userTotal <= 21)
+		{
+			room31DealerTurn(cardUsed, standardDeckOfCards, &dealerTotal, dealerCard1, dealerCard2);		
+		}
+
+		if(userTotal>21)
+		{
+			printf("You busted!! You LOSE!!!\n");
+                        money -= 1000;
+                        printf("Your total money: %d\n",money);
+
+		}
+		else if(dealerTotal> 21)
+		{
+			printf("Your Win!! The dealer busted.\n");
+   			money += 2500;
+			printf("Your total money: %d\n",money);
+		}
+		else if(userTotal> dealerTotal)
+		{
+			printf("You Win!! You had a higher total than the dealer.");
+                        money += 2500;
+                        printf("Your total money: %d\n",money);
+
+		}
+		else if(userTotal < dealerTotal)
+		{
+			printf("You Lose!! The dealer had a higher total.\n");
+                        money -= 1000;
+                        printf("Your total money: %d\n",money);
+		}
+		else
+		{
+			printf("Your and the dealer TIED!!\n");
+			money-=500;
+			printf("Your total money: %d\n",money);
+
+		}
+		if(money<=0)
+		{
+			printf("You're out of money! You left the room.\n");
+			break;
+		}
+		else if(money>= 17500)
+		{
+			printf("Congratulations! You reached $17500 and won the game! You left the room.\n");
+			break;
+		}
+		game++;
+	}
+}
+
+int room31DrawCard(int used[])
+{
+	int card;
+	do
+	{
+		card = rand() % 52;
+	}
+	while(used[card] == 1);
+	used[card] = 1;
+	return card;
+}
+
+int room31HitOrStand()
+{
+	char input[10];
+
+	while(1)
+	{
+		printf("Would you like to hit or stand?");
+		scanf("%9s",input);
+
+		for(int i = 0; input[i]; i++)
+		{
+			input[i] = tolower(input[i]);
+		}
+		if(strcmp(input,"hit") == 0)
+		{
+		        return 1;
+		}
+		else if(strcmp(input,"stand") == 0)
+		{
+		       return 0;
+		}
+		printf("Invalid input, Please type 'hit' or 'stand'.\n");
+	}
+}
+
+int room31GetCardValue(int cardIndex, int *currentTotal)
+{
+	int rank = cardIndex % 13;
+
+	if(rank>= 0 && rank<= 8)
+	{
+		return rank+2;
+	}
+
+	if(rank >= 9 && rank <= 11)
+	{
+		return 10;
+	}
+	if(rank == 12)
+	{
+		if(*currentTotal + 11 > 21)
+		{
+			return 1;
+		}
+		else
+		{
+			return 11;
+		}
+	}
+	return 0;
+}
+void room31PlayerTurn(int used[], char deck[][30], int *playerTotal)
+{
+	while(1)
+	{
+		int choice = room31HitOrStand();
+		
+		if(choice == 1)
+		{
+			int card = room31DrawCard(used);
+			printf("You drew: %s\n", deck[card]);
+			*playerTotal += room31GetCardValue(card,playerTotal);
+			printf("Your total: %d\n",*playerTotal);
+
+			if(*playerTotal > 21)
+			{
+				break;
+			}
+		}
+		else 
+		{
+			printf("You stand at %d\n", *playerTotal);
+			break;
+		}
+	}
+}
+
+void room31DealerTurn(int used[], char deck[][30], int *dealerTotal,int dealerCard1, int dealerCard2)
+{
+	printf("\n---- Dealers  turn ----\n");
+	printf("Dealer hidden card is: %s\n", deck[dealerCard2]);
+	*dealerTotal = room31GetCardValue(dealerCard1, dealerTotal) + room31GetCardValue(dealerCard2, dealerTotal);
+        printf("Dealer total: %d\n", *dealerTotal);
+
+	while(*dealerTotal < 17)
+	{
+		int card = room31DrawCard(used);
+		printf("Dealer draws: %s\n", deck[card]);
+		*dealerTotal += room31GetCardValue(card, dealerTotal);
+		printf("Dealer total: %d\n", *dealerTotal);
+	}
+	if(*dealerTotal > 21)
+	{
+		printf("Dealer Busts!!!\n");
+	}
+}
