@@ -762,8 +762,6 @@ void stanPush(void)
 
 void printInFG(void)
 {
-
-
 	int intelligence = 0;
 	int reconnaissance = 0;
 	int midwayDamage = 0;
@@ -789,34 +787,33 @@ void printInFG(void)
 		printf("Choose your Order: ");
 		scanf("%d", &Order);
 
-		if(Order ==1)
+		if(Order == 1)
 		{
-		carrierDeck(intelligence, reconnaissance, carrierLocated, fighterSupport, &carrierDamage, &midwayDamage, &fleetStrength);
-
+			carrierDeck(intelligence, reconnaissance, carrierLocated, fighterSupport, &carrierDamage, &midwayDamage, &fleetStrength);
 		}
-		if(Order ==2)
+		if(Order == 2)
 		{
-		reconnaissanceRoom(&reconnaissance, &carrierLocated, &fleetStrength, carrierDamage);
+			reconnaissanceRoom(&reconnaissance, &carrierLocated, &fleetStrength, carrierDamage);
 		}
-		if(Order ==3)
+		if(Order == 3)
 		{
-		invasionPlanningRoom(&midwayDamage, carrierDamage, &fleetStrength, &midwayCaptured);
+			invasionPlanningRoom(&midwayDamage, carrierDamage, &fleetStrength, &midwayCaptured);
 		}
-		if(Order ==4)
+		if(Order == 4)
 		{
-		fighterCommand(&fighterSupport, &fleetStrength);
+			fighterCommand(&fighterSupport, &fleetStrength);
 		}
 		if(Order ==5)
 		{
-		intelligenceRoom(&intelligence, &fleetStrength);
+			intelligenceRoom(&intelligence, &fleetStrength);
 		}
 		if(Order ==6)
 		{
-		showStats(intelligence, reconnaissance, fleetStrength, midwayDamage, carrierDamage, carrierLocated, fighterSupport, midwayCaptured);
+			showStats(intelligence, reconnaissance, fleetStrength, midwayDamage, carrierDamage, carrierLocated, fighterSupport, midwayCaptured);
 		}
 		if(Order ==7)
 		{
-		showFinalResult(fleetStrength, midwayDamage, carrierDamage, carrierLocated, midwayCaptured);
+			showFinalResult(fleetStrength, midwayDamage, carrierDamage, carrierLocated, midwayCaptured);
 		}
 
 
@@ -828,7 +825,6 @@ void printInFG(void)
 void showStats(int Intelligence, int Reconnaissance, int fleetStrength, int Midway, int carrierDamage, int carrierLocated, int fighterSupport, int midwayCaptured)
 {
 	printf("\nCurrent Command Status\n");
-
 	printf("Intelligence Level:  %d\n", Intelligence);
 	printf("Reconnaissance Level:  %d\n", Reconnaissance);
 	printf("Japanese Fleet Strength:  %d\n", fleetStrength);
@@ -837,22 +833,22 @@ void showStats(int Intelligence, int Reconnaissance, int fleetStrength, int Midw
 
 	if(carrierLocated>0)
 	{
-	printf("Enemy Carrier Location: Location\n");
-	printf("American Carriers Located: %d out of 3\n", carrierLocated);
+		printf("Enemy Carrier Location: Location\n");
+		printf("American Carriers Located: %d out of 3\n", carrierLocated);
 	}
 	else
 	{
-	printf("Enemy Carrier Location: Unknown\n");
-	printf("American Carriers Located: 0 out of 3\n");
+		printf("Enemy Carrier Location: Unknown\n");
+		printf("American Carriers Located: 0 out of 3\n");
 	}
 
 	if(midwayCaptured ==1)
 	{
-	printf("Midway Status:   Captured\n");
+		printf("Midway Status:   Captured\n");
 	}
 	else
 	{
-	printf("Midway Status:  Not Captured\n");
+		printf("Midway Status:  Not Captured\n");
 	}
 }
 
@@ -867,16 +863,16 @@ void intelligenceRoom(int *Intelligence, int*fleetStrength)
 
 	if(Order ==1)
 	{
-	*Intelligence +=2;
-	printf("Your officers begin preparing for an enemy carrier attack...\n");
-	printf("Intelligence increased by 2.\n");
+		*Intelligence +=2;
+		printf("Your officers begin preparing for an enemy carrier attack...\n");
+		printf("Intelligence increased by 2.\n");
 	}
 	else if(Order ==2)
 	{
-	*Intelligence -=1;
-	*fleetStrength-=1;
-	printf("Intelligence decreased by 1.\n");
-	printf("Fleet Strength decreased by 1.\n");
+		*Intelligence -=1;
+		*fleetStrength-=1;
+		printf("Intelligence decreased by 1.\n");
+		printf("Fleet Strength decreased by 1.\n");
 	}
 }
 
@@ -896,30 +892,27 @@ void reconnaissanceRoom(int *Reconnaissance, int *carrierLocated, int *fleetStre
 	printf("Choose your decision: ");
 	scanf("%d", &Order);
 
-	if(Order ==1)
+	if(Order == 1)
 	{
-	*Reconnaissance +=1;
-
-	remainingCarriers = 3-carrierDamage;
+		*Reconnaissance += 1;
+		remainingCarriers = 3-carrierDamage;
 		if(remainingCarriers <=0)
 		{
-		printf("\nAll American Carriers have already been destroyed.\n");
-		*carrierLocated = 0;
-		return;
+			printf("\nAll American Carriers have already been destroyed.\n");
+			*carrierLocated = 0;
+			return;
 		}
-
-	found = rand() % remainingCarriers + 1;
-	*carrierLocated = found;
-	printf("\nYou send scout planes across the Pacific.\n");
-	printf("Reconnaissance increased by 1.\n");
-	printf("Your scouts located %d American Carriers:\n", found);
-
+		found = rand() % remainingCarriers + 1;
+		*carrierLocated = found;
+		printf("\nYou send scout planes across the Pacific.\n");
+		printf("Reconnaissance increased by 1.\n");
+		printf("Your scouts located %d American Carriers:\n", found);
 		for( i = 0; i< found; i++)
 		{
-		printf("- %s\n", AmericanCarriers[carrierDamage + i]);
+			printf("- %s\n", AmericanCarriers[carrierDamage + i]);
 		}
 	}
-	else if(Order ==2)
+	else if(Order == 2)
 	{
 		*Reconnaissance -=1;
 		*fleetStrength-=1;
@@ -941,75 +934,79 @@ int calCarrierAttack(int Intelligence, int Reconnaissance, int carrierLocated, i
 
 	if(carrierLocated == 0)
 	{
-	chance -=25;
+		chance -= 25;
 	}
 	if(chance > 90)
 	{
-	chance = 90;
+		chance = 90;
 	}
 	if(chance < 10)
 	{
-	chance = 10;
+		chance = 10;
 	}
-
 	return chance;
 }
 
 void carrierDeck(int intelligence, int reconnaissance, int carrierLocated, int fighterSupport, int *carrierDamage, int *midwayDamage, int *fleetStrength)
 {
-char *AmericanCarriers[] = {"USS Enterprise", "USS Hornet", "USS Yorktown"};
-int Order;
-int attackChance;
-int dice;
+	char *AmericanCarriers[] = {"USS Enterprise", "USS Hornet", "USS Yorktown"};
+	int Order;
+	int attackChance;
+	int dice;
 
-printf("\n=== CARRIER DECK ===\n");
-printf("Bombers are ready to launch from Akagi, Kaga, Soryu, and Hiryu.\n");
-printf("1) Launch bombers against American carriers\n");
-printf("2) Launch bombers against Midway Island\n");
-printf("Choose your decision: ");
-scanf("%d", &Order);
+	printf("\n=== CARRIER DECK ===\n");
+	printf("Bombers are ready to launch from Akagi, Kaga, Soryu, and Hiryu.\n");
+	printf("1) Launch bombers against American carriers\n");
+	printf("2) Launch bombers against Midway Island\n");
+	printf("Choose your decision: ");
+	scanf("%d", &Order);
 
-if(Order ==1)
-{
-	attackChance = calCarrierAttack(intelligence, reconnaissance, carrierLocated, fighterSupport);
-	dice = rand()%100;
-	if(dice < attackChance)
+	if(Order ==1)
 	{
-		if(*carrierDamage<3)
-		{
-		printf("Success! Your bombers destroy %s!\n", AmericanCarriers[*carrierDamage]);
-		*carrierDamage+=1;
+		attackChance = calCarrierAttack(intelligence, reconnaissance, carrierLocated, fighterSupport);
+		dice = rand()%100;
+		if(dice < attackChance)
+		{	
+			if(*carrierDamage<3)
+			{
+				printf("Success! Your bombers destroy %s!\n", AmericanCarriers[*carrierDamage]);
+				*carrierDamage+=1;
+			}
+			else
+			{
+				printf("All American carriers have already been destroyed.\n");
+			}
 		}
+	
 		else
 		{
-		printf("All American carriers have already been destroyed.\n");
+			printf("Failure! The strike fails to hit the American carriers.\n");
+			printf("Enemy counterattacks weaken your fleet.\n");
+			*fleetStrength -=2;
 		}
 	}
-	else
+
+		
+	else if(Order ==2)
 	{
-	printf("Failure! The strike fails to hit the American carriers.\n");
-	printf("Enemy counterattacks weaken your fleet.\n");
-	*fleetStrength -=2;
+		printf("\nYou order a bombing attack on Midway Island.\n");
+		if(intelligence < 0 || reconnaissance < 0)
+		{
+			printf("The attack damages Midway, but your fleet is exposed to danger.\n");
+			*midwayDamage +=1;
+			*fleetStrength -=1;
+		}
+	
+		else
+		{
+			printf("The attack successfully damages Midway's defense.\n");
+			*midwayDamage+=2;
+		}
 	}
 
+	enemyCounterAttack(fleetStrength, intelligence, reconnaissance, fighterSupport);
 }
-else if(Order ==2)
-{
-	printf("\nYou order a bombing attack on Midway Island.\n");
-	if(intelligence < 0 || reconnaissance < 0)
-	{
-	printf("The attack damages Midway, but your fleet is exposed to danger.\n");
-	*midwayDamage +=1;
-	*fleetStrength -=1;
-	}
-	else
-	{
-	printf("The attack successfully damages Midway's defense.\n");
-	*midwayDamage+=2;
-	}
-}
-enemyCounterAttack(fleetStrength, intelligence, reconnaissance, fighterSupport);
-}
+
 
 void fighterCommand(int *fighterSupport, int *fleetStrength)
 {
@@ -1023,35 +1020,35 @@ void fighterCommand(int *fighterSupport, int *fleetStrength)
 
 	if(Order ==1)
 	{
-	*fighterSupport+=2;
-	*fleetStrength-=1;
-	printf("\nYou send fighters to escrot the bombers.\n");
-	printf("Future air attacks will have better support.\n");
-	printf("Fighter support increased by 2.\n");
-	printf("Fleet strength decreased by 1 because fewer fighters are defending the carriers.\n");
+		*fighterSupport+=2;
+		*fleetStrength-=1;
+		printf("\nYou send fighters to escrot the bombers.\n");
+		printf("Future air attacks will have better support.\n");
+		printf("Fighter support increased by 2.\n");
+		printf("Fleet strength decreased by 1 because fewer fighters are defending the carriers.\n");
 	}
 	else if(Order ==2)
 	{
-	*fleetStrength +=2;
-	*fighterSupport -=1;
-	printf("\nYou keep fighters close to defend the carrier fleet.\n");
-	printf("Your carriers are better protected from enemy attacks.\n");
-	printf("Fleet strength increased by 2.\n");
+		*fleetStrength +=2;
+		*fighterSupport -=1;
+		printf("\nYou keep fighters close to defend the carrier fleet.\n");
+		printf("Your carriers are better protected from enemy attacks.\n");
+		printf("Fleet strength increased by 2.\n");
 	}
 }
 
 void invasionPlanningRoom(int *midwayDamage, int carrierDamage, int * fleetStrength, int *midwayCaptured)
 {
-int Order;
-int dice;
+	int Order;
+	int dice;
 	
 	if(*midwayCaptured ==1)
 	{
-	printf("Midway has already been captured.\n");
-	printf("Returning to the command menu...\n");
-	printf("Your offiercs are waiting for your invasion orders.\n");
-	printf("Midway Island Damage: %d\n", carrierDamage);
-	printf("Fleet Strength: %d\n\n", *fleetStrength);
+		printf("Midway has already been captured.\n");
+		printf("Returning to the command menu...\n");
+		printf("Your offiercs are waiting for your invasion orders.\n");
+		printf("Midway Island Damage: %d\n", carrierDamage);
+		printf("Fleet Strength: %d\n\n", *fleetStrength);
 	}
 
 	printf("\n=== INVASION PLANNING ROOOM ===\n");
@@ -1064,31 +1061,30 @@ int dice;
 	printf("2) Delay invasion and continue air attacks\n");
 	scanf("%d", &Order);
 
-	if(Order ==1)
-	{
-	printf("\nYou order the invasion force to begin the assault on Midway...\n");
-		if(*midwayDamage >=3 && carrierDamage >=2)
+	if(Order == 1)
+	{	
+		printf("\nYou order the invasion force to begin the assault on Midway...\n");
+		if(*midwayDamage >= 3 && carrierDamage >= 2)
 		{
-		printf("The island defense are weakened and the American Carriers are badly damaged.\n");
-		printf("Success! Your forces capture Midway Island.\n");
-		*midwayCaptured =1;
+			printf("The island defense are weakened and the American Carriers are badly damaged.\n");
+			printf("Success! Your forces capture Midway Island.\n");
+			*midwayCaptured = 1;
 		}
-		else if(*midwayDamage >=2 && carrierDamage >=1)
+		else if(*midwayDamage >= 2 && carrierDamage >= 1)
 		{
 			printf("The invasion is risky, but possible.\n");
-
 			dice = rand()% 100;
 
 			if(dice < 60)
 			{
-			printf("Success! After heavy fighting your foces Capture Midway Island.\n");
-			*midwayCaptured =1;
+				printf("Success! After heavy fighting your foces Capture Midway Island.\n");
+				*midwayCaptured =1;
 			}
 			else
 			{
-			printf("Failure! The invasion stalls under American resistance.\n");
-			printf("Fleet Strength decreased by 2.\n");
-			*fleetStrength -=2;
+				printf("Failure! The invasion stalls under American resistance.\n");
+				printf("Fleet Strength decreased by 2.\n");
+				*fleetStrength -=2;
 			}
 		}
 	}
@@ -1115,11 +1111,11 @@ void enemyCounterAttack(int *fleetStrength, int Intelligence, int Reconnaissance
 
 	if(chance <10)
 	{
-	chance =10;
+		chance =10;
 	}
 	if(chance > 80)
 	{
-	chance =80;
+		chance =80;
 	}
 
 	dice = rand()% 100;
@@ -1129,13 +1125,13 @@ void enemyCounterAttack(int *fleetStrength, int Intelligence, int Reconnaissance
 
 	if (dice < chance)
 	{
-	printf("The counterattack hits your fleet!\n");
-	printf("Fleet strength decreased by 1. \n");
-	*fleetStrength -=1;
+		printf("The counterattack hits your fleet!\n");
+		printf("Fleet strength decreased by 1. \n");
+		*fleetStrength -=1;
 	}
 	else
 	{
-	printf("Your defenses hold. The counterattack fails.\n");
+		printf("Your defenses hold. The counterattack fails.\n");
 	}
 }
 
@@ -1143,46 +1139,46 @@ void showFinalResult(int fleetStrength, int midwayDamage, int carrierDamage, int
 {
 	if(midwayCaptured ==1)
 	{
-	printf("Midway Status:    Captured\n");
+		printf("Midway Status:    Captured\n");
 	}
 	else
 	{
-	printf("Midway Status:   Not Captured\n");
+		printf("Midway Status:   Not Captured\n");
 	}
 
 	printf("\n");
 
 	if(fleetStrength <= 0)
 	{
-	printf("RESULT: DEFEAT\n");
-	printf("You lost Akagi, Kaga, Soryu and Hiryu marking a crushing defeat. Time is now against Japan\n");
+		printf("RESULT: DEFEAT\n");
+		printf("You lost Akagi, Kaga, Soryu and Hiryu marking a crushing defeat. Time is now against Japan\n");
 	}
 	else if(carrierDamage>=3 && midwayCaptured ==1)
 	{
-	printf("RESULT: DECISIVE VICTORY\n");
-        printf("You destroyed the American carrier threat and captured Midway.\n");
-        printf("The operation is a major success.\n");
+		printf("RESULT: DECISIVE VICTORY\n");
+        	printf("You destroyed the American carrier threat and captured Midway.\n");
+        	printf("The operation is a major success.\n");
 	}
 	else if(carrierDamage>=2 && midwayCaptured ==1)
 	{
-	printf("RESULT: STRATEGIC VICTORY\n");
-        printf("You captured Midway and badly damaged the American carrier force buying Japan more time\n");
+		printf("RESULT: STRATEGIC VICTORY\n");
+        	printf("You captured Midway and badly damaged the American carrier force buying Japan more time\n");
 	}
 	else if(carrierDamage>=2 && midwayCaptured ==0)
 	{
-	printf("RESULT: PARTIAL SUCCESS\n");
-        printf("You damaged the American carriers, but failed to capture Midway.\n");
+		printf("RESULT: PARTIAL SUCCESS\n");
+        	printf("You damaged the American carriers, but failed to capture Midway.\n");
 	}
 
 	
 	else if (carrierDamage < 2 && midwayCaptured == 1)
        	{
-        printf("RESULT: RISKY VICTORY\n");
-        printf("You captured Midway, but the American carriers remain a serious threat.\n");
+        	printf("RESULT: RISKY VICTORY\n");
+        	printf("You captured Midway, but the American carriers remain a serious threat.\n");
 	}
 	else
 	{
-	printf("RESULT: DEFEAT\n");
-	printf("You failed to destroy the American Carrier force or Capture Midway. Go Home.");
+		printf("RESULT: DEFEAT\n");
+		printf("You failed to destroy the American Carrier force or Capture Midway. Go Home.");
 	}
 }
