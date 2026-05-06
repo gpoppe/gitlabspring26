@@ -306,7 +306,7 @@ int main(int argc, char *argv[])
 			}
 			case 56:
                         {
-				puts("room56");
+								puts("room56");
                                 break;
                         }
 			case 57:
