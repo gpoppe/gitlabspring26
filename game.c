@@ -12,6 +12,7 @@
 //Nishat Nawshin
 //Angel Martinez
 //Dagmawe (Bobby) Afework
+//Dominic Carreto
 
 
 
@@ -30,7 +31,7 @@
 void khprinter(void);
 
 
-//dcortez function prototypes 
+//dcortez function prototypes
 void ANFUN(void);
 void dcFunc(void);
 void dcFuncEnding(int rep[], char *factions[]);
@@ -43,7 +44,7 @@ void JMfun(void);
 void RRlab(void);
 void jwFunc(void);
 void jsl();
-void dcFun(void);
+void totallyAUniqueFunctionName(void);
 void abFun(void);
 void function13AG(void);
 void theSigmaMethod(void);
@@ -73,7 +74,7 @@ void GuckMan(void);
 
 void AMaderaFun(void);
 void CAYfrog(void);
-void afFun(void);  
+void afFun(void);
 void jmItsGoTime(void);
 void stanPush(void);
 void printdAfeworkIntials(void);
@@ -106,7 +107,7 @@ int main(int argc, char *argv[])
 	int choice = 0;
 	char name[30] = "bob";
 	srand(time(NULL));
-	
+
 	printf("Please enter your name: ");
 	scanf("%s",name);
 	printf("Hello %s welcome to THE RPG Game!\n",name);
@@ -196,7 +197,296 @@ int main(int argc, char *argv[])
 			}
 			case 14:
 			{
-				dcFun();
+				totallyAUniqueFunctionName();
+                int userChoice = 0;
+                printf("\nYou open door 14 and the entrance is glowing. You step forward with your eyes covered.");
+                printf("\nYou uncover your eyes and see that you are in a forest in the middle of the night.");
+                printf("\nYou look around you and you are surrounded by trees but you are currently at a camp site.");
+                printf("\nYou see that in the middle is a fire and next to you is a backpack.");
+                printf("\nYou also noticed that the door you walked to is gone.");
+                printf("\nAs you are looking at your surroundings a bear appears and is approaching you.");
+                printf("\nYou look at what you can do and you have 3 options.");
+                printf("\n\t1. You can make yourself look \"big\".");
+                printf("\n\t2. Get something that is potentially useful from the backpack next to you.");
+                printf("\n\t3. You can run away.\n");
+                printf("Select an option: ");
+                scanf("%d",&userChoice);
+                while(userChoice != 1 && userChoice != 2 && userChoice != 3)
+                {
+                    printf("\nInvalid choice. Please enter a valid number: ");
+                    scanf("%d",&userChoice);
+                }
+                if(userChoice == 1)
+                {
+                    printf("\nYou make yourself look big by spreading your arms and legs out.");
+                    printf("\nYou are nervous but are willing to stay still to survive.");
+                    printf("\nBecause you are \"bigger\" the bear ignores you and walks away.");
+                }
+                if(userChoice == 2)
+                {
+                    int randomNum = (rand() % 3) + 1;
+                    /*   Generates a number between 1 - 3 because the user is getting something quickly from the backpack
+                     *   and is not looking at what they got since they needed something quickly, so the item is random
+                     */
+                    if(randomNum == 1)
+                    {
+                        printf("\nYou grab something quickly from the backpack and you got a flashlight.");
+                        printf("\nYou look at the bear and the bear looks at you...");
+                        printf("\nYou turn on the flashlight but find out it doesn't have the batteries on it.");
+                        printf("\nThe bear jumps at you and bites you.");
+                        printf("\nYou scream in agony while the bear bites you.");
+                        printf("\nYour vision turns red as you lose consciousness and die.");
+                        printf("\n\n-----------------------------GAME OVER------------------------------\n\n");
+                        break;
+                    }
+                    if(randomNum == 2)
+                    {
+                        printf("\nYou grab something quickly from the backpack and you got bear spray.");
+                        printf("\nYou react quickly and use the bear spray on the bear.");
+                        printf("\nThe bear screams and runs away from your camp site.");
+                    }
+                    if(randomNum == 3)
+                    {
+                        printf("\nYou grab something quickly from the backpack and you got a sandwich.");
+                        printf("\nThe bear is very hungry so it bit your hand that was holding the sandwich.");
+                        printf("\nThe bear walks away satisfied.");
+                        printf("\nYou scream and lose consciousness slowly due to the blood lose.");
+                        printf("\n\n-----------------------------GAME OVER------------------------------\n\n");
+                        break;
+                    }
+                }
+                if(userChoice == 3)
+                {
+                    printf("\nYou run away into the dark forest full of trees.");
+                    printf("\nAs you were running you fall due to a branch on the forest floor you didn't see due to the darkness.");
+                    printf("\nYou turn around and see that the bear is right behind you looking down at you.");
+                    printf("\nThe bear jumps at you and bites you while you are on ground.");
+                	printf("\nYou scream in agony while the bear bites you.");
+                	printf("\nYour vision turns red as you lose consciousness and die.");
+                    printf("\n\n-----------------------------GAME OVER------------------------------\n\n");
+                    break;
+                }
+                printf("\nYou are relived of the terrifying encounter you just experienced.");
+                printf("\nYou look at the backpack and grab the flashlights and put in the batteries");
+                printf("\nYou put on the backpack and prepare to walk to the deep forest since the area is dangerous");
+                printf("\nYou turn on the flashlight and walk to the deep forest trusting your gut.");
+                printf("\n10 minutes pass and you are still in the forest looking for a way to get out of this dimension like space.");
+                printf("\nAfter walking for a while you encounter an abandoned cabin.");
+                printf("\nYou are curious and walked into the abandoned cabin.");
+                printf("\nYou look around and you see that it is moldy and very dirty.");
+                printf("\nYou continue looking and you find 2 items at a dirty table.");
+                printf("\n\t1. A medical kit");
+                printf("\n\t2. Canned food");
+                printf("\nSelect an option: ");
+                scanf("%d",&userChoice);
+                while(userChoice != 1 && userChoice != 2)
+                {
+                    printf("\nInvalid choice. Please enter a valid number: ");
+                    scanf("%d",&userChoice);
+                }
+                if(userChoice == 1)
+                {
+                    printf("\nYou grab the medical kit and use it on yourself.");
+                    printf("\nYou feel like a new person and left the abandoned cabin.");
+                }
+                if(userChoice == 2)
+                {
+                    printf("\nYou open the canned food and start eating the food.");
+                    printf("\nAfter you are done eating you look at the can and see that the expiration date was 20 years ago.");
+                    printf("\nYou throw up the food but it is too late and your stomach hurts a lot.");
+                    printf("\nAfter a few minutes of experiencing the stomach pain you collapse and your consciousness fades away.");
+                    printf("\n\n-----------------------------GAME OVER------------------------------\n\n");
+                    break;
+                }
+                printf("\nYou continue walking forward into the dark forest.");
+                printf("\nYou encounter a trail and it has two paths");
+                printf("\n\t1. Take the left path.");
+                printf("\n\t2. Take the right path.");
+                printf("\nSelect an option: ");
+                scanf("%d",&userChoice);
+                if(userChoice == 1)
+                {
+                    printf("\nYou decide to take the left path and walk that path.");
+                    printf("\nYou walk for a few minutes until you see a sign saying that the path leads to a town.");
+                    printf("\nYou smile and keep walking forward hoping to ask someone they know where you are located.");
+                }
+                else if(userChoice == 2)
+                {
+                    printf("\nYou decide to take the right path and walk that path,");
+                    printf("\nYou walk for you think was 30 minutes and then see a faint light between 2 trees and some bushes.");
+                    printf("\nYou approach the source of the light and find out that you came back to where your started.");
+                    printf("\nIt begins to rain and you have given up on finding a way out the mysterious forest.");
+                    printf("\n\n-----------------------------GAME OVER?------------------------------\n\n");
+                    break;
+                }
+                else
+                {
+	                printf("\nYou decide to make your own path and determined you start walking torwards a direction following your gut.");
+                	printf("\nYou are confident so confident in fact you feel like you can do anything.");
+                	printf("\n20 minutes later you are still walking and you encounter an empty circle with a cave on your path.");
+                	printf("\nYou later see a pack of wolves walking to you from the cave.");
+                	printf("\nYou can't let a pack of wolves stop you from walking your own path.");
+                	printf("\nYou say \"I won't let anything stop me from walking my own path not even wolves.\".");
+                	printf("\nThe wolves seem to have understood what you said and backed away from you.");
+                	printf("\nThe wolves then make way for their pack leader who walks torward you.");
+                	printf("\nYou look at the wolf pack leader and they are looking at you as if they are saying...");
+                	printf("\nIf you want to walk your own path you have to get through me!\"");
+                	printf("\nYou and the wolf get ready to fight!");
+                	printf("\nGet ready for a turn-based minigame!");
+                	//Start of a mini turn-based game
+                	int wolfLeaderHP = 115;
+                	int protagHP = 100;
+                	while(wolfLeaderHP > 0 && protagHP > 0)
+                	{
+						int choice;
+                		int wolfDmg = rand() % 13 + 8;
+                		printf("\nYour HP: %d", protagHP);
+                		printf("\nWolf HP: %d", wolfLeaderHP);
+                		printf("\n\t1.Attack  \n\t2.Heavy  \n\t3.Heal\n ");
+                		printf("\nSelect an option: ");
+                		scanf("%d", &choice);
+                		if(choice == 1)
+                		{
+                			//Attack 10 - 20 dmg
+                			int dmg = rand() % 10 + 11;
+                			wolfLeaderHP -= dmg;
+                		}
+                		else if(choice == 2)
+                		{
+                			// %50 chance of heavy attack doing dmg
+                			if(rand()%2)
+                			{
+                				//Attack 15 - 30 dmg
+								int dmg = rand()%16 + 15;
+								printf("Heavy hit %d!", dmg);
+								wolfLeaderHP -= dmg;
+							}
+                			else
+                			{
+                				printf("\nThe wolf saw through you and missed your attack!");
+                			}
+                		}
+                		else if(choice == 3)
+                		{
+                			protagHP += 20;
+                			if (protagHP > 100) protagHP = 100;
+                			printf("\nHeal +15");
+                		}
+                		else
+                		{
+                			printf("\nYou are confused giving up your next turn.");
+                		}
+                		if(wolfLeaderHP <= 0)
+                		{
+                			printf("\nYou have defeated the wolf pack leader!");
+                			break;
+                		}
+						printf("\nWolf hits you and you lose %d HP", wolfDmg);
+						protagHP -= wolfDmg;
+                		if(protagHP <= 0)
+                		{
+                			printf("\nDefeated!");
+                			break;
+                		}
+                	}
+                	if(protagHP > 0)
+                	{
+                		printf("\nThe wolf pack runs away seeing their leader laying on the floor unconscious and you continue walking.");
+                		printf("\nYou continue walking for what you think is an hour and you see a door in the middle of the forest.");
+                		printf("\nYou decide walk towards the door and open the door.");
+                		printf("\nThe entrance is glowing and you step forward with your eyes covered and smiling.");
+                		printf("\nYou successfully escaped the forest!");
+                		printf("\n\n-----------------------------Hidden Ending------------------------------\n\n");
+                		break;
+                	}
+                	else if(wolfLeaderHP > 0)
+                	{
+                		printf("\nThe wolf pack leader jumps at you and bites you.");
+                		printf("\nThe other wolves also start to bite you.");
+                		printf("\nYou scream in agony and experience pain like never before.");
+                		printf("\nYou tell yourself \"I should have not walked my own path...\".");
+                		printf("\nYour vision turns red as you lose consciousness and die.");
+                		printf("\n\n-----------------------------GAME OVER------------------------------\n\n");
+                		break;
+                	}
+                }
+				printf("\nYou walk the path and eventually arrive at a town and you find out no human or light in sight.");
+				printf("\nThe town looks old and abandoned so you decide to explore the town.");
+				printf("\nYou walk around see an abandoned hospital.");
+				printf("\nYou walk to the entrance and you see a long hall with multiple doors left and right.");
+				printf("\nYou walk at the long hall for what seems to be 5 minutes and think something isn't right.");
+				printf("\nYou look around and see a room number 14 so you remember that and continue walking.");
+				printf("\nYou continue walking while looking at the room number and you encounter room number 14 again.");
+				printf("\nYou realized you are walking in an infinite hallway and you start to think of what you can do.");
+				printf("\nSince you are in an infinite hallway you can think of a few things you can do.");
+				userChoice = 0;
+				while(userChoice != 2)
+				{
+					printf("\n\t1. Walk forward.\n\t2. Listen carefully for clues.\n\t3. Open a nearby door.");
+					printf("\nSelect an option: ");
+					scanf("%d",&userChoice);
+					while(userChoice != 1 && userChoice != 2 && userChoice != 3)
+					{
+						printf("\nInvalid choice. Please enter a valid number: ");
+						scanf("%d",&userChoice);
+					}
+					if(userChoice == 1)
+					{
+						printf("\nYou walk forward and continue walking at the hallway.");
+						printf("\nYou then walk at the beginning of the hallway.");
+						printf("\nSince you are in an infinite hallway you can think of a few things you can do.");
+					}
+					if(userChoice == 2)
+					{
+						printf("\nYou listen for any type of noise and there is a door that is playing music behind it.");
+						printf("\nYou open the door and you see a hospital room with a radio playing music.");
+						printf("\nYou look around the room and their is an open window.");
+						printf("\nYou decide to escape the infinite hallway by hopping out the window.");
+					}
+					if(userChoice == 3)
+					{
+						printf("\nYou open a nearby door and see the same infinite hallway.");
+						printf("\nSince you are in an infinite hallway you can think of a few things you can do.");
+					}
+				}
+				printf("\nAfter you hopped out the window there are 2 places you can go.");
+				printf("\n\t1. Go back to town\n\t2. Go back to the forest");
+				printf("\nSelect an option: ");
+				scanf("%d",&userChoice);
+				while(userChoice != 1 && userChoice != 2)
+				{
+					printf("\nInvalid choice. Please enter a valid number: ");
+					scanf("%d",&userChoice);
+				}
+				if(userChoice == 1)
+				{
+					printf("\nYou decide to go back to town and keep walking until you reach the middle of the town.");
+					printf("\nYou are surrounded by houses and then you hear footsteps.");
+					printf("\nYou get close to the source of the footsteps and it is behind a door so you get close to it.");
+					printf("\nAs you get closer the door the door gets slammed open and you see a zombie.");
+					printf("\nThe zombies says brains and you run but then all of the towns houses doors are opened by zombies and you are surrounded.");
+					printf("\nYou run as fast as you can but the zombies catch up you and start brutally biting you.");
+					printf("\nYou scream in agony while the zombies bites you and start biting to your brain.");
+					printf("\nYour vision turns red and you instantly die.");
+					printf("\n\n-----------------------------GAME OVER------------------------------\n\n");
+					break;
+
+				}
+				if(userChoice == 2)
+				{
+					printf("\nYou decide to walk into the forest and walk until you reach an underground bunker.");
+					printf("\nYou open the bunker door and walk down the bunker.");
+					printf("\nAs you walk down the bunker you hear multipe foot steps behind you.");
+					printf("\nThey are walking the same pace as you and when you are starting you walk faster.");
+					printf("\nSo do they...");
+					printf("\nThe footsteps gets louder and faster so you run as fast as you can without looking behind you.");
+					printf("\nAs you are running you see a door similar to the one you opened before you walked to the forest.");
+					printf("\nYou run and then you open the door.");
+					printf("\nAs you open the door something grabs and pulls your shoulder.");
+					printf("\nYou quickly take off the hand off your shoulder and escape.");
+					printf("\n\n-----------------------------The End------------------------------\n\n");
+					break;
+				}
 				puts("room14");
 				break;
 			}
@@ -337,7 +627,7 @@ int main(int argc, char *argv[])
 			case 25:
 			{
 
-				mnFun(); 
+				mnFun();
 				puts("room25");
 				break;
 			}
@@ -360,7 +650,7 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 29:
-			{	
+			{
 				puts("room29");
 				abFun();
 				break;
@@ -425,7 +715,7 @@ int main(int argc, char *argv[])
 				break;
 			}
 			case 40:
-			{      
+			{
                                 ls();
 				puts("room40");
 				break;
@@ -867,7 +1157,7 @@ typedef struct
 
 
 void afFun(void)
-{ 
+{
 	puts("AFroom52");
 }
 
@@ -1228,7 +1518,7 @@ void AMaderaFun(void)
 void ls(void)
 {
 	printf("LS\n");
-       
+
 }
 void JMfun(void)
 {
@@ -1264,9 +1554,9 @@ void PogoAM(void)
 {
 	printf("AM\n");
 }
-void dcFun(void)
+void totallyAUniqueFunctionName(void)
 {
-	printf("DC\n");
+	printf("\nDC");
 }
 
 
@@ -1356,7 +1646,7 @@ void abFun(void)
 		printf("You lose -10 health\n");
 		health -= 10;
         }
-	
+
 	// Choice 3
         printf("\nAs you explore the city, you begin to feel hungry. You stumble across a convenience store. While looting the scarce supplies, you find some expired canned food\n");
         printf("3. Eat the expired food? (1 = yes, 0 = no)\n");
@@ -1427,7 +1717,7 @@ void abFun(void)
                 health -= 10;
 
         }
-	
+
 	 // Choice 5
         printf("\nYou see flyers and posters about a CDC evacuation site. You hear rumors that only those who are healthy are allowed entry.\n");
         printf("5. Go to the evacuation site? (1 = yes, 0 = no)\n");
@@ -1465,7 +1755,7 @@ void abFun(void)
 			printf("You choose to not go to the evacuation site, but you feel like you are beginning to lose control over your body.\n");
 			printf("You barricade yourself inside of a safe room, as you wait for the worst...\n");
 		}
-        }	
+        }
 }
 
 
@@ -1481,12 +1771,12 @@ void dGMyName(void)
 	printf("DG\n");
 }
 
-void folksamEV(void) 
+void folksamEV(void)
 {
 	printf("EV\n");
 }
 
-void sonionRH(void) 
+void sonionRH(void)
 {
 	printf("RAOOL-HIG\n");
 }
@@ -1517,7 +1807,7 @@ void JLeyva(void)
 	printf("JL");
 }
 
-void fish(void) 
+void fish(void)
 {
 	printf("JF");
 
@@ -1607,7 +1897,7 @@ void gameroom30(void)
 			}
 
 		}
-	
+
 	//CHOICE 3: TRAINING (uses rand and loop)
 		puts("You realize how weak you are after the encounter with the chimera.");
 		puts("Do you want to have your training montage? (1: yes, 2: no)");
@@ -1699,9 +1989,9 @@ void gameroom30(void)
 				break;
 			}
 		}
-		
 
-	//CHOICE 5 : LAST TEST 
+
+	//CHOICE 5 : LAST TEST
 	puts("You walk for a while and come across a large stone door. Before the door is a large cloaked figure. Their clothes tattered and showing signs of distress and hard times.");
 	puts("'Please, you have the ability to leave but not all of us have that fortune. I have been trapped here for so long, I just want to be free. Please, if you could help me in some way I would be so grateful.'");
 	puts("What do you do? (1: help the figure, 2: ignore the figure and open the door)");
@@ -1802,7 +2092,7 @@ void gameroom30(void)
 	}
   return;
 }
-		
+
 
 void printInitialsAjewett(void)
 {
@@ -1811,11 +2101,11 @@ void printInitialsAjewett(void)
 
 void jgFun(void)
 {
-	printf("JGB");	
+	printf("JGB");
 
 }
 
-void printInitialsSMarkos(void) 
+void printInitialsSMarkos(void)
 {
 	printf("SM\n");
 }
@@ -1894,7 +2184,7 @@ void stanPush(void)
 void nnawshin()
 {
 	printf("N.N\n");
-}	
+}
 
 void phas22(void)
 {
@@ -1993,8 +2283,8 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 
 	while(true)
 	{
-		    
-	    while(!isPlayerTurnOver) 
+
+	    while(!isPlayerTurnOver)
 	    {
 
 		    printf("\t\tPLAYER'S TURN\n\nPLAYER\t\t\t\t\t\tBOBBINATOR-X67\nHP: %d/%d\t\t\t\t\tHP: %d/%d\nPotions: %d/%d\n\nA) Punch\tB) Kick\nC) Special\tD) Heal\n\n", current_player_HP, max_player_HP, current_enemy_HP, max_enemy_HP, current_NumOfPotions,max_numOfPotions);
@@ -2049,7 +2339,7 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 				    {
 					    int damage = rand() % (130 - 100 + 1) + 100;
 					    current_enemy_HP -= damage;
-					    printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);	     
+					    printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);
 				        isPlayerTurnOver = true;
 				    }
 
@@ -2065,18 +2355,18 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 			    case 'D':
 			    case 'd':
 			    {
-			    
+
 			        if(current_player_HP == max_player_HP)
 				    {
 				        printf("Your HP is already full, so there is no need to heal.\n\n");
-				    
+
 				    }
 				    else if(current_NumOfPotions > 0)
 				    {
 					    --current_NumOfPotions;
 					    int HP_Healed = rand() % (90 - 75 + 1) + 75;
 					    current_player_HP += HP_Healed;
-					    
+
 					    if(current_player_HP > max_player_HP)
 					    {
 					        current_player_HP = max_player_HP;
@@ -2089,25 +2379,25 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 				    {
 					    printf("I'm sorry, but you don't have anymore potions, so you can't heal.\n\n");
 				    }
-				
+
 			    break;
 			    }
 		    }
-		    
+
 		}
-	    
+
 	    if(current_enemy_HP <= 0)
 		{
 		        printf("CONGRATULATIONS! You won the battle and got the Pinball Park medal. You will be taken back to the room selection screen.\n\n");
 			    return true;
 		}
-	    
+
 	    printf("\t\tBOBBINATOR-X67's TURN!\n\n");
-	    
+
 	    int random_number = rand() % (3 - 1 + 1) + 1;
-	    
+
 	    printf("BOBBINATOR-X67 used ");
-	    
+
 	    switch (random_number)
 	    {
 	       case 1:
@@ -2117,7 +2407,7 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	           printf("laser blast on you. You took %d damage.\n\n", damage);
 	           break;
 	       }
-	        
+
 	       case 2:
 	       {
 	           int damage = rand() % (60 - 30 + 1) + 30;
@@ -2125,7 +2415,7 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	           printf("bomb throw on you. You took %d damage.\n\n", damage);
 	           break;
 	       }
-	        
+
 	       case 3:
 	       {
 	           int damage = rand() % (40 - 20 + 1) + 20;
@@ -2134,17 +2424,17 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	           break;
 	       }
 	    }
-	    
+
 	    if(current_player_HP <= 0)
 		{
 		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
 			    return false;
 		}
-        
+
         printf("\t\tINCOMING STAGE HAZARD\n\nWoah, a pinball. What will it do?\n\n");
-        
+
         random_number = rand() % (3 - 1 + 1) + 1;
-        
+
         switch (random_number)
 	    {
 	            case 1:
@@ -2153,14 +2443,14 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                printf("Oof! The pinball decided to hit you for 75 damage!\n\n");
 	                break;
 	            }
-	        
+
 	            case 2:
 	            {
 	                current_enemy_HP -= 75;
 	                printf("JEEPERS! The pinball decided to hit BOBBINATOR-X67 for 75 damage!\n\n");
 	                break;
 	            }
-	            
+
 	            case 3:
 	            {
 	                current_enemy_HP -= 75;
@@ -2168,28 +2458,28 @@ bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                break;
 	            }
 	    }
-	    
+
 	    if(current_player_HP <= 0)
 		{
 		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
 			    return false;
 		}
-		
+
 		if(current_enemy_HP <= 0)
 		{
 		        printf("CONGRATULATIONS! You won the battle and got the Pinball Park medal. You will be taken back to the room selection screen.\n\n");
 			    return true;
 		}
-		
+
 		isPlayerTurnOver = false;
 	}
-	
-	
+
+
 }
 
 bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 {
-    
+
 
 	char choice;
 	int current_player_HP = max_player_HP, current_enemy_HP = max_enemy_HP, current_NumOfPotions = max_numOfPotions;
@@ -2199,8 +2489,8 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 
 	while(true)
 	{
-		    
-	    while(!isPlayerTurnOver) 
+
+	    while(!isPlayerTurnOver)
 	    {
 	        if(!isPlayerAsleep)
 	        {
@@ -2257,7 +2547,7 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 				        {
 					        int damage = rand() % (110 - 95 + 1) + 95;
 					        current_enemy_HP -= damage;
-					        printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);	     
+					        printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);
 				            isPlayerTurnOver = true;
 				        }
 
@@ -2273,18 +2563,18 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 			        case 'D':
 			        case 'd':
 			        {
-			    
+
 			            if(current_player_HP == max_player_HP)
 				        {
 				            printf("Your HP is already full, so there is no need to heal.\n\n");
-				    
+
 				        }
 				        else if(current_NumOfPotions > 0)
 				        {
 					        --current_NumOfPotions;
 					        int HP_Healed = rand() % (70 - 50 + 1) + 50;
 					        current_player_HP += HP_Healed;
-					    
+
 					        if(current_player_HP > max_player_HP)
 					        {
 					            current_player_HP = max_player_HP;
@@ -2297,36 +2587,36 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 				        {
 					        printf("I'm sorry, but you don't have anymore potions, so you can't heal.\n\n");
 				        }
-				
+
 			        break;
 			        }
 		        }
 	        }
-	        
+
 	        else
 	        {
 	            printf("You are asleep, so your turn has been skipped!\n\n");
 	            isPlayerAsleep = false;
 	            isPlayerTurnOver = true;
 	        }
-		
+
 	    }
-	    
+
 	    if(current_enemy_HP <= 0)
 		{
 		        printf("CONGRATULATIONS! You won the battle and got the Musical Madness Medal. You will be taken back to the room selection screen.\n\n");
 			    return true;
 		}
-	    
+
 	    if(!isEnemyAsleep)
 	    {
-	        
+
 	        printf("\t\tC Sharp's TURN!\n\n");
-	    
+
 	        int random_number = rand() % (3 - 1 + 1) + 1;
-	    
+
 	        printf("C Sharp used his");
-	    
+
 	        switch (random_number)
 	        {
 	            case 1:
@@ -2336,7 +2626,7 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                printf(" (not so) good clarinet skills on you. You took %d damage.\n\n", damage);
 	                break;
 	            }
-	        
+
 	            case 2:
 	            {
 	                int damage = rand() % (60 - 30 + 1) + 30;
@@ -2344,7 +2634,7 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                printf(" kazoo solo on you (cringe). You took %d damage.\n\n", damage);
 	                break;
 	            }
-	        
+
 	            case 3:
 	            {
 	                int damage = rand() % (40 - 20 + 1) + 20;
@@ -2355,23 +2645,23 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	        }
 
         }
-        
+
         else
         {
             printf("C Sharp is asleep, so his turn has been skipped!\n\n");
             isEnemyAsleep = false;
         }
-        
+
         if(current_player_HP <= 0)
 		{
 		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
 			    return false;
 		}
-        
+
         printf("\t\tINCOMING STAGE HAZARD\n\nIt's the magic piano. What is it doing?\n\n\t\t*plays Beethoven's music*\n\n");
-        
+
         int random_number = rand() % (3 - 1 + 1) + 1;
-        
+
         switch (random_number)
 	    {
 	            case 1:
@@ -2380,45 +2670,45 @@ bool musicalMadness(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                isPlayerAsleep = true;
 	                break;
 	            }
-	        
+
 	            case 2:
 	            {
 	                printf("WOW! Look at that, C SHARP is falling asleep. Now he won't be able to use his turn.\n\n");
 	                isEnemyAsleep = true;
 	                break;
 	            }
-	            
+
 	            case 3:
 	            {
 	                printf("That piano just played Beethoven's music. I remember this one, but I don't understand the point of that?\n\n");
 	                break;
 	            }
 	    }
-		
+
 		isPlayerTurnOver = false;
 	}
-	
-	
 
-        
+
+
+
 
 }
 
 bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 {
-  
+
     char choice;
 	int current_player_HP = max_player_HP, current_enemy_HP = max_enemy_HP, current_NumOfPotions = max_numOfPotions;
 	bool isPlayerTurnOver = false, isPlayerConfused = false, isEnemyConfused = false;
 
 	puts("Welcome is this place? A TV dimension where there's nothing but TVs? Who would live in this place? Eeek, it's the...\n\n\t\tStrong Wielded Warrior:\n\t\tJim The Knight\n\n");
-	
-	
+
+
 
 	while(true)
 	{
-		    
-	    while(!isPlayerTurnOver) 
+
+	    while(!isPlayerTurnOver)
 	    {
 	        if(!isPlayerConfused)
 	        {
@@ -2475,7 +2765,7 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 				        {
 					        int damage = rand() % (130 - 100 + 1) + 100;
 					        current_enemy_HP -= damage;
-					        printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);	     
+					        printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);
 				            isPlayerTurnOver = true;
 				        }
 
@@ -2491,18 +2781,18 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 			        case 'D':
 			        case 'd':
 			        {
-			    
+
 			            if(current_player_HP == max_player_HP)
 				        {
 				        printf("Your HP is already full, so there is no need to heal.\n\n");
-				    
+
 				        }
 				        else if(current_NumOfPotions > 0)
 				        {
 					        --current_NumOfPotions;
 					        int HP_Healed = rand() % (150 - 100 + 1) + 100;
 					        current_player_HP += HP_Healed;
-					    
+
 					        if(current_player_HP > max_player_HP)
 					        {
 					            current_player_HP = max_player_HP;
@@ -2515,21 +2805,21 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 				        {
 					        printf("I'm sorry, but you don't have anymore potions, so you can't heal.\n\n");
 				        }
-				
+
 			        break;
 			        }
 		        }
-		    
+
 		    }
-		    
+
 		    else
 		    {
-		        
+
 
                 printf("Since you have been confused, your moves can either hurt YOU, or your enemy. As a result, a \"Do Nothing\" option has been added. Choose wisely.\n\nWhat will you do?: ");
 
 		        printf("\t\tPLAYER'S TURN\n\nPLAYER\t\t\t\t\t\tJim The Knight\nHP: %d/%d\t\t\t\t\tHP: %d/%d\nPotions: %d/%d\n\nA) Punch\tB) Kick\nC) Special\tD) Heal\nE) Do Nothing\n\n", current_player_HP, max_player_HP, current_enemy_HP, max_enemy_HP, current_NumOfPotions,max_numOfPotions);
-		        
+
 		        printf("What will you do?: ");
 
 		        scanf(" %c", &choice);
@@ -2546,20 +2836,20 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 			        case 'a':
 			        {
 				        int damage = rand() % (115 - 70 + 1) + 70, random_number = rand() % (2 - 1 + 1) + 1;
-				        
+
 				        if(random_number == 1)
 				        {
 				            current_player_HP -= damage;
 				            printf("OUCH! You just punched yourself in the face for %d damage.\n\n", damage);
-				            
+
 				        }
-				        
+
 				        else
 				        {
 				            current_enemy_HP -= damage;
 				            printf("Yes! You were lucky to punch your enemy for %d damage.\n\n", damage);
 				        }
-				        
+
 				        isPlayerTurnOver = true;
 				        isPlayerConfused = false;
 				        break;
@@ -2569,20 +2859,20 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 			        case 'b':
 			        {
 			            int damage = rand() % (140 - 60 + 1) + 60, random_number = rand() % (2 - 1 + 1) + 1;
-			            
+
 				        if(random_number == 1)
 				        {
 				            current_player_HP -= damage;
 				            printf("YIKES! You just kicked yourself in the nuts for %d damage.\n\n", damage);
-				            
+
 				        }
-				        
+
 				        else
 				        {
 				            current_enemy_HP -= damage;
 				            printf("Yes! You were lucky to kick your enemy and dealt %d damage.\n\n", damage);
 				        }
-				        
+
                         isPlayerTurnOver = true;
                         isPlayerConfused = false;
 				        break;
@@ -2605,20 +2895,20 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 				        if(guessed_number == random_number)
 				        {
 					        int damage = rand() % (200 - 150 + 1) + 150, random_number = rand() % (2 - 1 + 1) + 1;
-					        
+
 					        if(random_number == 1)
 				            {
 				                current_player_HP -= damage;
 				                printf("OH NO! You used your own special attack to hurt yourself %d damage. You unlucky soul.\n\n", damage);
 				            }
-				        
+
 				            else
 				            {
 				                current_enemy_HP -= damage;
 				                printf("HOW ARE YOU THIS LUCKY AND RISKY?? I can't believe you sucessfully used your special attack against your opponent to deal %d damage. Great Job!\n\n", damage);
-				                
+
 				            }
-				            
+
 				            isPlayerTurnOver = true;
 				            isPlayerConfused = false;
 				        }
@@ -2637,33 +2927,33 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 			        case 'D':
 			        case 'd':
 			        {
-			    
+
 			            if(current_player_HP == max_player_HP)
 				        {
 				            printf("Your HP is already full, so there is no need to heal (as well as possibly hurting yourself).\n\n");
-				    
+
 				        }
 				        else if(current_NumOfPotions > 0)
 				        {
 					        --current_NumOfPotions;
 					        int HP_HealedOrDrained = rand() % (150 - 100 + 1) + 100, random_number = rand() % (2 - 1 + 1) + 1;
-					        
+
 					        if(random_number == 1)
 				            {
 				                current_player_HP -= HP_HealedOrDrained;
 				                printf("Blech! That potion for some reason took away %d of your HP and ended your turn. How terrible!.\n\n", HP_HealedOrDrained);
 				                isPlayerTurnOver = true;
 				                isPlayerConfused = false;
-				                
+
 				            }
-				        
+
 				            else
 				            {
 				                current_enemy_HP -= HP_HealedOrDrained;
 				                printf("You used a potion to heal %d HP\n\n", HP_HealedOrDrained);
-				                
+
 				            }
-					    
+
 					        if(current_player_HP > max_player_HP)
 					        {
 					            current_player_HP = max_player_HP;
@@ -2675,49 +2965,49 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 				        {
 					        printf("I'm sorry, but you don't have anymore potions, so you can't heal. (But maybe that's a good thing.)\n\n");
 				        }
-				
+
 			        break;
 			        }
-			        
+
 			        case 'E':
 			        case 'e':
 			        {
-			    
+
 			            printf("You did nothing.\n\n");
 			            isPlayerTurnOver = true;
 			            isPlayerConfused = false;
-				
+
 			        break;
 			        }
 		        }
-		    
-		    
+
+
 		    }
 	    }
-	    
+
 	    if(current_player_HP <= 0)
 		{
 		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
 			    return false;
 		}
-	    
+
 	    if(current_enemy_HP <= 0)
 		{
 		        printf("CONGRATULATIONS! You won the battle and got the Telivision Troubles Medal. You will be taken back to the room selection screen.\n\n");
 			    return true;
 		}
-	    
-	  
-	        
+
+
+
 	    printf("\t\tJim The Knight's TURN!\n\n");
-	    
+
 	    if(!isEnemyConfused)
 	    {
-	    
+
 	        int random_number = rand() % (2 - 1 + 1) + 1;
-	    
+
 	        printf("Jim The Knight used ");
-	    
+
 	        switch (random_number)
 	        {
 	            case 1:
@@ -2727,7 +3017,7 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 	                printf("sword draw on you. You took %d damage.\n\n", damage);
 	                break;
 	            }
-	        
+
 	            case 2:
 	            {
 	                int damage = rand() % (140 - 120 + 1) + 120;
@@ -2737,63 +3027,63 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 	            }
 	        }
 	    }
-	    
+
 	    else
 	    {
 	        printf("Jim The Knight has been confused, so his attacks will either hurt you or him. He could also do nothing if he wants.\n\n");
-	        
+
 	        int random_number = rand() % (3 - 1 + 1) + 1;
-	    
+
 	        printf("Jim The Knight used ");
-	    
+
 	        switch (random_number)
 	        {
 	            case 1:
 	            {
 	                int random_number = rand() % (2 - 1 + 1) + 1, damage = rand() % (160 - 90 + 1) + 90;
-	                
+
 	                if(random_number == 1)
 	                {
 	                    current_enemy_HP -= damage;
 	                    printf("sword draw on HIMSELF (OH MY GOD)! He took %d damage.\n\n", damage);
 	                    isEnemyConfused = false;
-	                    
+
 	                }
-	                
-	                else 
+
+	                else
 	                {
 	                    current_player_HP -= damage;
 	                    printf("sword draw on you. You took %d damage.\n\n", damage);
 	                    isEnemyConfused = false;
-	                    
+
 	                }
-	                
+
 	                break;
 	            }
-	        
+
 	            case 2:
 	            {
 	                int random_number = rand() % (2 - 1 + 1) + 1, damage = rand() % (220 - 120 + 1) + 120;
-	                
+
 	                if(random_number == 1)
 	                {
 	                    current_enemy_HP -= damage;
 	                    printf("a war hammer on HIMSELF (OH MY GOODNESS)!. He took %d damage.\n\n", damage);
 	                    isEnemyConfused = false;
-	                    
+
 	                }
-	                
-	                else 
+
+	                else
 	                {
 	                    current_player_HP -= damage;
 	                    printf("a war hammer on you. You took %d damage.\n\n", damage);
 	                    isEnemyConfused = false;
-	                    
+
 	                }
-	                
+
 	                break;
 	            }
-	            
+
 	            case 3:
 	            {
 	                printf("Jim The Knight decided to play it safe and do nothing.\n\n");
@@ -2801,29 +3091,29 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 	                break;
 	            }
 	        }
-	        
-	    }
-	        
-	   
 
-        
-        
+	    }
+
+
+
+
+
         if(current_player_HP <= 0)
 		{
 		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
 			    return false;
 		}
-	    
+
 	    if(current_enemy_HP <= 0)
 		{
 		        printf("CONGRATULATIONS! You won the battle and got the Musical Madness Medal. You will be taken back to the room selection screen.\n\n");
 			    return true;
 		}
-        
+
         printf("\t\tINCOMING STAGE HAZARD\n\nWhy is there a floating TV near us? What's happening?\n\n");
-        
+
         int random_number = rand() % (3 - 1 + 1) + 1;
-        
+
         switch (random_number)
 	    {
 	            case 1:
@@ -2832,26 +3122,26 @@ bool televisionTroubles(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 	                printf("That TV showed us a bunch of graphic horror TV shows! I feel so confused.\n\n");
 	                break;
 	            }
-	        
+
 	            case 2:
 	            {
 	                isEnemyConfused = true;
 	                printf("Jim The Knight is getting confused from the graphic TV shows he watched from that TV. That's good for us.\n\n");
 	                break;
 	            }
-	            
+
 	            case 3:
 	            {
 	                printf("Huh? That TV was trying to shows us something, but it couldn't work.\n\n");
 	                break;
 	            }
 	    }
-	    
-		
+
+
 		isPlayerTurnOver = false;
 	}
-	
-	
+
+
 
 }
 
@@ -2860,15 +3150,15 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
     char choice;
 	int current_player_HP = max_player_HP, current_enemy_HP = max_enemy_HP, current_NumOfPotions = max_numOfPotions;
 	bool isPlayerTurnOver = false, isPlayerWeakened = false, isPlayerDizzy = false;
-	
+
     puts("It appears to be a laboratory, but why is everyone laughing? Is that...no it can't be,\n\n\t\tComedic Goofball:\n\t\tTalzeke The Clown\n\n");
-	
-	
+
+
 
 	while(true)
 	{
-		    
-	    while(!isPlayerTurnOver) 
+
+	    while(!isPlayerTurnOver)
 	    {
 
 		    printf("\t\tPLAYER'S TURN\n\nPLAYER\t\t\t\t\t\tTalzeke The Clown\nHP: %d/%d\t\t\t\t\tHP: %d/%d\nPotions: %d/%d\n\nA) Punch\tB) Kick\nC) Special\tD) Heal\n\n", current_player_HP, max_player_HP, current_enemy_HP, max_enemy_HP, current_NumOfPotions,max_numOfPotions);
@@ -2889,40 +3179,40 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 			    case 'a':
 			    {
 				    int damage = rand() % (130 - 90 + 1) + 90;
-				    
+
 				    if(isPlayerWeakened)
 				    {
 				        damage /= 2;
 				        current_enemy_HP -= damage;
 				        printf("You punched your enemy and dealt %d damage.\n\n", damage);
 				    }
-				    
+
 				    else if(isPlayerDizzy)
 				    {
 				        int random_number = rand() % (2 - 1 + 1) + 1;
-				        
+
 				        if(random_number == 1)
 				        {
 				            printf("Your attack missed.\n\n");
 				        }
-				        
+
 				        else
 				        {
 				            current_enemy_HP -= damage;
 				            printf("You punched your enemy and dealt %d damage.\n\n", damage);
-				            
+
 				        }
-				        
+
 				    }
-				    
-				    else 
+
+				    else
 				    {
 				        current_enemy_HP -= damage;
 				        printf("You punched your enemy and dealt %d damage.\n\n", damage);
 				    }
-				    
+
 				    isPlayerTurnOver = true;
-				    
+
 				    break;
 			    }
 
@@ -2930,39 +3220,39 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 			    case 'b':
 			    {
 				    int damage = rand() % (166 - 80 + 1) + 80;
-				    
+
 				    if(isPlayerWeakened)
 				    {
 				        damage /= 2;
 				        current_enemy_HP -= damage;
 				        printf("You kicked your enemy and dealt %d damage.\n\n", damage);
 				    }
-				    
+
 				    else if(isPlayerDizzy)
 				    {
-				        
+
 				        int random_number = rand() % (2 - 1 + 1) + 1;
-				        
+
 				        if(random_number == 1)
 				        {
 				            printf("Your attack missed.\n\n");
 				        }
-				        
+
 				        else
 				        {
 				            current_enemy_HP -= damage;
 				            printf("You kicked your enemy and dealt %d damage.\n\n", damage);
-				            
+
 				        }
-				        
+
 				    }
-				    
+
 				    else
 				    {
                         current_enemy_HP -= damage;
                         printf("You kicked your enemy and dealt %d damage.\n\n", damage);
 				    }
-				    
+
                     isPlayerTurnOver = true;
 				    break;
 			    }
@@ -2984,14 +3274,14 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 				    if(guessed_number == random_number)
 				    {
 					    int damage = rand() % (130 - 100 + 1) + 100;
-					    
+
 					    if(isPlayerWeakened)
 				        {
 				            damage /= 2;
 				        }
-				    
+
 					    current_enemy_HP -= damage;
-					    printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);	     
+					    printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);
 				        isPlayerTurnOver = true;
 				    }
 
@@ -3007,18 +3297,18 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 			    case 'D':
 			    case 'd':
 			    {
-			    
+
 			        if(current_player_HP == max_player_HP)
 				    {
 				        printf("Your HP is already full, so there is no need to heal.\n\n");
-				    
+
 				    }
 				    else if(current_NumOfPotions > 0)
 				    {
 					    --current_NumOfPotions;
 					    int HP_Healed = rand() % (135 - 90 + 1) + 100;
 					    current_player_HP += HP_Healed;
-					    
+
 					    if(current_player_HP > max_player_HP)
 					    {
 					        current_player_HP = max_player_HP;
@@ -3031,29 +3321,29 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 				    {
 					    printf("I'm sorry, but you don't have anymore potions, so you can't heal.\n\n");
 				    }
-				
+
 			    break;
 			    }
-		    
+
 		    }
 	    }
-		
+
 		isPlayerWeakened = false;
 		isPlayerDizzy = false;
-	    
+
 	    if(current_enemy_HP <= 0)
 		{
 		        printf("CONGRATULATIONS! You won the battle and got the Laughing Laboratory medal. You will be taken back to the room selection screen.\n\n");
 			    return true;
 		}
-	    
-	        
+
+
 	   printf("\t\tTalzeke The Clown's TURN!\n\n");
-	    
+
 	   int random_number = rand() % (4 - 1 + 1) + 1;
-	    
+
 	   printf("Talzeke The Clown is telling a pun. He says: ");
-	    
+
 	   switch (random_number)
 	   {
 	       case 1:
@@ -3065,7 +3355,7 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 	           printf("He throws a water balloon on you. You took %d damage and you are weakened.\"\n\n", damage);
 	           break;
 	       }
-	        
+
 	       case 2:
 	       {
 	           printf("\"I don't just like boxing, I glove it!\"\n\n");
@@ -3075,7 +3365,7 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 	           isPlayerDizzy = true;
 	           break;
 	       }
-	        
+
 	       case 3:
 	       {
 	           printf("\"That’s how the pie-face crumbles.\"\n\n");
@@ -3085,41 +3375,41 @@ bool laughingLaboratory(int max_player_HP, int max_enemy_HP, int max_numOfPotion
 	           printf("He throws a vamp pie on yo FACE. You took %d damage and he healed all of that damage he did to you.\n\n", damage);
 	           break;
 	       }
-	            
+
 	       case 4:
 	       {
 	           printf("\"Looks like my joke wasn't the only one that fell off.\"\n\nOof! He fell down. He really is a goofball.\n\n");
 	           break;
 	       }
 	   }
-        
+
         if(current_player_HP <= 0)
 		{
 		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
 			    return false;
 		}
-        
-		
+
+
 		isPlayerTurnOver = false;
 	}
 }
 
 bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 {
-    
-    
+
+
     char choice;
 	int current_player_HP = max_player_HP, current_enemy_HP = max_enemy_HP, current_NumOfPotions = max_numOfPotions;
 	bool isPlayerTurnOver = false, isEnemyTurnOver = false;
-	
+
     puts("Are we in space? This is crazy! And there are no battle gimmicks this time unlike the previous 4. It's just a ONE ON ONE battle against\n\n\t\tShadowy Duplicator:\n\t\tFury Shadow\n\nWAIT A MINUTE! He has all the same moves as you do and gets unlimited potions?! C'MON, that's not fair! We'll have to beat him as quick as we can before things get nasty.\n\n");
-	
-	
+
+
 
 	while(true)
 	{
-		    
-	    while(!isPlayerTurnOver) 
+
+	    while(!isPlayerTurnOver)
 	    {
 
 		    printf("\t\tPLAYER'S TURN\n\nPLAYER\t\t\t\t\t\tFury Shadow\nHP: %d/%d\t\t\t\t\tHP: %d/%d\nPotions: %d/%d\n\nA) Punch\tB) Kick\nC) Special\tD) Heal\n\n", current_player_HP, max_player_HP, current_enemy_HP, max_enemy_HP, current_NumOfPotions,max_numOfPotions);
@@ -3145,7 +3435,7 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 				    isPlayerTurnOver = true;
 				    isEnemyTurnOver = false;
 				    break;
-				
+
 			    }
 
 			    case 'B':
@@ -3176,9 +3466,9 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 				    if(guessed_number == random_number)
 				    {
 					    int damage = rand() % (500 - 250 + 1) + 250;
-				    
+
 					    current_enemy_HP -= damage;
-					    printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);	     
+					    printf("BOOYAH! You guessed it right and used your special attack against your opponent to deal %d damage.\n\n", damage);
 				        isPlayerTurnOver = true;
 				        isEnemyTurnOver = false;
 				    }
@@ -3196,18 +3486,18 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 			    case 'D':
 			    case 'd':
 			    {
-			    
+
 			        if(current_player_HP == max_player_HP)
 				    {
 				        printf("Your HP is already full, so there is no need to heal.\n\n");
-				    
+
 				    }
 				    else if(current_NumOfPotions > 0)
 				    {
 					    --current_NumOfPotions;
 					    int HP_Healed = rand() % (405 - 300 + 1) + 300;
 					    current_player_HP += HP_Healed;
-					    
+
 					    if(current_player_HP > max_player_HP)
 					    {
 					        current_player_HP = max_player_HP;
@@ -3219,28 +3509,28 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 				    {
 					    printf("I'm sorry, but you don't have anymore potions, so you can't heal.\n\n");
 				    }
-				
+
 			    break;
 			    }
-		    
+
 		    }
 	    }
-	    
+
 	    if(current_enemy_HP <= 0)
 		{
 		        printf("CONGRATULATIONS! You won the battle and got the Space Spectacle medal. You will be taken back to the room selection screen.\n\n");
 			    return true;
 		}
-	    
+
 	    while(!isEnemyTurnOver)
 	    {
-	        
+
 	        printf("\t\tFury Shadow's TURN!\n\n");
-	    
+
 	        int random_number = rand() % (4 - 1 + 1) + 1;
-	    
+
 	        printf("Fury Shadow ");
-	    
+
 	        switch (random_number)
 	        {
 	            case 1:
@@ -3252,7 +3542,7 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                isEnemyTurnOver = true;
 	                break;
 	            }
-	        
+
 	           case 2:
 	           {
 	                int damage = rand() % (360 - 140 + 1) + 140;
@@ -3262,12 +3552,12 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                isEnemyTurnOver = true;
 	                break;
 	           }
-	        
+
 	           case 3:
 	           {
 	                printf("is guessing a number from 1-5 to do his special attack.\n\n");
 	                int random_number = rand() % (5 - 1 + 1) + 1, guessed_number = rand() % (5 - 1 + 1) + 1;
-	           
+
 	                if(guessed_number == random_number)
 	                {
 	                    int damage = rand() % (500 - 250 + 1) + 250;
@@ -3276,42 +3566,42 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	                    isPlayerTurnOver = false;
 	                    isEnemyTurnOver = true;
 	                }
-	           
+
 	                else
 	                {
 	                    printf("Oof! He guessed the number wrong and lost his turn. That's a good thing.\n\n");
 	                    isPlayerTurnOver = false;
 	                    isEnemyTurnOver = true;
 	                }
-	           
+
 	                break;
 	           }
-	       
+
 	           case 4:
 	           {
 	               printf("heals.\n\n");
 	               if(current_enemy_HP == max_enemy_HP)
 				    {
 				        printf("But his HP is already full, so there is no need to heal.\n\n");
-				    
+
 				    }
 				    else
 				    {
 					    int HP_Healed = rand() % (405 - 300 + 1) + 300;
 					    current_enemy_HP += HP_Healed;
-					    
+
 					    if(current_enemy_HP > max_enemy_HP)
 					    {
 					        current_enemy_HP = max_enemy_HP;
 					    }
 					    printf("He healed %d HP\n\n", HP_Healed);
 				    }
-	                
+
 	                break;
-	           
+
 	           }
 	   }
-        
+
             if(current_player_HP <= 0)
 		    {
 		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
@@ -3319,9 +3609,7 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 		    }
 	    }
 
-        
+
 
      }
 }
-
-
