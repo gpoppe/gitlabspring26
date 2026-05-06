@@ -28,6 +28,8 @@
 //place function prototypes here
 void khprinter(void);
 
+void coolGame(void);
+int iAmLazy(int);
 
 //dcortez function prototypes 
 void ANFUN(void);
@@ -264,7 +266,8 @@ int main(int argc, char *argv[])
 			case 27:
 			{
 				puts("room27");
-     				theSigmaMethod();
+     		theSigmaMethod();
+        coolGame();
 				break;
 			}
 			case 28:
@@ -1671,6 +1674,300 @@ void RT_playCupRound(void)
     {
         printf("Wrong cup. The ball was under cup %d.\n", ballSpot + 1);
     }
+}
+
+void coolGame()
+{
+
+srand(time(NULL));
+
+printf("You enter another dark room\n");
+printf("In this room there are two things that are illuminated.\n");
+printf("A peculiar lightswitch and a door that says exit above it.\n\n");
+
+printf("1.Flip the lightswitch\n");
+printf("2.Use the door that says exit\n");
+printf("3.Go back to the door that you came from\n");
+printf("4.Take Nap\n");
+printf("5.Rub eyes\n");
+
+int choice;
+int randy;
+
+switch(iAmLazy(4))
+{
+  case 1:
+    printf("You turn on the light to reveal a motorcycle.\n");
+    printf("Right next to the motorcycle there is also motorcycle gear\n\n");
+
+    printf("1.Take off on motorcycle with gear\n");
+    printf("2.Take off on motorcycle without gear\n");
+    printf("3.Ignore the motorcycle and use the door that says exit\n");
+    printf("4.Ignore everything and use the door that you came from\n");
+    choice = iAmLazy(4);
+
+    if(choice ==2)
+    {
+      goto motoNoGear; 
+    }
+    else if (choice ==1)
+    {
+      goto motoWithGear;  
+    }
+    else if(choice ==3)
+    {
+      goto caseToo;
+    }
+    else if(choice ==4)
+    {
+      goto caseTree; 
+    }
+    
+    break;
+
+  case 2:
+    printf("You are now outside in the middle of nowhere, nothing but sand.\n");
+    printf("To the left theres a bus waiting to leave.\n");
+    printf("To your right theres the long open road.\n\n");
+    printf("1.Catch the bus\n");
+    printf("2.Walk along the road\n");
+    printf("3.Wait\n");
+    choice = iAmLazy(3);
+    if(choice == 3)
+    {
+      randy = rand() % 2; 
+      if(randy == 0)
+      {
+        goto actOfGod;
+      }
+      else
+      {
+        goto caseToo;
+      }
+    }
+    else if(choice ==1)
+    {
+      printf("You take the bus to the nearest metropolis.");
+      printf("As you get off the bus, you are submerged in the dissonant sounds of life happening around you.\n");
+      printf("You start to dissapear as walk further into the waves of people walking by...\n");
+    }
+    else if (choice==2)
+    {
+        randy = rand() % 2; 
+        if(randy ==1)
+        {
+          goto randoEndOne;
+        }
+        else
+        {
+          goto randoEndTwo;
+        }
+    }
+    break;
+
+  caseToo:
+   printf("You are now outside in the middle of nowhere, nothing but sand.\n");
+    printf("To the left theres a bus waiting to leave.\n");
+    printf("To your right theres the long open road.\n\n");
+    printf("1.Catch the bus\n");
+    printf("2.Walk along the road\n");
+    printf("3.Wait\n");
+    choice = iAmLazy(3);
+    if(choice == 3)
+    {
+      randy = rand() % 2; 
+      if(randy == 0)
+      {
+        goto actOfGod;
+      }
+      else
+      {
+        goto caseToo;
+      }
+    }
+    else if(choice ==1)
+    {
+      printf("You take the bus to the nearest metropolis.");
+      printf("As you get off the bus, you are submerged in the dissonant sounds of life happening around you.\n");
+      printf("You start to disappear as you walk further into the waves of people walking by...\n");
+    }
+    else if (choice==2)
+    {
+        randy = rand() % 2; 
+        if(randy ==1)
+        {
+          goto randoEndOne;
+        }
+        else
+        {
+          goto randoEndTwo;
+        }
+    }
+    break;
+
+    case 3:
+      printf("You end up drowning :()");
+      break;
+
+    caseTree:
+      printf("You end up drowning :(");
+      break;
+    
+  
+  motoWithGear:
+    printf("You speed out of the garage on a motorcycle.\n");
+    printf("You push your limits as you manuever the busy highway wearing full moto gear\n");
+    printf("Eventually you see a set of flashing blue and red lights.\n");
+    printf("Its the police, what do you do?\n\n");
+
+    printf("1.Take a chance and escape through oncoming traffic\n");
+    printf("2.Pull over safely\n");
+    choice = iAmLazy(2);
+
+    if(choice == 1)
+    {
+       randy = rand() % 2; 
+       if(randy ==0)
+       {
+        printf("You escaped!\n");
+        printf("You continue riding off into the sunset.\n");
+        printf("As a an outlaw.\n");
+       }
+       else if(randy == 1)
+       {
+        printf("You end up crashing!\n");
+        printf("Battered and bruised you end up living.\n");
+        printf("Seconds later you are arrested.\n");
+        printf("You get your last glimpse of freedom as you are put\n");
+        printf("In the back of a police car.\n");
+
+
+       }
+    }
+    else
+    {
+      printf("You pull over safely on the shoulder.\n");
+      printf("You turn off your motorcycle as you wait patiently.\n");
+      printf("The officer eventually walks up, noticing your gear\n");
+      printf("for being responsible he lets you off with just a ticket.\n");
+      printf("You continue off on the winding roads.\n");
+      printf("As a drifter navigating whats in front of them.\n");
+    }
+
+    break;
+
+  motoNoGear:
+    printf("You speed out of the garage on a motorcycle.\n");
+    printf("You push your limits as you manuever the busy highway wearing no gear.\n");
+    printf("Hair waving aimlessly in the air.\n");
+    printf("Eventually you see a set of flashing blue and red lights.\n");
+    printf("Its the police, what do you do?\n\n");
+
+    printf("1.Take a chance and escape through oncoming traffic\n");
+    printf("2.Pull over safely\n");
+    choice = iAmLazy(2);
+
+    if(choice == 1)
+    {
+       randy = rand() % 2; 
+       if(randy ==0)
+       {
+        printf("You escaped!\n");
+        printf("You continue riding off into the sunset.\n");
+        printf("As a an outlaw.\n");
+       }
+       else
+       {
+        printf("You end up crashing!\n");
+        printf("Bystanders and first responders are unable to do anything.\n");
+        printf("Red paints the roads as your motorcycle is left in pieces.\n");
+        printf("You dont make it out alive :(\n");
+        
+
+
+       }
+    }
+    else
+    {
+      printf("You pull over safely on the shoulder.\n");
+      printf("You turn off your motorcycle as you wait patiently.\n");
+      printf("The officer eventually walks up, scolding you as he walks up. \n");
+      printf("For being reckless, you are arrested and you motorcycle is impounded\n");
+      printf("You spend the rest of you days in a cell :(\n");
+    }
+      
+    break;
+
+  case 4:
+    printf("You lay down and close your eyes\n\n");
+    printf("ALL of a sudden!\n");
+    randy =  (rand() % 3) + 1;  
+    
+    if(randy == 1)
+    {
+      goto actOfGod;
+    }
+    else if(randy ==2)
+    {
+      goto caseToo;
+    }
+    else if(randy ==3)
+    {
+      goto motoNoGear;
+    }
+    break;
+  
+  case 5:
+    printf("You begin to close your eyes and start rubbing them.\n");
+    printf("Once you stop and open your eyes you find yourself somewhere different.\n");
+    printf("You wake up in a dreary room, laying on a uncomfortable bed.\n");
+    printf("You wonder what would have happened had you not rubbed your eyes...\n");
+    break;
+
+  randoEndOne:
+    printf("You start walking.\n");
+    printf("You walk til night, and collapse to the floor from exhaustion.\n");
+    printf("In you last waking moment a beam of light shoots from the sky, focusing on you.\n");
+    printf("As the light intensifies you feel weightless as you seemingly ascend into the sky.\n ");
+    printf("That was the last anyone ever heard from you...\n");
+    break;
+  randoEndTwo:
+    printf("You find an abandoned house.\n");
+    printf("You decide to take refuge and fix up what was once a shell of its former self.\n");
+    printf("Time begins to pass.\n");
+    printf("You begin to fix up the house.\n");
+    printf("Soon after you begin to plant food.\n");
+    printf("You find yourself living very comfortable off the land\n");
+    break;
+
+  actOfGod:
+    printf("You were struck by lightning While waiting :(");
+    break;
+
+}
+
+
+}
+
+int iAmLazy(int choices)
+{
+  int option =0;
+  printf("What do you choose to do?");
+  do
+  {
+    scanf("%d", &option);
+
+    if(option<0 || option>choices)
+    {
+      printf("Invalid input\n");
+    }
+  }
+  while(option<1 || option>choices);
+
+  printf("\n");
+
+  return option;
+
 }
 
 
