@@ -3330,6 +3330,38 @@ void coolGame()
 {
 
 	  srand(time(NULL));
+	  int choice;
+	  int randy;
+	  char * arrayOfStrings[5];
+      randy = rand() % 5;
+    
+      arrayOfStrings[0] = "May 7, 2026";
+      arrayOfStrings[1] = "August 9, 2040";
+      arrayOfStrings[2] = "September 9, 1940";
+      arrayOfStrings[3] = "December 25, 2020";
+      arrayOfStrings[4] = "February 16, 1960";
+    
+      if(randy == 1)
+      {
+         printf("%s\n", arrayOfStrings[0]);
+      }
+      else if(randy ==1)
+      {
+          printf("%s\n", arrayOfStrings[1]);
+      }
+      else if(randy ==2)
+      { 
+          printf("%s\n", arrayOfStrings[2]);
+      }
+      else if(randy ==3)
+      {
+          printf("%s\n", arrayOfStrings[3]);
+      }
+      else if(randy ==4)
+      {
+          printf("%s\n", arrayOfStrings[4]);
+      }
+		
 	
 	  printf("You enter another dark room\n");
 	  printf("In this room there are two things that are illuminated.\n");
@@ -3341,8 +3373,7 @@ void coolGame()
 	  printf("4.Take Nap\n");
 	  printf("5.Rub eyes\n");
 	
-	  int choice;
-	  int randy;
+	  
 
 	  switch (iAmLazy(4))
 	  {
