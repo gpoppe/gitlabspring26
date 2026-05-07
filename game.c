@@ -12,6 +12,7 @@
 //Nishat Nawshin
 //Angel Martinez
 //Dagmawe (Bobby) Afework
+//Neal Hannon
 
 
 
@@ -326,6 +327,7 @@ int main(int argc, char *argv[])
 			case 23:
 			{
 				puts("room23");
+				nhfun();
 				break;
 			}
 			case 24:
@@ -356,7 +358,6 @@ int main(int argc, char *argv[])
 			case 28:
 			{
 				puts("room28");
-				nhfun();
 				break;
 			}
 			case 29:
@@ -1910,7 +1911,113 @@ void WMGwent(void)
 
 void nhfun(void)
 {
-	puts("NH\n");
+	int node = 0;
+	int choice = 0;
+
+	// combat states
+	int playerHp = 20;
+	int drennHP = 15;
+	int playerValnerable = 0;
+	int playerBlocking = 0;
+	int drennRoll;
+	int playerDmg;
+	int drenDmg;
+
+	while(1)
+	{
+		switch(node)
+		{
+			case 0:
+				printf("==================================================\n");
+				printf("                  THE LOST CROWN\n");
+				printf("==================================================\n\n");
+				printf("You are %s, a wandering sellsword.\n", name);
+				printf("The kingdom of Astrial has fallen since the\n");
+				printf("High Crown was stolen. You arrive at the\n");
+				printf("ruined capital gate where two figures await you.\n");
+				printf("*Please enter the numerical value of the action\n");
+				printf("you want to take.\n");
+				printf("1: Approach the hooded messenger.\n");
+				printf("2: Approach the city guard.\n");
+				printf("Enter choice: ");
+				scanf("%d" &choice);
+				
+				if(choice == 1)
+				{
+					node = 1;
+				}
+				else if(choice == 2)
+				{
+					node = 2;
+				}
+				else
+				{
+					printf("Invalid choice.\n");
+				}
+				break;
+			case 1:
+				printf("==================================================\n");
+				printf("                The Scriptorium\n\n");
+				printf("The hooded figure ended up being a member of the\n");
+				printf("Silver Older. He told you the archivist of the\n");
+				printf("organization has work for you.\n");
+				printf("At the orders headquarters, the archivist\n");
+				printf("spreads a map accross the table. 'The crown is\n");
+				printf("in one of two places - the Ashwood Tomb or Drenn\n");
+				printf("the Warlock's tower on Frostpine Ridge.'\n");
+				printf("Where would you like to search?\n");
+				printf("3: Travel to the Ashwood Tomb.\n");
+				printf("4: Ride for Frostpine Ridge.\n");
+				printf("Enter choice: ");
+				scanf("%d", &choice);
+
+				if(choice == 3)
+				{
+					node = 3;
+				}
+				else if(choice == 4)
+				{
+					node = 4;
+				}
+				else
+				{
+					printf("Invalid choice.\n");
+				}
+				break;
+			case 2:
+				printf("==================================================\n");
+				printf("                   The Barracks\n\n");
+				printf("The city gaurd tells you a recently captured spy\n");
+				printf("shared intelligence that the lost crown is\n");
+				printf("hidden in Ashwood Tomb. Captain Maren has put\n");
+				printf("out a reward for its return, but warns that\n");
+				printf("Drenn the Warlock's forces are already marching\n");
+				printf("their to get it themselves.\n");
+				printf("3: Race to the Ashwood Tomb before Drenn arrives.\n");
+				printf("5: Set an ambush on the road to slow Drenn down.\n");
+				printf("Enter choice: ");
+				scanf("%d", &choice);
+
+				if(choice == 3)
+				{
+					node = 3;
+				}
+				else if(choice == 5)
+				{
+					node = 5;
+				}
+				else
+				{
+					printf("Invalid choice.\n")
+				}
+				break;
+			case 3:
+				printf("==================================================\n");
+				printf("                The Ashwood Tomb\n\n");
+				printf("Your reach the tomb and no one is in site. Deep in\n");
+				printf("its caves you find the crown glowing on a stone.\n");
+				printf("alter, but your keen eyes detect a trap on the\n");
+				printf("floor.
 }
 
 
@@ -1967,6 +2074,66 @@ void RT_playCupRound(void)
     scanf("%d", &guess);
 
     if(guess < 1 || guess > 3)
+    {
+        printf("Invalid cup choice.\n");
+        return;
+    }
+
+    if(cups[guess - 1] == 1)
+    {
+        printf("You found the ball!\n");
+    }
+    else
+    {
+        printf("Wrong cup. The ball was under cup %d.\n", ballSpot + 1);
+    }
+}
+
+bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
+{
+
+	char choice;
+	int current_player_HP = max_player_HP, current_enemy_HP = max_enemy_HP, current_NumOfPotions = max_numOfPotions;
+	bool isPlayerTurnOver = false;
+
+	puts("Welcome to a park...inside of a pinball machine, what?? Anyways, you will be going against...\n\n\t\tPsychotic Clanker:\n\t\tBOBBINATOR-X67\n\n");
+
+	while(true)
+	{
+		    
+	    while(!isPlayerTurnOver) 
+	    {
+
+    {
+        printf("Invalid cup choice.\n");
+        return;
+    }
+
+    if(cups[guess - 1] == 1)
+    {
+        printf("You found the ball!\n");
+    }
+    else
+    {
+        printf("Wrong cup. The ball was under cup %d.\n", ballSpot + 1);
+    }
+}
+
+bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
+{
+
+	char choice;
+	int current_player_HP = max_player_HP, current_enemy_HP = max_enemy_HP, current_NumOfPotions = max_numOfPotions;
+	bool isPlayerTurnOver = false;
+
+	puts("Welcome to a park...inside of a pinball machine, what?? Anyways, you will be going against...\n\n\t\tPsychotic Clanker:\n\t\tBOBBINATOR-X67\n\n");
+
+	while(true)
+	{
+		    
+	    while(!isPlayerTurnOver) 
+	    {
+
     {
         printf("Invalid cup choice.\n");
         return;
@@ -3265,63 +3432,3 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	        
 	           case 3:
 	           {
-	                printf("is guessing a number from 1-5 to do his special attack.\n\n");
-	                int random_number = rand() % (5 - 1 + 1) + 1, guessed_number = rand() % (5 - 1 + 1) + 1;
-	           
-	                if(guessed_number == random_number)
-	                {
-	                    int damage = rand() % (500 - 250 + 1) + 250;
-	                    current_player_HP -= damage;
-	                    printf("Oh No! He guessed the number correct and used his special attack to deal %d damage to you.\n\n", damage);
-	                    isPlayerTurnOver = false;
-	                    isEnemyTurnOver = true;
-	                }
-	           
-	                else
-	                {
-	                    printf("Oof! He guessed the number wrong and lost his turn. That's a good thing.\n\n");
-	                    isPlayerTurnOver = false;
-	                    isEnemyTurnOver = true;
-	                }
-	           
-	                break;
-	           }
-	       
-	           case 4:
-	           {
-	               printf("heals.\n\n");
-	               if(current_enemy_HP == max_enemy_HP)
-				    {
-				        printf("But his HP is already full, so there is no need to heal.\n\n");
-				    
-				    }
-				    else
-				    {
-					    int HP_Healed = rand() % (405 - 300 + 1) + 300;
-					    current_enemy_HP += HP_Healed;
-					    
-					    if(current_enemy_HP > max_enemy_HP)
-					    {
-					        current_enemy_HP = max_enemy_HP;
-					    }
-					    printf("He healed %d HP\n\n", HP_Healed);
-				    }
-	                
-	                break;
-	           
-	           }
-	   }
-        
-            if(current_player_HP <= 0)
-		    {
-		        printf("Oh no! You lost the battle! I'm sorry, but you have to go back to the room selection screen.\n\n");
-			    return false;
-		    }
-	    }
-
-        
-
-     }
-}
-
-
