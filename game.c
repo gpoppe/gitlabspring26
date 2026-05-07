@@ -29,6 +29,10 @@
 //place function prototypes here
 void khprinter(void);
 
+void hauntedHouse(void); //Charles Parker Final Project
+void callHouse(void);
+void callEyes(void);
+void callGhost(void);
 
 //dcortez function prototypes 
 void ANFUN(void);
@@ -132,6 +136,7 @@ int main(int argc, char *argv[])
 			case 3:
 			{
 				cparkerFun();
+				hauntedHouse();
 				puts("room3");
 				break;
 			}
@@ -637,6 +642,313 @@ int main(int argc, char *argv[])
 }
 
 //place function definitions below this comment
+void hauntedHouse(void) //Charles Parker Final Project
+{
+	srand(time(NULL));
+
+	while(1)
+    	{
+        char choice;
+        
+        callHouse();
+        printf("You see a house in the distance...\n");
+        printf("It is cold and dark outside. You need shelter.\n");
+
+        printf("\nIt looks abandoned. Enter? (Y or N): ");
+        while(1) //input validation
+        {
+            scanf(" %c", &choice);
+            if (choice == 'Y' || choice == 'y')
+            {
+                printf("You decided to enter the house.\n");
+                choice = 'Y';
+                break;
+            }
+            else if (choice == 'N' || choice == 'n')
+            {
+                printf("***************************************************\n");
+                printf("\nYou decide to not enter the house.\n");
+                printf("\nYou turn away. Never to be seen again...\n");
+                printf("\nGAME OVER.\n");
+                choice = 'N';
+                break;
+            }
+            else
+            {
+                printf("Enter Y or N only: ");
+            }
+        }
+
+        if (choice == 'Y')
+        {
+            int diceRoll = (rand() % 90) + 10; //10-99 to make it easier for the hidden array
+            printf("***************************************************\n");
+            
+            printf("\nYou assume there is nobody else in this house...\n");
+            printf("However, as you walk into the darkness, you notice a pair of eyes in the distance.\n\n");
+            callEyes();
+            printf("\nThe eyes are watching you. What do you do?\n\n");
+
+            printf("A. Talk\n");
+            printf("B. Fight\n");
+            printf("C. Cry\n");
+            printf("D. Bribe\n");
+            printf("E. Run Away\n\n");
+
+            printf("***************************************************\n");
+
+            while(1)
+            {
+
+                printf("Enter: ");
+                scanf(" %c", &choice);
+                if (choice == 'A' || choice == 'a') //Talk
+                {
+                    if (diceRoll > 20)
+                    {
+                        printf("\nYou decide to talk to the eyes.\n\n");
+
+                        printf("The eyes reveal themselves to be an old man hiding from the darkness like you.\n");
+                        printf("You chat away the night. And retire to your chosen rooms.\n");
+                    
+                        printf("\nYOU HAVE SURVIVED THE NIGHT.\n");
+                        printf("***************************************************\n");
+                        break;
+                    }
+                    else
+                    {
+                        printf("\nYou decide to talk to the eyes.\n\n");
+
+                        printf("No response.\n");
+
+                        printf("\nEventually, something shiny peeks out of the darkness.\n");
+                        printf("It is something sharp.\n");
+
+                        printf("\nYou are never to be seen again.\n");
+                        printf("\nGAME OVER.\n");
+                        printf("***************************************************\n");
+                        break;
+                    }
+                }
+                else if (choice == 'B'|| choice == 'b') //Fight
+                {
+                    if (diceRoll > 70)
+                    {
+                        printf("\nYou decide to brawl with the eyes!\n\n");
+
+                        printf("The eyes notice your fighting stance.\n");
+                        printf("\nBefore you could get a punch in, the eyes decide to run away.\n");
+
+                        printf("They jump out of a window, never to be seen again.\n");
+                        
+                        printf("\nYOU HAVE SURVIVED THE NIGHT.\n");
+                        printf("***************************************************\n");
+                        break;
+                    }
+                    else
+                    {
+                        printf("\nYou decide to brawl with the eyes!\n\n");
+                        
+                        printf("The eyes notice your fighting stance.\n");
+                        printf("Before you could get a punch in, something sharp pokes out of the darkness.\n");
+                        printf("\nThe sharp object runs right through your torso.\n");
+                        printf("\nYou are never to be seen again.\n");
+                        printf("\nGAME OVER.\n");
+                        printf("***************************************************\n");
+                        break;
+                    }
+                }
+                else if (choice == 'C' || choice == 'c') //Cry (has an easter egg if you guess the dice roll)
+                {
+                    if (diceRoll > 30)
+                    {
+                        int num1, num2;
+                        int dice1, dice2;
+                        int numArr[2];
+                        int diceArr[2];
+                        int flag = 1;
+
+                        printf("\nYou decide to lay down and cry.\n\n");
+                        
+                        printf("The eyes see your sorry pose and pity you.\n");
+                        printf("It drops some items to help you survive the night. Then disappears into a locked room.\n");
+
+                        printf("\nYOU HAVE SURVIVED THE NIGHT.\n");
+                        
+                        printf("As the eyes leave, you notice a safe hidden in the corner.\n");
+                        printf("\nThe safe reads, \"Guess the two-digit combination and you can open the safe.\"\n");
+
+                        printf("Enter the first number: ");
+                        scanf(" %d", &num1);
+                        printf("Enter the second number: ");
+                        scanf(" %d", &num2);
+                        numArr[0] = num1;
+                        numArr[1] = num2;
+
+                        dice1 = diceRoll / 10;
+                        dice2 = diceRoll % 10;
+                        diceArr[0] = dice1;
+                        diceArr[1] = dice2;
+                        
+                        for (int i = 0; i < 2; i++)
+                        {
+                            if (numArr[i] != diceArr[i])
+                            {
+                                printf("\nWrong number! The safe stays closed.\n");
+                                flag = 0;
+                                break;
+                            }
+                        }
+
+                        if (flag)
+                        {
+                            printf("\nYou have opened the safe!\n");
+                            printf("There was a ghost hiding inside!\n");
+                            callGhost();
+                        }
+                        break;
+                        
+                    }
+                    else
+                    {
+                        printf("\nYou decide to lay down and cry.\n\n");
+                        
+                        printf("The eyes see your sorry pose and laugh at you.\n");
+                        printf("The sheer embarrassment triggers your anxiety and gives you a heart attack.\n");
+
+                        printf("GAME OVER.\n");
+                        printf("***************************************************\n");
+                        break;
+                    }
+                }
+                else if (choice == 'D' || choice == 'd') //Bribe
+                {
+                    if (diceRoll > 50)
+                    {
+                        printf("\nYou decide to bribe the eyes.\n\n");
+                        
+                        printf("\nThe eyes see the stack of money and are pleased.\n");
+                        printf("It swipes the whole stack and disappears into a locked room.\n");
+
+                        printf("\nYOU HAVE SURVIVED THE NIGHT.\n");
+                        printf("***************************************************\n");
+                        break;
+                    }
+                    else
+                    {
+                        printf("\nYou decide to bribe the eyes.\n\n");
+
+                        printf("\nThe eyes see the stack of money and are confused.\n");
+                        printf("An old man reveals himself and accuses you of being a criminal.\n");
+
+                        printf("\nHe kicks you out.\n");
+                        printf("You succumb to the cold and pass away.\n");
+
+                        printf("\nGAME OVER.\n");
+                        printf("***************************************************\n");
+                        break;
+                    }
+                }
+                else if (choice == 'E' || choice == 'e')
+                {
+                    printf("\nYou decide to run away from the eyes.\n\n");
+
+                    printf("\nYou exit the house and escape deep into the darkness.\n");
+                    printf("As you run deeper, you realize there is no end in sight.\n");
+                    printf("You eventually succumb to the cold.\n");
+
+                    printf("\nGAME OVER.\n");
+                    printf("***************************************************\n");
+                    break;
+                }
+                else
+                {
+                    printf("Please pick one of the choices (A-E only): ");
+                }
+
+            }
+
+        }
+
+        printf("\nDo you want to play again? (Y or N): ");
+        while(1)
+        {
+            scanf(" %c", &choice);
+            if (choice == 'Y' || choice == 'y')
+            {
+                break;
+            }
+            if (choice == 'N' || choice == 'n')
+            {
+                choice = 'N';
+                break;
+            }
+            else
+            {
+                printf("Please choose Y or N only: ");
+            }
+        }
+
+        if (choice == 'N')
+        {
+            printf("\nThank you for playing!\n");
+            break;
+        }
+    } 	
+}
+
+void callHouse(void) //Charles Parker
+{
+	     printf(
+    "               /\\\n"
+    "              /  \\\n"
+    "  ___________/    \\____________\n"
+    " |::::::::::/      \\:::::::::::|\n"
+    " |:::::::::/        \\::::::::::|\n"
+    " |::::::::/__________\\:::::::::|\n"
+    " |_________|  ____  |__________|\n"
+    "  | ______ | /    \\ | _______ |\n"
+    "  ||      || |    | ||       ||\n"
+    "  ||      || |    | ||       ||\n"
+    "  ||______|| |    | ||_______||\n"
+    "  |========| |____| |=========|\n"
+    " (,,,,,,,,,|________|,,,,,,,,,)\n"
+    " (,,,,,,,,,/________\\,,,,,,,,,)\n"
+    " (,,,,,,,,/__________\\,,,,,,,,)\n"
+    "\n"
+        );
+}
+
+void callEyes(void) //Charles Parker
+{
+	     printf(
+    "                              \n"
+    "        _,..,_         _,..,_     \n"
+    "    _,-`/ o \\ '.     .' / o \\`-,_\n"
+    "     '-.\\___/.-`     `-.\\___/.-'\n"
+            );
+}
+
+void callGhost(void) //Charles Parker
+{
+	
+        printf(
+"       .-.\n"
+"      (o o)\n"
+"  /\\_.' o '. _/\\\n"
+"  |            |\n"
+"   \\          /\n"
+"    `\\      /`\n"
+"   (__)    /\n"
+"   `.__...'\n"
+);
+}
+
+
+
+
+
+
 void room58SM(void)
 {
 	int candles[6] = {0, 0, 0, 0, 0, 0};
