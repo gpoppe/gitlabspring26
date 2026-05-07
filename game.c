@@ -1922,7 +1922,7 @@ void nhfun(void)
 	int playerBlocking;
 	int drennRoll;
 	int playerDmg;
-	int drenDmg;
+	int drennDmg;
 
 	while(1)
 	{
@@ -1942,7 +1942,7 @@ void nhfun(void)
 				printf("2: Approach the city guard.\n");
 				printf("99: Return to the door room\n.");
 				printf("Enter choice: ");
-				scanf("%d" &choice);
+				scanf("%d", &choice);
 				
 				if(choice == 1)
 				{
@@ -2014,7 +2014,7 @@ void nhfun(void)
 				}
 				else
 				{
-					printf("Invalid choice.\n")
+					printf("Invalid choice.\n");
 				}
 				break;
 			case 3:
@@ -2045,7 +2045,7 @@ void nhfun(void)
 				else {
 					printf("You stumble forward in the dimmly lit\n");
 					printf("room. As you go to take a step you here\n");
-					printf("a ghostly voice call out to you. 'Stop,\n")
+					printf("a ghostly voice call out to you. 'Stop,\n");
 					printf("there is a trap!'\n");
 					node = 7;
 					break;
@@ -2054,7 +2054,7 @@ void nhfun(void)
 				printf("Invalid choice.\n");
 			case 4:
 				printf("==================================================\n");
-				printf("                 Frostpine Ridge\n\n")
+				printf("                 Frostpine Ridge\n\n");
 				printf("You reach Drenn's tower. The powerful warlock is\n");
 				printf("waiting. 'I knew you would come. You see I know\n");
 				printf("about the mark on your palm. I know more about you\n");
@@ -2177,9 +2177,9 @@ void nhfun(void)
 			case 12:
 				printf("==================================================\n");
 				printf("                     FIGHT!\n\n");
-				printf("Player HP: %d | Drenn HP: %d\n\n", playerHP, DrennHP);
+				printf("Player HP: %d | Drenn HP: %d\n\n", playerHp, drennHP);
 
-				if (playerVulnerable)
+				if (playerValnerable)
 				{
 					printf("Warning! You are vulnerable this turn!\n\n");
 				}
@@ -2191,7 +2191,7 @@ void nhfun(void)
 				printf("Enter choice: ");
 				scanf("%d", &choice);
 
-				f (choice == 1)
+				if(choice == 1)
 				{
 					playerDmmg  = (rand() % 6) + 1;
 					drennHp   -= playerDmg;
@@ -3708,4 +3708,3 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	        
 	           case 3:
 	           {
-
