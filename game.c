@@ -89,7 +89,8 @@ void hOsuna(void);
 void nnawshin(void);
 void WMGwent(void);
 void nhfun(void);
-void printInitialsAngelM(void);
+void room36AngelM(void);
+int retryRoom36(void);
 
 void dGMyName(void);
 bool pinballPark(int max_player_HP, int max_enemy_HP, int max_numOfPotions);
@@ -403,8 +404,7 @@ int main(int argc, char *argv[])
 			}
 			case 36:
 			{
-				printInitialsAngelM();
-				puts("room36");
+				room36AngelM();
 				break;
 			}
 			case 37:
@@ -1907,18 +1907,549 @@ void WMGwent(void)
 	printf("WM \n");
 }
 
-
 void nhfun(void)
 {
 	puts("NH\n");
 }
 
-
-void printInitialsAngelM(void)
+void room36AngelM(void)
 {
-	printf("AM\n");
+	int choice;
+	int done = 0;
+	int alive = 1;
+	int hidFirst = 0;
+	int readNote = 0;
+	int hideCount = 0;
+	int leaveCount = 0;
+	int sanity = 4;
+	int timeLeft = 5;
+	int correctDoor = rand() % 3 + 1;
+
+	char *warnings[6] = {
+		"Stillness hides you.",
+		"Run before it sees you.",
+		"Voices lie.",
+		"The note wants to be read twice.",
+		"Breath without lungs is not life.",
+		"The quiet door is hungry."
+	};
+
+	puts("You enter Room 36.");
+	puts("The door locks behind you, and the lights die.");
+	puts("Something begins breathing from inside the walls.");
+	puts("A message is scratched into the floor:");
+	puts("\"Survival requires patience, but patience has a limit.\"");
+
+	while(done == 0 && alive == 1)
+	{
+		if(timeLeft <= 0)
+		{
+			puts("\nThe room goes completely silent.");
+			puts("You waited too long.");
+			puts("The creature finally learns the sound of your breathing.");
+			puts("It crawls from the wall and devours you in the dark.");
+			puts("You did not survive Room 36.");
+
+			if(retryRoom36() == 1)
+			{
+				done = 0;
+				alive = 1;
+				hidFirst = 0;
+				readNote = 0;
+				hideCount = 0;
+				leaveCount = 0;
+				sanity = 4;
+				timeLeft = 5;
+				correctDoor = rand() % 3 + 1;
+				puts("\nThe room resets around you...");
+				continue;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		if(sanity <= 0)
+		{
+			puts("\nYour mind breaks.");
+			puts("The warnings spin around you.");
+			puts("The doors melt into mouths.");
+			puts("You choose nothing, so the room chooses for you.");
+			puts("You are devoured by the room itself.");
+			puts("You did not survive Room 36.");
+
+			if(retryRoom36() == 1)
+			{
+				done = 0;
+				alive = 1;
+				hidFirst = 0;
+				readNote = 0;
+				hideCount = 0;
+				leaveCount = 0;
+				sanity = 4;
+				timeLeft = 5;
+				correctDoor = rand() % 3 + 1;
+				puts("\nThe room resets around you...");
+				continue;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		printf("\nSanity: %d | Time left: %d\n", sanity, timeLeft);
+		puts("What do you do?");
+		puts("1. Read the bloody note on the floor");
+		puts("2. Follow the crying voice in the corner");
+		puts("3. Open one of the three black doors");
+		puts("4. Hide under the broken table");
+		puts("5. Try to leave the room");
+		puts("6. Sit down and cry");
+
+		scanf("%d", &choice);
+		timeLeft--;
+
+		if(choice == 1)
+		{
+			if(hidFirst == 0)
+			{
+				puts("You kneel down to read the bloody note.");
+				puts("The floorboards creak beneath you.");
+				puts("Something behind the wall whispers, \"Too eager.\"");
+				puts("A hand breaks through the floor and drags you under.");
+				puts("You did not survive Room 36.");
+
+				if(retryRoom36() == 1)
+				{
+					done = 0;
+					alive = 1;
+					hidFirst = 0;
+					readNote = 0;
+					hideCount = 0;
+					leaveCount = 0;
+					sanity = 4;
+					timeLeft = 5;
+					correctDoor = rand() % 3 + 1;
+					puts("\nThe room resets around you...");
+					continue;
+				}
+				else
+				{
+					alive = 0;
+					done = 1;
+				}
+			}
+			else if(readNote == 1)
+			{
+				puts("You bend down to read the note again.");
+				puts("The letters rearrange themselves.");
+				puts("\"Greed for answers is still greed.\"");
+				puts("The blood on the paper crawls up your hands like veins.");
+				puts("The note has already learned your name.");
+				puts("You did not survive Room 36.");
+
+				if(retryRoom36() == 1)
+				{
+					done = 0;
+					alive = 1;
+					hidFirst = 0;
+					readNote = 0;
+					hideCount = 0;
+					leaveCount = 0;
+					sanity = 4;
+					timeLeft = 5;
+					correctDoor = rand() % 3 + 1;
+					puts("\nThe room resets around you...");
+					continue;
+				}
+				else
+				{
+					alive = 0;
+					done = 1;
+				}
+			}
+			else
+			{
+				int i;
+
+				puts("Because you hid first, the creature lost track of you.");
+				puts("All the warnings appear at once:");
+
+				for(i = 0; i < 6; i++)
+				{
+					printf("%d. \"%s\"\n", i + 1, warnings[i]);
+				}
+
+				puts("Some warnings help you. Some warnings want you dead.");
+				puts("Your sanity drops from trying to understand them.");
+				sanity--;
+
+				puts("\nThe bloody note reads:");
+
+				if(correctDoor == 1)
+				{
+					puts("\"Three doors wait in blackened stone.\"");
+					puts("\"The first screams because it is still afraid.\"");
+					puts("\"The second breathes because something wears it.\"");
+					puts("\"The third is silent because it already ate.\"");
+					puts("\"Choose the door that still fears death.\"");
+				}
+				else if(correctDoor == 2)
+				{
+					puts("\"Three doors wait in blackened stone.\"");
+					puts("\"The first screams, but tells no truth.\"");
+					puts("\"The second breathes, but has no lungs.\"");
+					puts("\"The third is silent because it already ate.\"");
+					puts("\"Choose the door that sounds alive, but is not.\"");
+				}
+				else
+				{
+					puts("\"Three doors wait in blackened stone.\"");
+					puts("\"The first screams to make you panic.\"");
+					puts("\"The second breathes to make you trust it.\"");
+					puts("\"The third is silent, not empty.\"");
+					puts("\"Choose the door that does not beg to be chosen.\"");
+				}
+
+				readNote = 1;
+			}
+		}
+		else if(choice == 2)
+		{
+			puts("You follow the crying voice.");
+			puts("It stops crying and starts laughing.");
+			puts("The thing in the corner was never human.");
+			puts("You did not survive Room 36.");
+
+			if(retryRoom36() == 1)
+			{
+				done = 0;
+				alive = 1;
+				hidFirst = 0;
+				readNote = 0;
+				hideCount = 0;
+				leaveCount = 0;
+				sanity = 4;
+				timeLeft = 5;
+				correctDoor = rand() % 3 + 1;
+				puts("\nThe room resets around you...");
+				continue;
+			}
+			else
+			{
+				alive = 0;
+				done = 1;
+			}
+		}
+		else if(choice == 3)
+		{
+			int doorChoice;
+
+			if(readNote == 0)
+			{
+				puts("You step toward the black doors without reading the note.");
+				puts("The handles twist by themselves.");
+				puts("All three doors open at once.");
+				puts("You hear claws sprinting from every direction.");
+				puts("You did not survive Room 36.");
+
+				if(retryRoom36() == 1)
+				{
+					done = 0;
+					alive = 1;
+					hidFirst = 0;
+					readNote = 0;
+					hideCount = 0;
+					leaveCount = 0;
+					sanity = 4;
+					timeLeft = 5;
+					correctDoor = rand() % 3 + 1;
+					puts("\nThe room resets around you...");
+					continue;
+				}
+				else
+				{
+					alive = 0;
+					done = 1;
+				}
+			}
+			else
+			{
+				puts("Three black doors stand in front of you.");
+				puts("Choose door 1, 2, or 3:");
+				scanf("%d", &doorChoice);
+
+				if(doorChoice == correctDoor)
+				{
+					printf("You open door %d.\n", doorChoice);
+					puts("The hallway beyond it is cold, narrow, and real.");
+					puts("Behind you, the room screams because it lost.");
+					puts("You survived Room 36 and return to the hallway.");
+					done = 1;
+				}
+				else if(doorChoice == 1)
+				{
+					puts("You open the first door.");
+					puts("The screaming stops instantly.");
+					puts("A mouth opens where the hallway should be.");
+					puts("It was not screaming in fear. It was calling you closer.");
+					puts("You did not survive Room 36.");
+
+					if(retryRoom36() == 1)
+					{
+						done = 0;
+						alive = 1;
+						hidFirst = 0;
+						readNote = 0;
+						hideCount = 0;
+						leaveCount = 0;
+						sanity = 4;
+						timeLeft = 5;
+						correctDoor = rand() % 3 + 1;
+						puts("\nThe room resets around you...");
+						continue;
+					}
+					else
+					{
+						alive = 0;
+						done = 1;
+					}
+				}
+				else if(doorChoice == 2)
+				{
+					puts("You open the second door.");
+					puts("Warm breath rolls across your face.");
+					puts("The door was not alive.");
+					puts("Something inside it was.");
+					puts("You did not survive Room 36.");
+
+					if(retryRoom36() == 1)
+					{
+						done = 0;
+						alive = 1;
+						hidFirst = 0;
+						readNote = 0;
+						hideCount = 0;
+						leaveCount = 0;
+						sanity = 4;
+						timeLeft = 5;
+						correctDoor = rand() % 3 + 1;
+						puts("\nThe room resets around you...");
+						continue;
+					}
+					else
+					{
+						alive = 0;
+						done = 1;
+					}
+				}
+				else if(doorChoice == 3)
+				{
+					puts("You open the third door.");
+					puts("There is no scream. No hand. No warning.");
+					puts("Only bones stacked neatly in the dark.");
+					puts("The silence was not empty.");
+					puts("It was chewing.");
+					puts("You did not survive Room 36.");
+
+					if(retryRoom36() == 1)
+					{
+						done = 0;
+						alive = 1;
+						hidFirst = 0;
+						readNote = 0;
+						hideCount = 0;
+						leaveCount = 0;
+						sanity = 4;
+						timeLeft = 5;
+						correctDoor = rand() % 3 + 1;
+						puts("\nThe room resets around you...");
+						continue;
+					}
+					else
+					{
+						alive = 0;
+						done = 1;
+					}
+				}
+				else
+				{
+					puts("That is not one of the doors.");
+					puts("The room punishes hesitation.");
+					sanity--;
+				}
+			}
+		}
+		else if(choice == 4)
+		{
+			hideCount++;
+
+			if(hideCount == 1)
+			{
+				puts("You crawl under the broken table and hold your breath.");
+				puts("Something walks around the room, dragging metal across the floor.");
+				puts("It stops inches away from you, then moves toward the far wall.");
+				puts("It leaves behind another warning scratched into the wood:");
+				puts("\"Now read.\"");
+				hidFirst = 1;
+			}
+			else
+			{
+				puts("You hide under the table again.");
+				puts("This time, the room does not make a sound.");
+				puts("A pale face slowly appears beneath the table beside yours.");
+				puts("\"I checked here already,\" it whispers.");
+				puts("You did not survive Room 36.");
+
+				if(retryRoom36() == 1)
+				{
+					done = 0;
+					alive = 1;
+					hidFirst = 0;
+					readNote = 0;
+					hideCount = 0;
+					leaveCount = 0;
+					sanity = 4;
+					timeLeft = 5;
+					correctDoor = rand() % 3 + 1;
+					puts("\nThe room resets around you...");
+					continue;
+				}
+				else
+				{
+					alive = 0;
+					done = 1;
+				}
+			}
+		}
+		else if(choice == 5)
+		{
+			leaveCount++;
+
+			if(leaveCount == 1)
+			{
+				puts("You pull on the locked door.");
+				puts("It does not open.");
+				puts("Behind you, one of the black doors knocks back.");
+				puts("The room whispers: \"Do not ask twice.\"");
+				sanity--;
+			}
+			else
+			{
+				puts("You try to leave again.");
+				puts("The locked door stays shut.");
+				puts("One of the black doors bursts open behind you.");
+				puts("A starving thing crawls out and devours you before you can scream.");
+				puts("You did not survive Room 36.");
+
+				if(retryRoom36() == 1)
+				{
+					done = 0;
+					alive = 1;
+					hidFirst = 0;
+					readNote = 0;
+					hideCount = 0;
+					leaveCount = 0;
+					sanity = 4;
+					timeLeft = 5;
+					correctDoor = rand() % 3 + 1;
+					puts("\nThe room resets around you...");
+					continue;
+				}
+				else
+				{
+					alive = 0;
+					done = 1;
+				}
+			}
+		}
+		else if(choice == 6)
+		{
+			puts("You collapse to the floor and begin to cry.");
+
+			if(sanity <= 1)
+			{
+				puts("You cannot stop.");
+				puts("Your crying echoes through the room.");
+				puts("Something answers.");
+				puts("It finds you by your voice.");
+				puts("You did not survive Room 36.");
+
+				if(retryRoom36() == 1)
+				{
+					done = 0;
+					alive = 1;
+					hidFirst = 0;
+					readNote = 0;
+					hideCount = 0;
+					leaveCount = 0;
+					sanity = 4;
+					timeLeft = 5;
+					correctDoor = rand() % 3 + 1;
+					puts("\nThe room resets around you...");
+					continue;
+				}
+				else
+				{
+					alive = 0;
+					done = 1;
+				}
+			}
+			else
+			{
+				puts("Your breathing becomes louder.");
+				puts("The room listens.");
+				puts("The walls whisper:");
+				puts("\"Time is not waiting for you.\"");
+				puts("\"Neither am I.\"");
+
+				sanity -= 2;
+				timeLeft -= 1;
+
+				if(sanity < 0)
+				{
+					sanity = 0;
+				}
+
+				if(timeLeft < 0)
+				{
+					timeLeft = 0;
+				}
+
+				puts("Your sanity drops. Your time slips away.");
+			}
+		}
+		else
+		{
+			puts("Invalid choice.");
+			puts("The walls move closer.");
+			sanity--;
+		}
+	}
+
+	puts("Room 36 is finished.");
 }
 
+int retryRoom36(void)
+{
+	int retry;
+
+	puts("\nYou have died in Room 36.");
+	puts("1. Try again");
+	puts("2. Return to hallway");
+
+	scanf("%d", &retry);
+
+	while(retry != 1 && retry != 2)
+	{
+		puts("Invalid choice. Enter 1 or 2:");
+		scanf("%d", &retry);
+	}
+
+	return retry;
+}
 
 void RT_room57(void)
 {
