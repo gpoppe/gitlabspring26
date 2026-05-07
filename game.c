@@ -2177,7 +2177,7 @@ void nhfun(void)
 			case 12:
 				printf("==================================================\n");
 				printf("                     FIGHT!\n\n");
-				printf("Player HP: %d | Drenn HP: %d\n\n", playerHp, drennHP);
+				printf("Player HP: %d | Drenn HP: %d\n\n", playerHp, drennHp);
 
 				if (playerValnerable)
 				{
@@ -2258,7 +2258,7 @@ void nhfun(void)
 				playerHp -= drennDmg;
 				printf("You take %d damage!\n", drennDmg);
 
-				playerVulnerable = 0;
+				playerValnerable = 0;
 
 				if(playerHp <= 0)
 				{
@@ -3708,5 +3708,3 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	        
 	           case 3:
 	           {
-
-
