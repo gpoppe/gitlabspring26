@@ -1932,7 +1932,7 @@ void nhfun(void)
 				printf("==================================================\n");
 				printf("                  THE LOST CROWN\n");
 				printf("==================================================\n\n");
-				printf("You are %s, a wandering sellsword.\n", name);
+				printf("You are a wandering sellsword.\n");
 				printf("The kingdom of Astrial has fallen since the\n");
 				printf("High Crown was stolen. You arrive at the\n");
 				printf("ruined capital gate where two figures await you.\n");
@@ -1940,7 +1940,7 @@ void nhfun(void)
 				printf("you want to take.\n");
 				printf("1: Approach the hooded messenger.\n");
 				printf("2: Approach the city guard.\n");
-				printf("99: Return to the door room\n.")
+				printf("99: Return to the door room\n.");
 				printf("Enter choice: ");
 				scanf("%d" &choice);
 				
@@ -2036,9 +2036,9 @@ void nhfun(void)
 				printf("stone alter.\n");
 
 				if(inventory[0] == 1) {
-					printf("With the tourch you easily see a trap\n")
-					printf("hidden on the ground. You are able to\n")
-					printf("disarm it and take the crown.\n")
+					printf("With the tourch you easily see a trap\n");
+					printf("hidden on the ground. You are able to\n");
+					printf("disarm it and take the crown.\n");
 					node = 6;
 					break;
 				}
@@ -2082,11 +2082,11 @@ void nhfun(void)
 			case 5:
 				printf("==================================================\n");
 				printf("                   The Ambush\n\n");
-				printf("You set up a perfect ambush for Drenn's soldiers,\n")
+				printf("You set up a perfect ambush for Drenn's soldiers,\n");
 				printf("but Drenn himself escapes. A wounded soldier\n");
 				printf("tells you the real crown has already been recovered\n");
-				printf("by Drenn and is in his layer at Frostpine Ridge.\n")
-				printf("You quickly set out for your new destination.\n")
+				printf("by Drenn and is in his layer at Frostpine Ridge.\n");
+				printf("You quickly set out for your new destination.\n");
 
 				node = 4;
 				break;
@@ -2097,7 +2097,7 @@ void nhfun(void)
 				printf("hold it, you feel your palm burn, it pulling the\n");
 				printf("crown to your head.\n");
 				printf("9: Put on the crown and claim your birthright.\n");
-				printf("10: Destroy it, no one should be king.\n")
+				printf("10: Destroy it, no one should be king.\n");
 				printf("Enter choice: ");
 				scanf("%d", &choice);
 				if(choice == 9)
@@ -2193,21 +2193,21 @@ void nhfun(void)
 
 				f (choice == 1)
 				{
-					player_dmg  = (rand() % 6) + 1;
-					drenn_hp   -= player_dmg;
-					printf("You attack for %d damage!\n", player_dmg);
+					playerDmmg  = (rand() % 6) + 1;
+					drennHp   -= playerDmg;
+					printf("You attack for %d damage!\n", playerDmg);
 				}
 				else if (choice == 2)
 				{
-					player_blocking = 1;
+					playerBlocking = 1;
 					printf("You raise your guard and brace for impact.\n");
 				}
 				else if (choice == 3)
 				{
-					player_dmg = (rand() % 7) + 4;
-					drenn_hp -= player_dmg;
-					player_vulnerable = 1;
-					printf("Soulfire erupts from your palm for %d damage!\n", player_dmg);
+					playerDmg = (rand() % 7) + 4;
+					drennHp -= playerDmg;
+					playerVulnerable = 1;
+					printf("Soulfire erupts from your palm for %d damage!\n", playerDmg);
 					printf("You are left vulnerable!\n");
 				}
 				else if (choice == 4)
@@ -2222,45 +2222,45 @@ void nhfun(void)
 					break;
 				}
 
-				if (drenn_hp <= 0)
+				if (drennHp <= 0)
 				{
 					node = 13;
 					break;
 				}
 
 
-				drenn_roll = (rand() % 3) + 1;
+				drennRoll = (rand() % 3) + 1;
 
-				if (drenn_roll == 3)
+				if (drennRoll == 3)
 				{
-					drenn_dmg = (rand() % 5) + 3;
+					drennDmg = (rand() % 5) + 3;
 					printf("Drenn charges a Dark Pulse!\n");
 				}
 				else
 				{
-					drenn_dmg = (rand() % 4) + 1;
+					drennDmg = (rand() % 4) + 1;
 					printf("Drenn attacks!\n");
 				}
 
-				if (player_vulnerable)
+				if (playerVulnerable)
 				{
-					drenn_dmg += 3;
+					drennDmg += 3;
 				}
-				if (player_blocking)
+				if (playerBlocking)
 				{
-					drenn_dmg /= 2;
+					drennDmg /= 2;
 				}
-				if (drenn_dmg < 0)
+				if (drennDmg < 0)
 				{
-					drenn_dmg  = 0;
+					drennDmg  = 0;
 				}
 
-				player_hp -= drenn_dmg;
-				printf("You take %d damage!\n", drenn_dmg);
+				playerHp -= drennDmg;
+				printf("You take %d damage!\n", drennDmg);
 
-				player_vulnerable = 0;
+				playerVulnerable = 0;
 
-				if(player_hp <= 0)
+				if(playerHp <= 0)
 				{
 					node = 14;
 				}
@@ -3708,3 +3708,4 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	        
 	           case 3:
 	           {
+
