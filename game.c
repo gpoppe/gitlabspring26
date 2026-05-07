@@ -2193,8 +2193,8 @@ void nhfun(void)
 
 				if(choice == 1)
 				{
-					playerDmmg  = (rand() % 6) + 1;
-					drennHp   -= playerDmg;
+					playerDmg  = rand() % 6) + 1;
+					drennHp  -= playerDmg;
 					printf("You attack for %d damage!\n", playerDmg);
 				}
 				else if (choice == 2)
@@ -2206,7 +2206,7 @@ void nhfun(void)
 				{
 					playerDmg = (rand() % 7) + 4;
 					drennHp -= playerDmg;
-					playerVulnerable = 1;
+					playerValnerable = 1;
 					printf("Soulfire erupts from your palm for %d damage!\n", playerDmg);
 					printf("You are left vulnerable!\n");
 				}
@@ -3708,3 +3708,4 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	        
 	           case 3:
 	           {
+
