@@ -1917,7 +1917,7 @@ void nhfun(void)
 
 	// combat states
 	int playerHp = 20;
-	int drennHP = 15;
+	int drennHp = 15;
 	int playerValnerable;
 	int playerBlocking;
 	int drennRoll;
@@ -2193,7 +2193,7 @@ void nhfun(void)
 
 				if(choice == 1)
 				{
-					playerDmg  = rand() % 6) + 1;
+					playerDmg  = rand() % 6 + 1;
 					drennHp  -= playerDmg;
 					printf("You attack for %d damage!\n", playerDmg);
 				}
@@ -2242,7 +2242,7 @@ void nhfun(void)
 					printf("Drenn attacks!\n");
 				}
 
-				if (playerVulnerable)
+				if (playerValnerable)
 				{
 					drennDmg += 3;
 				}
@@ -3708,4 +3708,5 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions)
 	        
 	           case 3:
 	           {
+
 
