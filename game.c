@@ -1913,12 +1913,13 @@ void nhfun(void)
 {
 	int node = 0;
 	int choice = 0;
+	int inventory[3] = {0,0,0};
 
 	// combat states
 	int playerHp = 20;
 	int drennHP = 15;
-	int playerValnerable = 0;
-	int playerBlocking = 0;
+	int playerValnerable;
+	int playerBlocking;
 	int drennRoll;
 	int playerDmg;
 	int drenDmg;
@@ -1939,6 +1940,7 @@ void nhfun(void)
 				printf("you want to take.\n");
 				printf("1: Approach the hooded messenger.\n");
 				printf("2: Approach the city guard.\n");
+				printf("99: Return to the door room\n.")
 				printf("Enter choice: ");
 				scanf("%d" &choice);
 				
@@ -1949,6 +1951,10 @@ void nhfun(void)
 				else if(choice == 2)
 				{
 					node = 2;
+				}
+				else if(choice == 99)
+				{
+					node == 99;
 				}
 				else
 				{
@@ -2014,10 +2020,280 @@ void nhfun(void)
 			case 3:
 				printf("==================================================\n");
 				printf("                The Ashwood Tomb\n\n");
-				printf("Your reach the tomb and no one is in site. Deep in\n");
-				printf("its caves you find the crown glowing on a stone.\n");
-				printf("alter, but your keen eyes detect a trap on the\n");
-				printf("floor.
+				printf("Your reach the tomb and no one is in site. It is\n");
+				printf("too dark to see inside but a torch sits near the\n");
+				printf("entrance to the caves. Do you take it?\n");
+				printf("Enter 1 for yes, 0 for no.\n");
+				printf("Enter choice: ");
+				scanf("%d", &choice);
+
+				if(choice == 1)
+				{
+					inventory[0] = 1;
+				}
+
+				printf("Deep in the tomb you see the crown glowing on a\n");
+				printf("stone alter.\n");
+
+				if(inventory[0] == 1) {
+					printf("With the tourch you easily see a trap\n")
+					printf("hidden on the ground. You are able to\n")
+					printf("disarm it and take the crown.\n")
+					node = 6;
+					break;
+				}
+				else {
+					printf("You stumble forward in the dimmly lit\n");
+					printf("room. As you go to take a step you here\n");
+					printf("a ghostly voice call out to you. 'Stop,\n")
+					printf("there is a trap!'\n");
+					node = 7;
+					break;
+				}
+
+				printf("Invalid choice.\n");
+			case 4:
+				printf("==================================================\n");
+				printf("                 Frostpine Ridge\n\n")
+				printf("You reach Drenn's tower. The powerful warlock is\n");
+				printf("waiting. 'I knew you would come. You see I know\n");
+				printf("about the mark on your palm. I know more about you\n");
+				printf("then you probably know about yourself. That mark\n");
+				printf("proves you are the rightful owner of this.' He\n");
+				printf("points at the crown in front of him. 'Join me and\n");
+				printf("we can rule this kingdowm together!'\n");
+				printf("6: Grab the crown and run while Drenn is distracted.\n");
+				printf("12: Draw your sword and fight!\n");
+				printf("Enter choice: ");
+				scanf("%d", &choice);
+				if(choice == 6)
+				{
+					node = 6;
+				}
+				else if(choice == 12)
+				{
+					node = 12;
+				}
+				else
+				{
+					printf("Invalid choice.\n");
+				}
+				break;
+			case 5:
+				printf("==================================================\n");
+				printf("                   The Ambush\n\n");
+				printf("You set up a perfect ambush for Drenn's soldiers,\n")
+				printf("but Drenn himself escapes. A wounded soldier\n");
+				printf("tells you the real crown has already been recovered\n");
+				printf("by Drenn and is in his layer at Frostpine Ridge.\n")
+				printf("You quickly set out for your new destination.\n")
+
+				node = 4;
+				break;
+			case 6:
+				printf("==================================================\n");
+				printf("                The Crown in Hand\n\n");
+				printf("You have managed to recover the crown, but as you\n");
+				printf("hold it, you feel your palm burn, it pulling the\n");
+				printf("crown to your head.\n");
+				printf("9: Put on the crown and claim your birthright.\n");
+				printf("10: Destroy it, no one should be king.\n")
+				printf("Enter choice: ");
+				scanf("%d", &choice);
+				if(choice == 9)
+				{
+					node = 9;
+				}
+				else if(choice == 10)
+				{
+					node = 10;
+				}
+				else
+				{
+					printf("Invalid choice.\n");
+				}
+				break;
+			case 7:
+				printf("==================================================\n");
+				printf("                     Birthright\n\n");
+				printf("The ghostly voice saves you from a grim dealth. You\n");
+				printf("soon learn it belongs to the ghost of King Aldric,\n");
+				printf("king over 200 years ago. He confirm that this crown\n");
+				printf("belongs to you as you are his lost heir, but warns of\n");
+				printf("a curse that prevents anyone from wearing the crown\n");
+				printf("from finding true happinness.\n");
+				printf("9: Accept the curse and take the crown.\n");
+				printf("11: Ask if their is anyway to break the curse.\n");
+				printf("Enter choice: ");
+				scanf("%d", &choice);
+
+				if(choice == 9)
+				{
+					node = 9;
+				}
+				else if(choice == 11)
+				{
+					node = 11;
+				}
+				else
+				{
+					printf("Invalid choice.\n");
+				}
+				break;
+			case 9:
+				printf("==================================================\n");
+				printf("        Ending A: The Returned King\n\n");
+				printf("As the crown settles on your brow, the mark on your\n");
+				printf("burns a bright gold then fades. You feel the power of\n");
+				printf("your ancesters in your blood. You know you have the\n");
+				printf("power to bend the kingdom to your will, but you will\n");
+				printf("never enjoy it.\n\n");
+				printf("Game over. You have experienced 1//5 endings. Enter\n");
+				printf("the room to try again.\n\n");
+				return;
+			case 10:
+				printf("==================================================\n");
+				printf("           Ending B: The Nameless Hero\n\n");
+				printf("You smash the crown on the stone floor. YOu feel\n");
+				printf("your hand glow as the curse releases. The relm\n");
+				printf("has no king, but your happiness is intact.\n");
+				printf("Legends will speak of the wanderer who gave up\n");
+				printf("power for happiness.\n");
+				printf("Game over. You have experienced 1//5 endings. Enter\n");
+				printf("the room to try again.\n\n");
+				return;
+			case 11:
+				printf("==================================================\n");
+				printf("              Ending C: Lost Hope\n\n");
+				printf("The ghost kinds silence speaks volumes. There is no\n");
+				printf("way to break the curse. Despite this you search for\n");
+				printf("weeks, giving Drenn time to rally his troops. He\n");
+				printf("Eventually build up the strngth to seize the crown\n");
+				printf("from you. Although he has no claim, the kingdom\n");
+				printf("bends to his will and falls into chaos.");
+				printf("Game over. You have experienced 1//5 endings. Enter\n");
+				printf("the room to try again.\n\n");
+				return;
+			case 12:
+				printf("==================================================\n");
+				printf("                     FIGHT!\n\n");
+				printf("Player HP: %d | Drenn HP: %d\n\n", playerHP, DrennHP);
+
+				if (playerVulnerable)
+				{
+					printf("Warning! You are vulnerable this turn!\n\n");
+				}
+
+				printf("1: Attack (1-6 damage)\n");
+				printf("2: Block (halve incoming damage)\n");
+				printf("3: Soulfire (4-10 damage, leaves you vulnerable)\n");
+				printf("4. Flee\n");
+				printf("Enter choice: ");
+				scanf("%d", &choice);
+
+				f (choice == 1)
+				{
+					player_dmg  = (rand() % 6) + 1;
+					drenn_hp   -= player_dmg;
+					printf("You attack for %d damage!\n", player_dmg);
+				}
+				else if (choice == 2)
+				{
+					player_blocking = 1;
+					printf("You raise your guard and brace for impact.\n");
+				}
+				else if (choice == 3)
+				{
+					player_dmg = (rand() % 7) + 4;
+					drenn_hp -= player_dmg;
+					player_vulnerable = 1;
+					printf("Soulfire erupts from your palm for %d damage!\n", player_dmg);
+					printf("You are left vulnerable!\n");
+				}
+				else if (choice == 4)
+				{
+					printf("You grab what you can and flee the tower!\n");
+					node = 6;
+					break;
+				}
+				else
+				{
+					printf("Invalid choice.\n");
+					break;
+				}
+
+				if (drenn_hp <= 0)
+				{
+					node = 13;
+					break;
+				}
+
+
+				drenn_roll = (rand() % 3) + 1;
+
+				if (drenn_roll == 3)
+				{
+					drenn_dmg = (rand() % 5) + 3;
+					printf("Drenn charges a Dark Pulse!\n");
+				}
+				else
+				{
+					drenn_dmg = (rand() % 4) + 1;
+					printf("Drenn attacks!\n");
+				}
+
+				if (player_vulnerable)
+				{
+					drenn_dmg += 3;
+				}
+				if (player_blocking)
+				{
+					drenn_dmg /= 2;
+				}
+				if (drenn_dmg < 0)
+				{
+					drenn_dmg  = 0;
+				}
+
+				player_hp -= drenn_dmg;
+				printf("You take %d damage!\n", drenn_dmg);
+
+				player_vulnerable = 0;
+
+				if(player_hp <= 0)
+				{
+					node = 14;
+				}
+				break;
+			case 13:
+				printf("==================================================\n");
+				printf("        Ending D: The Unburdeded King\n\n");
+				printf("Drenns's journal contained a ritual to lift the\n");
+				printf("curse of the crown. You gather the highest wizards\n");
+				printf("of the land and preform the ritual at down. As the sun\n");
+				printf("rises, the mark on your hand fades to nothing. The crown\n");
+				printf("easily rests on your head and the realm has a king once\n");
+				printf("again. And you are happy to rule.");
+				printf("Game over. You have experienced 1//5 endings. Enter\n");
+				printf("the room to try again.\n\n");
+				return;
+			case 14:
+				printf("==================================================\n");
+				printf("        Ending E: Fall in the Tower\n\n");
+				printf("Drenn stands over you and laughs. The crown is his\n");
+				printf("now and the kingdom will bend to his rule. The last\n");
+				printf("thing you see is him dropping it on his head.\n");
+				printf("Game over. You have experienced 1//5 endings. Enter\n");
+				printf("the room to try again.\n\n");
+				return;
+			case 99:
+				return;
+			default:
+				printf("Invalid node, returning to start");
+				node = 0;
+				break;
+		}
+	}
 }
 
 
