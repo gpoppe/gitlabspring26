@@ -48,7 +48,6 @@ void function13AG(void);
 void theSigmaMethod(void);
 void jbInit(void);
 
-void printInitials(void);
 
 void ip21(void);
 void folksamEV(void);
@@ -107,10 +106,6 @@ bool spaceSpectacle(int max_player_HP, int max_enemy_HP, int max_numOfPotions);
 
 int main(int argc, char *argv[])
 {
-
-	printInitials();
-
-
 	int choice = 0;
 	char name[30] = "bob";
 	srand(time(NULL));
