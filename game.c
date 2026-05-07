@@ -198,7 +198,7 @@ int main(int argc, char *argv[])
 			case 14:
 			{
 				totallyAUniqueFunctionName();
-                int userChoice = 0;
+                int userChoice[1] = {0};
                 printf("\nYou open door 14 and the entrance is glowing. You step forward with your eyes covered.");
                 printf("\nYou uncover your eyes and see that you are in a forest in the middle of the night.");
                 printf("\nYou look around you and you are surrounded by trees but you are currently at a camp site.");
@@ -210,19 +210,19 @@ int main(int argc, char *argv[])
                 printf("\n\t2. Get something that is potentially useful from the backpack next to you.");
                 printf("\n\t3. You can run away.\n");
                 printf("Select an option: ");
-                scanf("%d",&userChoice);
-                while(userChoice != 1 && userChoice != 2 && userChoice != 3)
+                scanf("%d",&userChoice[0]);
+                while(userChoice[0] != 1 && userChoice[0] != 2 && userChoice[0] != 3)
                 {
                     printf("\nInvalid choice. Please enter a valid number: ");
-                    scanf("%d",&userChoice);
+                    scanf("%d",&userChoice[0]);
                 }
-                if(userChoice == 1)
+                if(userChoice[0] == 1)
                 {
                     printf("\nYou make yourself look big by spreading your arms and legs out.");
                     printf("\nYou are nervous but are willing to stay still to survive.");
                     printf("\nBecause you are \"bigger\" the bear ignores you and walks away.");
                 }
-                if(userChoice == 2)
+                if(userChoice[0] == 2)
                 {
                     int randomNum = (rand() % 3) + 1;
                     /*   Generates a number between 1 - 3 because the user is getting something quickly from the backpack
@@ -255,7 +255,7 @@ int main(int argc, char *argv[])
                         break;
                     }
                 }
-                if(userChoice == 3)
+                if(userChoice[0] == 3)
                 {
                     printf("\nYou run away into the dark forest full of trees.");
                     printf("\nAs you were running you fall due to a branch on the forest floor you didn't see due to the darkness.");
@@ -278,18 +278,18 @@ int main(int argc, char *argv[])
                 printf("\n\t1. A medical kit");
                 printf("\n\t2. Canned food");
                 printf("\nSelect an option: ");
-                scanf("%d",&userChoice);
-                while(userChoice != 1 && userChoice != 2)
+                scanf("%d",&userChoice[0]);
+                while(userChoice[0] != 1 && userChoice[0] != 2)
                 {
                     printf("\nInvalid choice. Please enter a valid number: ");
-                    scanf("%d",&userChoice);
+                    scanf("%d",&userChoice[0]);
                 }
-                if(userChoice == 1)
+                if(userChoice[0] == 1)
                 {
                     printf("\nYou grab the medical kit and use it on yourself.");
                     printf("\nYou feel like a new person and left the abandoned cabin.");
                 }
-                if(userChoice == 2)
+                if(userChoice[0] == 2)
                 {
                     printf("\nYou open the canned food and start eating the food.");
                     printf("\nAfter you are done eating you look at the can and see that the expiration date was 20 years ago.");
@@ -303,14 +303,14 @@ int main(int argc, char *argv[])
                 printf("\n\t1. Take the left path.");
                 printf("\n\t2. Take the right path.");
                 printf("\nSelect an option: ");
-                scanf("%d",&userChoice);
-                if(userChoice == 1)
+                scanf("%d",&userChoice[0]);
+                if(userChoice[0] == 1)
                 {
                     printf("\nYou decide to take the left path and walk that path.");
                     printf("\nYou walk for a few minutes until you see a sign saying that the path leads to a town.");
                     printf("\nYou smile and keep walking forward hoping to ask someone they know where you are located.");
                 }
-                else if(userChoice == 2)
+                else if(userChoice[0] == 2)
                 {
                     printf("\nYou decide to take the right path and walk that path,");
                     printf("\nYou walk for you think was 30 minutes and then see a faint light between 2 trees and some bushes.");
@@ -419,31 +419,31 @@ int main(int argc, char *argv[])
 				printf("\nYou continue walking while looking at the room number and you encounter room number 14 again.");
 				printf("\nYou realized you are walking in an infinite hallway and you start to think of what you can do.");
 				printf("\nSince you are in an infinite hallway you can think of a few things you can do.");
-				userChoice = 0;
-				while(userChoice != 2)
+				userChoice[0] = 0;
+				while(userChoice[0] != 2)
 				{
 					printf("\n\t1. Walk forward.\n\t2. Listen carefully for clues.\n\t3. Open a nearby door.");
 					printf("\nSelect an option: ");
-					scanf("%d",&userChoice);
-					while(userChoice != 1 && userChoice != 2 && userChoice != 3)
+					scanf("%d",&userChoice[0]);
+					while(userChoice[0] != 1 && userChoice[0] != 2 && userChoice[0] != 3)
 					{
 						printf("\nInvalid choice. Please enter a valid number: ");
 						scanf("%d",&userChoice);
 					}
-					if(userChoice == 1)
+					if(userChoice[0] == 1)
 					{
 						printf("\nYou walk forward and continue walking at the hallway.");
 						printf("\nYou then walk at the beginning of the hallway.");
 						printf("\nSince you are in an infinite hallway you can think of a few things you can do.");
 					}
-					if(userChoice == 2)
+					if(userChoice[0] == 2)
 					{
 						printf("\nYou listen for any type of noise and there is a door that is playing music behind it.");
 						printf("\nYou open the door and you see a hospital room with a radio playing music.");
 						printf("\nYou look around the room and their is an open window.");
 						printf("\nYou decide to escape the infinite hallway by hopping out the window.");
 					}
-					if(userChoice == 3)
+					if(userChoice[0] == 3)
 					{
 						printf("\nYou open a nearby door and see the same infinite hallway.");
 						printf("\nSince you are in an infinite hallway you can think of a few things you can do.");
@@ -453,12 +453,12 @@ int main(int argc, char *argv[])
 				printf("\n\t1. Go back to town\n\t2. Go back to the forest");
 				printf("\nSelect an option: ");
 				scanf("%d",&userChoice);
-				while(userChoice != 1 && userChoice != 2)
+				while(userChoice[0] != 1 && userChoice[0] != 2)
 				{
 					printf("\nInvalid choice. Please enter a valid number: ");
-					scanf("%d",&userChoice);
+					scanf("%d",&userChoice[0]);
 				}
-				if(userChoice == 1)
+				if(userChoice[0] == 1)
 				{
 					printf("\nYou decide to go back to town and keep walking until you reach the middle of the town.");
 					printf("\nYou are surrounded by houses and then you hear footsteps.");
@@ -472,7 +472,7 @@ int main(int argc, char *argv[])
 					break;
 
 				}
-				if(userChoice == 2)
+				if(userChoice[0] == 2)
 				{
 					printf("\nYou decide to walk into the forest and walk until you reach an underground bunker.");
 					printf("\nYou open the bunker door and walk down the bunker.");
