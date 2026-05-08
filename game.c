@@ -514,9 +514,83 @@ int main(int argc, char *argv[])
 
 
 void afFun(void)
-{ 
-	puts("AFroom52");
+{
+    printf("\n room 52: The crypt of the lost bananas of the curator\n");
+
+    int Answers[5] = {2, 2, 1, 4, 2}; // array
+    int decision;
+    int score = 0;
+    int failures = 0;
+    int start = rand() % 5;// random number
+    int i;
+    int q;
+
+    for(i = 0; i < 5; i++)//loop for my questions
+    {
+        q = (start + i) % 5;
+
+        printf("\nQuestion %d:\n", i+1);
+
+        switch(q)
+        {
+            case 0:
+                printf("Which banana is the ripest?\n");
+                printf("1) Green  2) Yellow  3) Brown  4) Black  5) Moldy\n");
+                break;
+
+            case 1:
+                printf("How many bananas are in a bunch?\n");
+                printf("1) 4  2) 8  3) 16  4) 32  5) 64\n");
+                break;
+
+            case 2:
+                printf("What color is a perfect banana?\n");
+                printf("1) Yellow  2) Blue  3) Purple  4) Black  5) Red\n");
+                break;
+
+            case 3:
+                printf("What happens if you slip on a banana peel?\n");
+                printf("1) Nothing  2) You fly  3) You die  4) You fall  5) You win\n");
+                break;
+
+            case 4:
+                printf("Who guards the bananas?\n");
+                printf("1) A cat  2) The curator  3) A robot  4) A potato  5) Nobody\n");
+                break;
+        }
+
+        printf("Your answer (use 1-5): ");
+        scanf("%d", &decision);
+
+        if(decision == Answers[q])
+        {
+            printf("Correct! The curator rewards your knowledge with a banana.\n");
+            score++;
+        }
+        else
+        {
+            printf("Wrong... no banana for you.\n");
+            failures++;
+        }
+
+        if(failures == 3)//if you fail 3 question you fail
+        {
+            printf("\nYou failed 3 times! The curator banishes you to a lifetime of brown bananas!\n");
+            printf("Returning to main room...\n\n");
+            return;
+        }
+    }
+
+    printf("\nFinal Score: %d out of 5\n", score);
+
+    if(score >= 3)
+        printf("You survived Room 52 and pleased the curator! He rewards you with a GOLDEN BANANA!!!\n");
+    else
+        printf("You couldn't get enough questions right...\n");
+
+    printf("Returning to main room...\n\n");
 }
+
 void dcFunc(void)
 {
     printf("DCroom19\n");
