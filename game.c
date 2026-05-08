@@ -12,7 +12,7 @@
 //Nishat Nawshin
 //Angel Martinez
 //Dagmawe (Bobby) Afework
-
+//Julian Gonzalez Balsells
 
 
 
@@ -60,7 +60,7 @@ void gameroom30(void);
 
 void printInitialsAjewett(void);
 
-
+//---------- Julian Gonzalez Balsells Functions ----------//
 void jgFun(void);
 void jgKitchen(void);
 void jgBasement(void);
@@ -86,7 +86,7 @@ bool jgBedroomChecked = false;
 bool jgBathroomChecked = false;
 bool jgStudyRoomChecked = false;
 bool jgGameRunning = true;
-
+//--------------------------------------------------------//
 void room58SM(void);
 int getLitCount58SM(int candles[]);
 void brooklynstitt(void);
@@ -1836,72 +1836,77 @@ void printInitialsAjewett(void)
 	printf("AJ\n");
 }
 
-void jgFun(void){
+void jgFun(void)
+{
 	char userName[50];
 	char evilGuy[] = "Larry Pope";
 	char response;	
 	srand(time(NULL));
 
-    	printf("Enter your username: ");
-    	scanf("%49s", userName);
+    printf("Enter your username: ");
+    scanf("%49s", userName);
 
 	
-    	printf("You are %s.\n", userName);
-    	sleep(1);
+    printf("You are %s.\n", userName);
+    sleep(1);
    	printf("%s walks in the quiet streets of Opulence, California.\n", userName);
-    	printf("The air is quiet... Not a single car has passed by.\n");
-    	sleep(2); 
-    	printf("When suddenly a man steps out from the dark, holding a large amount of cash.\n");
+    printf("The air is quiet... Not a single car has passed by.\n");
+    sleep(2); 
+    printf("When suddenly a man steps out from the dark, holding a large amount of cash.\n");
 
 	printf("%s: Evening.\n", evilGuy);
-    	printf("%s: Oh, hi there!\n", userName);
-    	printf("%s: You look interested in cash, aren't you?\n", evilGuy);
-    	sleep(1);
+    printf("%s: Oh, hi there!\n", userName);
+    printf("%s: You look interested in cash, aren't you?\n", evilGuy);
+    sleep(1);
 
-    	printf("%s: Interested?\n", evilGuy);
-    	sleep(1);
+    printf("%s: Interested?\n", evilGuy);
+    sleep(1);
     
-    	printf("%s: You're damn right, free cash. No catch to this.\n", evilGuy);
-    	printf("%s: You want it or not?\n", evilGuy);
-    	sleep(1);
+    printf("%s: You're damn right, free cash. No catch to this.\n", evilGuy);
+    printf("%s: You want it or not?\n", evilGuy);
+    sleep(1);
     
-    	printf("Do you accept or reject? (y/n)\n");
-    	scanf(" %c", &response);
+    printf("Do you accept or reject? (y/n)\n");
+    scanf(" %c", &response);
        
 	response = tolower(response);
 
-	while (response != 'y' && response != 'n'){
+	while (response != 'y' && response != 'n')
+	{
 		printf("Invalid Input! Respond either (y/n): ");
 		scanf(" %c", &response);
 		response = tolower(response);
 	}
-	if (response == 'y'){
+	if (response == 'y')
+	{
 		printf("%s: Excellent.\n", evilGuy);
-        	sleep(1);
-        	printf("%s: See? I knew you were smarter than most.\n", evilGuy);        
-        	sleep(1);
-        	printf("%s: Here, take the cash, it's all yours.\n", evilGuy);
-        	sleep(1);
+        sleep(1);
+        printf("%s: See? I knew you were smarter than most.\n", evilGuy);        
+    	sleep(1);
+       	printf("%s: Here, take the cash, it's all yours.\n", evilGuy);
+    	sleep(1);
         	
 		printf("You step closer and reach for the cash.\n");
-        	sleep(1);
-        	printf("%s: Good choice.\n", evilGuy);
-        	sleep(1);
-        	printf("Before you can react, something solid crashes into the back of your skull.\n");
-        	sleep(2);
-        	printf("Everything goes dark.\n");
-	} else if (response == 'n'){
+        sleep(1);
+        printf("%s: Good choice.\n", evilGuy);
+        sleep(1);
+        printf("Before you can react, something solid crashes into the back of your skull.\n");
+        sleep(2);
+        printf("Everything goes dark.\n");
+	} 
+	else if (response == 'n')
+	{
 		printf("%s: No, eh?\n", evilGuy);
-        	sleep(1);
-        	printf("%s: Shame.\n", evilGuy);
-        	sleep(1);
-        	printf("You begin to walk away.\n");
-        	sleep(1);
-        	printf("%s: I really wasn't asking.\n", evilGuy);
-        	sleep(1);
-        	printf("You hear fast footsteps behind you.\n");
-        	sleep(1);
-        	printf("Then, darkness.\n");
+        sleep(1);
+        printf("%s: Shame.\n", evilGuy);
+        sleep(1);
+        printf("You begin to walk away.\n");
+        sleep(1);
+        printf("%s: I really wasn't asking.\n", evilGuy);
+        sleep(1);
+        printf("You hear fast footsteps behind you.\n");
+        sleep(1);
+        printf("Then, darkness.\n");
 	}
     	printf("Your eyes slowly open.\n");
     	printf("Your head throbs with pain. The room is dark, cold and unfamiliar.\n");
@@ -1928,33 +1933,60 @@ void jgFun(void){
     	printf("Find the phone, the key, and the code.\n");
     	sleep(1);
     	printf("Then escape before Larry Pope wakes up.\n");
-	sleep(1);
+		sleep(1);
 	
 	// Requirement: loop keeps the running until win or lose.
-	while (jgGameRunning){
+	while (jgGameRunning)
+	{
         int choice;
-
-        printf("\nNoise Level: %d / 3\n", jgNoiseLevel);        
-
-
-      printf("Inventory: ");
-        if(!jgHasPhone && !jgHasKey && !jgHasCode){
-		printf("Empty");	
-	}
-        if (jgHasPhone) printf("Phone ");
-        if (jgHasKey) printf("Key ");
-        if (jgHasCode) printf("Code ");
-        printf("\n");
+		
+		printf("\nNoise Level: %d / 3\n", jgNoiseLevel);        
+      	printf("Inventory: ");
+        
+		if(!jgHasPhone && !jgHasKey && !jgHasCode)
+		{
+			printf("Empty");
+		}
+        if (jgHasPhone)
+		{
+			printf("Phone ");	
+		} 
+		if (jgHasKey) 
+		{
+			printf("Key ");
+		}
+		if (jgHasCode)
+		{
+			printf("Code ");
+		}
+		         
+		printf("\n");
 
         printf("Rooms checked: ");
-        if (!jgVisited[0] && !jgVisited[1] && !jgVisited[2] && !jgVisited[3] && !jgVisited[4]){
-		printf("None");
-	}
-        if(jgVisited[0]) printf("Kitchen ");
-        if(jgVisited[1]) printf("Basement ");
-        if(jgVisited[2]) printf("Bedroom ");
-        if(jgVisited[3]) printf("Bathroom ");
-        if(jgVisited[4]) printf("Study Room ");
+        if (!jgVisited[0] && !jgVisited[1] && !jgVisited[2] && !jgVisited[3] && !jgVisited[4])
+		{
+			printf("None");
+		}
+        if(jgVisited[0])
+		{
+			printf("Kitchen ");
+		}
+        if (jgVisited[1]) 
+		{
+			printf("Basement ");
+		}
+        if (jgVisited[2]) 
+		{
+			printf("Bedroom ");
+		}
+        if (jgVisited[3])
+		{ 
+			printf("Bathroom ");
+		}
+        if (jgVisited[4])
+		{ 
+			printf("Study Room ");
+		}
         printf("\n");
 
 	// Requirement: five choices/decisions to pursue, plus escape.
@@ -1968,39 +2000,49 @@ void jgFun(void){
         
         scanf("%d", &choice);
         
-	switch (choice){
-            case 1:
-                jgKitchen();
-                break;
-            case 2:
-                jgBasement();
-                break;
-            case 3:
-                jgBedroom();
-                break;
-            case 4:
-                jgBathroom();
-                break;
-            case 5:
-                jgStudyRoom();
-                break;
-            case 6:
-                jgPlayerVictory();
-                break;
-            default:
-                printf("Invalid selection!\n");
+		switch (choice)
+		{
+	        case 1:
+	            jgKitchen();
+	            break;
+			
+	        case 2:
+	            jgBasement();
+	            break;
+			
+	        case 3:
+	            jgBedroom();
+	            break;
+			
+	        case 4:
+	            jgBathroom();
+	            break;
+			
+	        case 5:
+	            jgStudyRoom();
+	            break;
+			
+	        case 6:
+	            jgPlayerVictory();
+	            break;
+			
+	        default:
+	            printf("Invalid selection!\n");
+			}
 		}
-	}
+	
 	printf("Leaving Room 42...\n");
 }
 // Kitchen
-void jgKitchen(void) {
+void jgKitchen(void) 
+{
     bool inKitchen = true;
     int kitchenChoice;
 
     jgVisited[0] = 1;
 
-    while (inKitchen && jgGameRunning){
+    while (inKitchen && jgGameRunning)
+	{
         jgNoise = jgGenerateRandomNoise();
 
         printf("You step quietly into the kitchen.\n");
@@ -2010,33 +2052,44 @@ void jgKitchen(void) {
         printf("4. Leave the Kitchen.\n");
         scanf("%d", &kitchenChoice);
         
-        switch (kitchenChoice){
+        switch (kitchenChoice)
+		{
             case 1:
                 printf("You search the counter.\n");
-                if (jgKitchenCounterChecked == true) {
+                if (jgKitchenCounterChecked == true) 
+				{
                     printf("There is nothing useful here.\n");
                 }
-                else{
+                else
+				{
                     jgKitchenCounterChecked = true; 
 
-                    if (jgNoise < 25){
+                    if (jgNoise < 25)
+					{
                         printf("You hear a noise.\n");
                         jgNoiseLevel++;
                     }
-                    else {
+                    else 
+					{
                         printf("You find crumbs, dirty dishes, and nothing useful.\n");
                     }
                 }
                 break;
 
             case 2:
-                if (jgHasPhone == true){
+                if (jgHasPhone == true)
+				{
                     printf("The drawers are empty.\n");
-                } else {
-                    if (jgNoise < 25){
+                } 
+				else 
+				{
+                    if (jgNoise < 25)
+					{
                         printf("The drawer squeaks loudly.\n");
                         jgNoiseLevel++;
-                    } else {
+                    } 
+					else
+					{
                         printf("You carefully slide the drawer open.\n");
                     }                    
                     printf("You find a phone hidden in the drawer.\n");
@@ -2047,10 +2100,13 @@ void jgKitchen(void) {
             case 3:
                 printf("You inspect the fridge.\n");
 
-                if (jgNoise < 25){
+                if (jgNoise < 25)
+				{
                     printf("The fridge door creaks loudly.\n");
                     jgNoiseLevel++;
-                } else {
+                } 
+				else
+				{
                     printf("A foul smell hits you in the face.\n");
                     printf("There is nothing useful inside.\n");
                 }
@@ -2070,13 +2126,15 @@ void jgKitchen(void) {
 }
 
 // Basement
-void jgBasement(void) {
+void jgBasement(void) 
+{
     int basementChoice;
     bool inBasement = true;
 
     jgVisited[1] = 1;
 
-    while (inBasement && jgGameRunning){
+    while (inBasement && jgGameRunning)
+	{
         jgNoise = jgGenerateRandomNoise();
 
         printf("You descend into the basement.\n");
@@ -2088,18 +2146,24 @@ void jgBasement(void) {
         
         scanf("%d" , &basementChoice);
 
-        switch (basementChoice){
+        switch (basementChoice)
+		{
             case 1:
                 printf("You search the shelves.\n");
 
-                if(jgBasementChecked == true){
+                if (jgBasementChecked == true)
+				{
                     printf("You only find dusty boxes and useless junk.\n");
-                } else {
-                    if (jgNoise < 25){
+                } 
+				else 
+				{
+                    if (jgNoise < 25)
+					{
                         printf("A metal tool falls and clatters loudly.\n");
                         jgNoiseLevel++;
                     }
-                    else{
+                    else
+					{
                         printf("You find nothing useful, only dust and cobwebs.\n");
                     }
                     jgBasementChecked = true;
@@ -2109,10 +2173,13 @@ void jgBasement(void) {
             case 2:
                 printf("You inspect the floor.\n");
 
-                if (jgNoise < 25){
+                if (jgNoise < 25)
+				{
                     printf("You step on a loose board and it cracks loudly.\n");
                     jgNoiseLevel++;
-                } else {
+                } 
+				else 
+				{
                     printf("You notice old stains and broken wood, but nothing useful.\n");
                 }
                 break;
@@ -2120,9 +2187,12 @@ void jgBasement(void) {
             case 3:
                 printf("You hold your breath and listen.\n");
 
-                if (jgNoise < 25){
+                if (jgNoise < 25) 
+				{
                     printf("You hear movement somewhere above you.\n");
-                } else {
+                } 
+				else 
+				{
                     printf("For a moment, everything is silent.\n");
                 }
                 break;
@@ -2141,13 +2211,15 @@ void jgBasement(void) {
 }
 
 // Bedroom
-void jgBedroom(void) {
+void jgBedroom(void) 
+{
     bool inBedroom = true;
     int bedroomChoice;
 
     jgVisited[2] = 1;
 
-    while(inBedroom && jgGameRunning){
+    while (inBedroom && jgGameRunning)
+	{
         jgNoise = jgGenerateRandomNoise();
 
         printf("You quickly enter the bedroom.\n");
@@ -2158,19 +2230,24 @@ void jgBedroom(void) {
 
         scanf("%d", &bedroomChoice);
 
-        switch (bedroomChoice){
+        switch (bedroomChoice)
+		{
             case 1:
                 printf("You search the nightstand.\n");
 
-                if (jgBedroomChecked == true){
+                if (jgBedroomChecked == true)
+				{
                     printf("The drawers are empty.\n");
                 }
-                else{
-                    if (jgNoise < 25){
+                else
+				{
+                    if (jgNoise < 25)
+					{
                         printf("The drawer squeaks loudly.\n");
                         jgNoiseLevel++;
                     }
-                    else {
+                    else 
+					{
                         printf("You slide the drawer open carefully.\n");
                     }
                     printf("You find a key hidden inside.\n");
@@ -2182,11 +2259,13 @@ void jgBedroom(void) {
             case 2:
                 printf("You look under the bed.\n");
 
-                if(jgNoise < 25){
+                if (jgNoise < 25)
+				{
                     printf("The bed frame scrapes against the floor.\n");
                     jgNoiseLevel++;
                 }
-                else {
+                else 
+				{
                     printf("Dust and old junk are all you find.\n");
                 }
                 break;
@@ -2194,10 +2273,13 @@ void jgBedroom(void) {
             case 3:
                 printf("You inspect the closet.\n");
 
-                if(jgNoise < 25){
+                if (jgNoise < 25)
+				{
                     printf("The closet door squeaks loudly.\n");
                     jgNoiseLevel++;
-                } else {
+                } 
+				else 
+				{
                     printf("You find hanging clothes and nothing useful.\n");
                 }
                 break;
@@ -2216,13 +2298,15 @@ void jgBedroom(void) {
 }
 
 // Bathroom
-void jgBathroom(void) {
+void jgBathroom(void) 
+{
     bool inBathroom = true;
     int bathroomChoice;
 
     jgVisited[3] = 1;
 
-    while (inBathroom && jgGameRunning){
+    while (inBathroom && jgGameRunning)
+	{
         jgNoise = jgGenerateRandomNoise();
 
         printf("You quietly enter the bathroom.\n");
@@ -2233,13 +2317,17 @@ void jgBathroom(void) {
 
         scanf("%d", &bathroomChoice);
 
-        switch(bathroomChoice){
+        switch (bathroomChoice)
+		{
             case 1:
                 printf("You check the mirror.\n");
                 
-                if(jgBathroomChecked == true){
+                if (jgBathroomChecked == true)
+				{
                     printf("The mirror is cracked, but there is nothing new to see.\n");
-                } else {
+                } 
+				else 
+				{
                     printf("A message is smeared across the mirror.\n");
                     printf("\"The numbers are where he works.\"\n");
                     jgBathroomChecked = true;
@@ -2249,10 +2337,13 @@ void jgBathroom(void) {
             case 2:
                 printf("You open the medicine cabinet.\n");
 
-                if(jgNoise < 25){
+                if (jgNoise < 25)
+				{
                     printf("The cabinet door creaks loudly.\n");
                     jgNoiseLevel++;
-                } else {
+                } 
+				else 
+				{
                     printf("You find old medicine and nothing useful.\n");
                 }
                 break;
@@ -2260,14 +2351,17 @@ void jgBathroom(void) {
             case 3:
                 printf("You inspect the bathtub.\n");
 
-                if (jgNoise < 25) {
+                if (jgNoise < 25) 
+				{
                     printf("Your foot slips against the tub and makes a loud thud.\n");
                     jgNoiseLevel++;
-                } else {
+                } 
+				else
+				{
                     printf("The tub is stained and empty.\n");
                 }
                 break;
-
+			
             case 4:
                 printf("You leave the bathroom.\n");
                 inBathroom = false;
@@ -2282,13 +2376,15 @@ void jgBathroom(void) {
 }
 
 // Study Room
-void jgStudyRoom(void) {
+void jgStudyRoom(void) 
+{
     bool inStudyRoom = true;
     int studyChoice;
 
     jgVisited[4] = 1;
 
-    while (inStudyRoom && jgGameRunning){
+    while (inStudyRoom && jgGameRunning)
+	{
         jgNoise = jgGenerateRandomNoise();
 
         printf("You step into the study room.\n");
@@ -2299,17 +2395,24 @@ void jgStudyRoom(void) {
 
         scanf("%d", &studyChoice);
 
-        switch(studyChoice){
+        switch (studyChoice)
+		{
             case 1:
                 printf("You search the desk.\n");
 
-                if (jgStudyRoomChecked == true){
+                if (jgStudyRoomChecked == true)
+				{
                     printf("The desk has already been searched.\n");
-                } else {
-                    if (jgNoise < 25){
+                } 
+				else 
+				{
+                    if (jgNoise < 25)
+					{
                         printf("The desk drawer scrapes loudly.\n");
                         jgNoiseLevel++;
-                    } else {
+                    } 
+					else
+					{
                         printf("You quietly open the drawer.\n");
                     }
 
@@ -2322,10 +2425,13 @@ void jgStudyRoom(void) {
             case 2:
                 printf("You inspect the bookshelf.\n");
 
-                if (jgNoise < 25){
+                if (jgNoise < 25)
+				{
                     printf("A book slips loose and hits the floor.\n");
                     jgNoiseLevel++;
-                } else {
+                } 
+				else 
+				{
                     printf("You find old books and dusty folders, but nothing useful.\n");
                 }
                 break;
@@ -2333,10 +2439,13 @@ void jgStudyRoom(void) {
             case 3:
                 printf("You check the papers.\n");
 
-                if (jgNoise < 25){
+                if (jgNoise < 25)
+				{
                     printf("The papers rustle loudly in your hands.\n");
                     jgNoiseLevel++;
-                } else {
+                } 
+				else 
+				{
                     printf("Most of the papers are useless notes and old bills.\n");
                 }
                 break;
@@ -2354,21 +2463,27 @@ void jgStudyRoom(void) {
     }
 }
 
-void jgPlayerVictory(void){
-    if (jgHasPhone && jgHasKey && jgHasCode){
+void jgPlayerVictory(void)
+{
+    if (jgHasPhone && jgHasKey && jgHasCode)
+	{
         printf("You unlock the exit...\n");
         sleep(1);
         printf("You call the police...\n");
         sleep(1);
         printf("Larry Pope is arrested...\n");
         jgGameRunning = false;
-    } else {
+    } 
+	else 
+	{
         printf("You are still missing something...\n");
     }
 }
 
-void jgPlayerLose(void){
-    if (jgNoiseLevel >= 3){
+void jgPlayerLose(void)
+{
+    if (jgNoiseLevel >= 3)
+	{
         printf("Larry wakes up.\n");
         sleep(1);
         printf("You were too loud.\n");
@@ -2378,8 +2493,9 @@ void jgPlayerLose(void){
     }
 }
 
-//Requirement: random number generator used for noise events.
-int jgGenerateRandomNoise(void) {
+// Requirement: random number generator used for noise events.
+int jgGenerateRandomNoise(void) 
+{
     int x = rand() % 101;
     return x;
 }
