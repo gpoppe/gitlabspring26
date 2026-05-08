@@ -21,7 +21,7 @@
 //Meretrout(J.Q)
 //Ivan Peralta
 //Dominic Carreto
-
+//Abdullah Hasan
 
 
 
@@ -40,6 +40,7 @@
 void khprinter(void);
 void coolGame(void);
 int iAmLazy(int);
+void ahasanArcadeRoom(void);
 
 //dcortez function prototypes 
 void ANFUN(void);
@@ -120,7 +121,7 @@ bool getChoiceDL(void);
 void jkFun(void);
 void jkRoom41(void); 
 
-
+void printInitialsAHasan(void);
 
 int main(int argc, char *argv[])
 {
@@ -954,6 +955,141 @@ int main(int argc, char *argv[])
 }
 
 //place function definitions below this comment
+void printInitialsAHasan(void)
+{
+    printf("AH\n");
+}
+void ahasanArcadeRoom(void)
+{
+    int choice = 0;
+    int decisionsMade = 0;
+    int hasKey = 0;
+    int hasToken = 0;
+    int doorCode = 0;
+    int randomPrize = 0;
+
+    char items[5][30] = {
+        "flashlight",
+        "silver key",
+        "arcade token",
+        "old map",
+        "mystery card"
+    };
+
+    doorCode = (rand() % 5) + 1;
+
+    puts("\nYou enter Abdullah's Lost Arcade Room.");
+    puts("The lights are flickering, old machines are making noise, and there is a locked exit door.");
+    puts("You need to make choices to escape the room.\n");
+
+    while (decisionsMade < 5)
+    {
+        printf("\nDecision %d of 5\n", decisionsMade + 1);
+        puts("Choose what you want to do:");
+        puts("1. Search the prize counter");
+        puts("2. Play the broken arcade machine");
+        puts("3. Look under the carpet");
+        puts("4. Try the locked exit door");
+        puts("5. Check your inventory");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            puts("\nYou search the prize counter and find an old map.");
+            printf("Item found: %s\n", items[3]);
+            decisionsMade++;
+        }
+        else if (choice == 2)
+        {
+            puts("\nYou play the broken arcade machine.");
+            randomPrize = (rand() % 3) + 1;
+
+            if (randomPrize == 1)
+            {
+                puts("The machine spits out an arcade token.");
+                printf("Item found: %s\n", items[2]);
+                hasToken = 1;
+            }
+            else if (randomPrize == 2)
+            {
+                puts("The machine flashes loudly, but nothing useful happens.");
+            }
+            else
+            {
+                puts("The machine shows a strange clue on the screen.");
+                printf("The clue says: The door code might be %d.\n", doorCode);
+            }
+
+            decisionsMade++;
+        }
+        else if (choice == 3)
+        {
+            puts("\nYou lift the carpet and find a silver key.");
+            printf("Item found: %s\n", items[1]);
+            hasKey = 1;
+            decisionsMade++;
+        }
+        else if (choice == 4)
+        {
+            int guess = 0;
+
+            puts("\nYou walk up to the locked exit door.");
+
+            if (hasKey == 1)
+            {
+                puts("You use the silver key to unlock the first lock.");
+            }
+            else
+            {
+                puts("The door has a key lock. You may need to find a key first.");
+            }
+
+            printf("The keypad asks for a number from 1 to 5: ");
+            scanf("%d", &guess);
+
+            if (hasKey == 1 && guess == doorCode)
+            {
+                puts("\nThe door unlocks completely.");
+                puts("You escaped Abdullah's Lost Arcade Room!");
+                decisionsMade = 5;
+            }
+            else
+            {
+                puts("\nThe door stays locked. You need the key and the correct code.");
+                decisionsMade++;
+            }
+        }
+        else if (choice == 5)
+        {
+            puts("\nInventory check:");
+
+            if (hasKey == 1)
+            {
+                printf("- %s\n", items[1]);
+            }
+
+            if (hasToken == 1)
+            {
+                printf("- %s\n", items[2]);
+            }
+
+            if (hasKey == 0 && hasToken == 0)
+            {
+                puts("- You do not have anything useful yet.");
+            }
+
+            decisionsMade++;
+        }
+        else
+        {
+            puts("\nInvalid choice. Please choose a number from 1 to 5.");
+        }
+    }
+
+    puts("\nYour room is complete. Returning to the main game menu...\n");
+}
+
 void room58SM(void)
 {
 	int candles[6] = {0, 0, 0, 0, 0, 0};
