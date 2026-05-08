@@ -3191,10 +3191,6 @@ void hOsuna(void)
 
 
 
-void stanPush(void)
-{
-	puts(" S J \n");
-}
 
 
 
@@ -4741,4 +4737,68 @@ void jkRoom41(void)
                 printf("Invalid choice.\n");
         }
     }
+
 }
+
+void stanPush(void){
+        puts(" S J \n");
+
+        char *stanRooms[5] = {"forest", "cave", "river", "castle", "Milo's room" };
+
+        int stanVisits[5] = {0}, stanChoice, stanRandy;
+
+        do {
+
+		printf("\n=== stanley's room ===\n");
+
+        	for(int i = 0; i < 5; i++) {
+            		printf("%d. Enter %s\n", i + 1, stanRooms[i]);
+     		}
+
+        	printf("6. quit\n");
+
+        	printf("choose a room: ");
+        	scanf("%d", &stanChoice);
+
+        	if(stanChoice >= 1 && stanChoice <= 5) {
+
+            		stanVisits[stanChoice - 1]++;
+
+            	printf("\nyou entered %s.\n",stanRooms[stanChoice - 1]);
+
+            	stanRandy = rand() % 3;
+
+            	if(stanRandy == 0) {
+                	printf("you found treasure\n");
+            	}	
+           	 else if(stanRandy == 1) {
+                	printf("a monster appeared\n");
+            	}		
+            	else {
+                	printf("nothing happened\n");
+            	}	
+
+        	}
+        	else if(stanChoice == 6) {
+
+            	printf("\n=== rooms visits ===\n");
+
+            	for(int i = 0; i < 5; i++) {
+
+                	printf("%s visited %d time(s)\n",
+                       	stanRooms[i],
+                       	stanVisits[i]);
+            	}
+
+            	printf("goodbye\n");
+        	}
+        	else {
+
+            	printf("invalid choice\n");
+        	}
+
+    	} while(stanChoice != 6);
+
+}
+
+
