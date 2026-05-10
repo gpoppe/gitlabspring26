@@ -13,7 +13,7 @@
 //Angel Martinez
 //John Keroles 
 //Dagmawe (Bobby) Afework
-
+//Joseph Hernandez
 
 
 
@@ -58,6 +58,7 @@ void fish(void);
 void printStudent30(void);
 void gameroom30(void);
 
+void josephhernandez(void);
 void printInitialsAjewett(void);
 void jgFun(void);
 void room58SM(void);
@@ -581,6 +582,7 @@ int main(int argc, char *argv[])
 			}
 			case 67:
 			{
+				josephhernandez();
                                 puts("room67");
                                 break;
 			}
@@ -4003,4 +4005,255 @@ void jkRoom41(void)
                 printf("Invalid choice.\n");
         }
     }
+}
+
+void josephhernandez(void)
+{
+	int currentmoney = 500;
+	int gamechoice;
+	int lever;
+	int blackjack;
+	int roulette;
+	int craps;
+	int chance[2] = {1 , 2};	//Represents a fifty percent chance
+
+	bool exit = false;
+	printf("You enter room 67 and see... A Casino?? Your goal is to win it big, and leave the Casino positive. Can you accomplish this?\n\n");
+
+	while (!exit)
+	{
+		printf("You are in the main lobby of the Casino, and see 4 different games you can play. Choose the game you would like to play, or exit:\n");
+		printf("Starting Money: $500\n");
+		printf("Current Money: $%i\n\n", currentmoney);
+		
+		printf("1. Slot Machines\n");
+		printf("2. BlackJack\n");
+		printf("3. Roulette\n");
+		printf("4. Craps Table\n");
+		printf("5. Exit Casino\n\n");
+		
+		printf("What is your choice?: ");
+		scanf("%i", &gamechoice);
+
+		while (gamechoice > 5 || gamechoice < 1)
+		{
+			printf("Invalid Choice, please input a number between 1 and 5: ");
+			scanf("%i", &gamechoice);
+		}
+
+		switch(gamechoice)
+		{
+			case 1:
+				printf("You step up to the Slot Machines. There is a red, green, and blue lever to pull to play. Which one do you pull?\n\n");
+				
+				printf("1. Red Lever\n");
+				printf("2. Green Lever\n");
+				printf("3. Blue Lever\n\n");
+				
+				printf("What is your choice?: ");
+				scanf("%i", &lever);
+				
+				printf("\n");
+
+				switch(lever)
+				{
+					case 1:
+						if (chance[rand() % 2] % 2 == 0) 
+						{
+							printf("Congrats! You won some money, but the other levers might offer more\n");
+							printf("Money earned: $50\n\n");
+							currentmoney = currentmoney + 50;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! You lost this one.\n");
+							printf("Money lost: $50\n\n");
+							currentmoney = currentmoney - 50;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+					case 2:
+						if (chance[rand() % 2] % 2 == 0) 
+						{
+							printf("Congrats! You won some money, this lever feels like a good middle ground between winning and losing\n");
+							printf("Money earned: $75\n\n");
+							currentmoney = currentmoney + 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! You lost this one.\n");
+							printf("Money lost: $75\n\n");
+							currentmoney = currentmoney - 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+					case 3:
+						if (chance[rand() % 2] % 2 == 0) 
+						{
+							printf("Congrats! You won some money, and this lever feels like it offers the highest reward for your risk\n");
+							printf("Money earned: $100\n\n");
+							currentmoney = currentmoney + 100;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! You lost this one.\n");
+							printf("Money lost: $100\n\n");
+							currentmoney = currentmoney - 100;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+				}
+				break;
+			case 2:
+				printf("You approach the BlackJack table. The dealer reveals an ace, while you have a 16 (10 + 6). What do you do?\n\n");
+				
+				printf("1. Hit\n");
+				printf("2. Stay\n\n");
+				
+				printf("What is your choice?: ");
+				scanf("%i", &blackjack);
+				
+				printf("\n");
+				
+				switch(blackjack)
+				{
+					case 1:
+						if (chance[rand() % 2] % 2 == 0) 
+						{
+							printf("Congrats! You hit a 5 and win with a 21!\n");
+							printf("Money earned: $75\n\n");
+							currentmoney = currentmoney + 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! You hit a face card and bust\n");
+							printf("Money lost: $75\n\n");
+							currentmoney = currentmoney - 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+					case 2:
+						if (chance[rand() % 2] % 2 == 0) 
+						{
+							printf("Congrats! The dealer draws 4 cards, ending with a face card and busting\n");
+							printf("Money earned: $75\n\n");
+							currentmoney = currentmoney + 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! The dealer draws a face card and hits 21.\n");
+							printf("Money lost: $75\n\n");
+							currentmoney = currentmoney - 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+				}
+				break;
+			case 3:
+				printf("You approach the Roulette table. Your options are to bet on red, black, or the ultra rare green\n\n");
+				
+				printf("1. Red\n");
+				printf("2. Black\n");
+				printf("3. Green\n\n");
+				
+				printf("What is your choice?: ");
+				scanf("%i", &roulette);
+				
+				printf("\n");
+				
+				switch(roulette)
+				{
+					case 1:
+						if (chance[rand() % 2] % 2 == 0) 
+						{
+							printf("Congrats! You won the 50/50\n");
+							printf("Money earned: $75\n\n");
+							currentmoney = currentmoney + 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! You lost the 50/50\n");
+							printf("Money lost: $75\n\n");
+							currentmoney = currentmoney - 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+					case 2:
+						if (chance[rand() % 2] % 2 == 0) 
+						{
+							printf("Congrats! You won the 50/50\n");
+							printf("Money earned: $75\n\n");
+							currentmoney = currentmoney + 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! You lost the 50/50\n");
+							printf("Money lost: $75\n\n");
+							currentmoney = currentmoney - 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+					case 3:
+						if ((rand() % 100) % 10 == 0) 
+						{
+							printf("WOAH! You actually hit the green. Heres a big payout\n");
+							printf("Money earned: $1000\n\n");
+							currentmoney = currentmoney + 1000;
+							printf("New Total: %i\n", currentmoney);
+						}
+						else 
+						{
+							printf("Unfortunate! You didn't hit it big. Something tells me it might be worth to keep trying\n");
+							printf("Money lost: $75\n\n");
+							currentmoney = currentmoney - 75;
+							printf("New Total: %i\n", currentmoney);
+						}
+						break;
+				}
+				break;
+			case 4:
+				printf("You step up to the Craps table. You are betting on whether a 7 is rolled using both dice on the table.\n\n");
+				
+				printf("1. A 7 is rolled\n");
+				printf("2. A 7 is not rolled\n\n");
+				
+				printf("What is your choice?: ");
+				scanf("%i", &craps);
+				
+				printf("\n");
+				
+				switch(craps)
+				{
+					case 1:
+						printf("Congrats! You won the 50/50\n");
+						printf("Money earned: $75\n\n");
+						currentmoney = currentmoney + 75;
+						printf("New Total: %i\n", currentmoney);
+						break;
+					case 2:
+						printf("Unfortunate! You lost the 50/50\n");
+						printf("Money lost: $75\n\n");
+						currentmoney = currentmoney - 75;
+						printf("New Total: %i\n", currentmoney);
+						break;
+				}
+				break;
+			case 5:
+				exit = true;
+				break;
+		}
+	}
+	if (currentmoney > 500)
+		printf("Congratulations! You went positive.\n\n");
+	else if (currentmoney == 500)
+		printf("Did you even play?? You walked out with the same amount of money you walked in with. Try again!\n\n");
+	else
+		printf("Unfortunately you went negative, come try again!\n\n");
 }
