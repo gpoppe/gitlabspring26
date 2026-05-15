@@ -25,6 +25,8 @@
 //Meretrout(J.Q)
 //Ivan Peralta
 //Dominic Carreto
+//Daniel de la Herran
+// stanley johnson
 //Jeremiah R Pallera-Bautista
 //Esthepanie Izaguirre
 //Cristobal Yepez
@@ -160,6 +162,7 @@ bool getChoiceDL(void);
 void jkFun(void);
 void jkRoom41(void); 
 
+void room5Danny(void);
 
 void guessNum(void);
 
@@ -222,6 +225,7 @@ int main(int argc, char *argv[])
 			}
 			case 5:
 			{
+				room5Danny();
 				puts("room5");
 				break;
 			}
@@ -1612,6 +1616,141 @@ int main(int argc, char *argv[])
 }
 
 //place function definitions below this comment
+void room5Danny(void)
+{
+	int classChoice = 0;
+	int playerHP = 110;
+	int enemyHP = 100;
+	int randomNumber = 0;
+	int damage = 0;
+	int enemyDamage = 0;
+	int option = 0;
+
+	puts("\n Weclome to room 5.");
+	puts("Please choose your class.");
+
+	puts("1. Knight");
+	puts("2. Warrior");
+	puts("3. Mage");
+	puts("4. Warlock");
+	puts("5. Rogue");
+
+	printf("Enter your choice: ");
+	scanf("%d", &classChoice);
+
+	while(playerHP > 0 && enemyHP > 0) 
+	{
+		printf("\nPlayer HP: %d\n", playerHP);
+		printf("Enemy HP: %d\n", enemyHP);
+
+		puts("1. Attack");
+		puts("2. Run!!!");
+
+		printf("Choose an option: ");
+		scanf("%d", &option);
+
+		
+		if(option ==1) 
+		{
+			randomNumber = 1+ (rand() % 10);
+
+			if(randomNumber <= 7)
+			{
+				if(classChoice == 1)
+				{
+					damage = 10 + (rand () % 16);
+					puts("Knight used shield bash!!");
+				}
+				if(classChoice == 2)
+				{
+					damage = 10 + (rand() % 17);
+					puts("Warrior used Berserker Swing!");
+				}
+				if(classChoice == 3)
+				{
+					damage = 10 + (rand() % 21);
+					puts("Mage conjured a fireball!!");
+				}
+				if(classChoice == 4)
+				{
+					damage = 10 + (rand() % 21);
+					puts("Warlock used Necromancy!!");
+
+				}
+				if(classChoice == 5)
+				{
+					damage = 10 + (rand() % 20);
+					puts("Rogue used Shadow Strike!!");
+				}
+				enemyHP = enemyHP - damage;
+				printf("You did %d damage!\n",damage);
+			}
+
+			else
+			{
+				puts("OH NO your attack missed!");
+			}
+
+		}
+		
+		if(option == 2)
+		{
+			randomNumber = 1 + (rand() % 10);
+
+			if(randomNumber <= 5)
+			{
+				puts("You escaped successfully!");
+				puts("Returning to the main menu");
+				return;
+			
+			}
+
+			else 
+			{
+				puts("Oh no! You have failed to escape!");
+			}
+		}
+
+		if(enemyHP > 0)
+		{
+			randomNumber = 1 + (rand() % 10);
+
+			if(randomNumber <= 7)
+			{
+				enemyDamage = 8 + (rand() % 13);
+				randomNumber = 1 + (rand() % 10);
+			}
+			if(randomNumber <= 2)
+			{
+				enemyDamage = enemyDamage * 2;
+				puts("The enemy got a critical hit!!!");
+			}
+			puts("The enemy attacks!");
+			playerHP = playerHP - enemyDamage;
+			printf("The enemy did %d damage!\n", enemyDamage);
+			
+		}
+
+			else
+			{
+				puts("The enemy missed!!");
+			}
+		}
+
+	if(enemyHP <= 0)
+	{
+		puts("You defeated the enemy!");
+	}
+	
+
+	if(playerHP <= 0)
+	{
+		puts("GAME OVER");
+		puts("Try out a different class and beat the enemy!!");
+
+	}
+	puts("Now returning to the main menu...");
+}
 void hauntedHouse(void)
 {
 	srand(time(NULL));
