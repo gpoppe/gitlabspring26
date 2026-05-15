@@ -706,13 +706,250 @@ int main(int argc, char *argv[])
 				puts("room24");
 				break;
 			}
-			case 25:
-			{
 
-				mnFun(); 
-				puts("room25");
-				break;
-			}
+
+	case 25:
+	{
+        int roomChoice = 0;
+        int answer;
+        int randomNumber;
+
+        char rooms[5][20] =
+       	{
+                "Kitchen",
+                "Library",
+                "Basement",
+                "Garden",
+                "Bedroom"
+        };
+
+       
+
+  	mnFun();
+        puts("");
+        puts("You open door 25 and step into a haunted mansion.");
+        puts("The door slams shut behind you.");
+        puts("To escape this room, you must explore the mansion.");
+
+        while(roomChoice != 6)
+        {
+                puts("");
+                puts("===== Door 25 Haunted Mansion =====");
+                puts("1. Kitchen");
+                puts("2. Library");
+                puts("3. Basement");
+                puts("4. Garden");
+                puts("5. Bedroom");
+                puts("6. Return to the main door room");
+                puts("Choose a room:");
+                scanf("%d", &roomChoice);
+
+                if(roomChoice >= 1 && roomChoice <= 5)
+                {
+                        printf("\nYou chose the %s.\n", rooms[roomChoice - 1]);
+                }
+
+                if(roomChoice == 1)
+                {
+                        puts("You walk into the kitchen.");
+                        puts("The fridge opens by itself.");
+                        puts("Do you look inside?");
+                        puts("1. Yes");
+                        puts("2. No");
+                        scanf("%d", &answer);
+
+                        if(answer == 1)
+                        {
+                                randomNumber = rand() % 2 + 1;
+
+                                if(randomNumber == 1)
+                                {
+                                        puts("You found a scary note.");
+                                }
+                                else
+                                {
+                                        puts("A cold hand reaches out!");
+                                }
+                        }
+                        else
+                        {
+                                puts("You walk away from the fridge.");
+                        }
+
+                        puts("You leave the kitchen and return to the mansion menu.");
+                }
+                else if(roomChoice == 2)
+                {
+                        puts("You walk into the library.");
+                        puts("A book falls from the shelf.");
+                        puts("Do you open the book?");
+                        puts("1. Yes");
+                        puts("2. No");
+                        scanf("%d", &answer);
+
+                        if(answer == 1)
+                        {
+                                randomNumber = rand() % 2 + 1;
+
+                                if(randomNumber == 1)
+                                {
+                                        puts("The book has your name in it.");
+                                }
+                                else
+                                {
+                                        puts("The book pages are blank.");
+                                }
+                        }
+                        else
+                        {
+                                puts("You leave the book alone.");
+                        }
+
+                        puts("You leave the library and return to the mansion menu.");
+                }
+                else if(roomChoice == 3)
+                {
+                        puts("You walk into the basement.");
+                        puts("You hear scratching in the dark.");
+                        puts("Do you follow the sound?");
+                        puts("1. Yes");
+                        puts("2. No");
+                        scanf("%d", &answer);
+
+                        if(answer == 1)
+                        {
+                                randomNumber = rand() % 2 + 1;
+
+                                if(randomNumber == 1)
+                                {
+                                        puts("You found an old lantern.");
+                                }
+                                else
+                                {
+                                        puts("A shadow runs past you!");
+                                }
+                        }
+                        else
+                        {
+                                puts("You decide not to go deeper.");
+                        }
+
+                        puts("You leave the basement and return to the mansion menu.");
+                }
+                else if(roomChoice == 4)
+                {
+                        puts("You walk into the garden.");
+                        puts("A scarecrow is staring at you.");
+                        puts("Do you walk closer?");
+                        puts("1. Yes");
+                        puts("2. No");
+                        scanf("%d", &answer);
+
+                        if(answer == 1)
+                        {
+                                randomNumber = rand() % 2 + 1;
+
+                                if(randomNumber == 1)
+                                {
+                                        puts("The scarecrow points to a hidden path.");
+                                }
+                                else
+                                {
+                                        puts("The scarecrow whispers your name.");
+                                }
+                        }
+                        else
+                        {
+                                puts("You stay away from the scarecrow.");
+                        }
+
+                        puts("You leave the garden and return to the mansion menu.");
+                }
+                else if(roomChoice == 5)
+                {
+                        puts("You walk into the bedroom.");
+                        puts("Your reflection in the mirror smiles at you.");
+                        puts("Do you touch the mirror?");
+                        puts("1. Yes");
+                        puts("2. No");
+                        scanf("%d", &answer);
+
+                        if(answer == 1)
+                        {
+                                randomNumber = rand() % 2 + 1;
+
+                                if(randomNumber == 1)
+                                {
+                                        puts("You found a silver key.");
+                                }
+                                else
+                                {
+                                        puts("The mirror turns black.");
+                                }
+                        }
+                        else
+                        {
+                                puts("You walk away from the mirror.");
+                        }
+
+                        puts("You leave the bedroom and return to the mansion menu.");
+                }
+                else if(roomChoice == 13)
+                {
+                        puts("");
+                        puts("*** Secret Room Found ***");
+                        puts("You found the Moon Ghost Room.");
+                        puts("A green light shines through the window.");
+                        puts("A small ghost is floating in the room.");
+                        puts("On the floor, you see a flashlight and a ghost vacuum.");
+                        puts("Do you use the flashlight?");
+                        puts("1. Yes");
+                        puts("2. No");
+                        scanf("%d", &answer);
+
+                        if(answer == 1)
+                        {
+                                randomNumber = rand() % 3 + 1;
+
+                                if(randomNumber == 1)
+                                {
+                                        puts("The flashlight flashes bright green.");
+                                        puts("The ghost is stunned and drops a moon key.");
+                                        puts("Easter egg found: Moon Key!");
+                                }
+                                else if(randomNumber == 2)
+                                {
+                                        puts("The ghost laughs and flies around the room.");
+                                        puts("Your flashlight starts to flicker.");
+                                }
+                                else
+                                {
+                                        puts("The ghost vacuum turns on by itself.");
+                                        puts("It pulls the ghost into the vacuum.");
+                                        puts("Easter egg found: Mansion Cleaner Bonus!");
+                                }
+                        }
+                        else
+                        {
+                                puts("You leave the flashlight alone.");
+                                puts("The ghost waves at you and disappears into the moonlight.");
+                        }
+
+                        puts("You leave the secret room and return to the mansion menu.");
+                }
+                else if(roomChoice == 6)
+                {
+                        puts("You leave door 25 and return to the main door room.");
+                }
+                else
+                {
+                        puts("That is not a room in the mansion.");
+                }
+        }
+
+        break;
+}
+	
 			case 26:
 			{
 				GuckMan();
@@ -2663,7 +2900,7 @@ void crazy49adventure(void)
 
 void mnFun(void)
 {
-	puts("MNroom25");
+	puts("BOO!");
 }
 
 
