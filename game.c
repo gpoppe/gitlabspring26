@@ -81,7 +81,11 @@ void theSigmaMethod(void);
 void jbInit(void);
 
 void ip21(void);
+
+//evasquez functions
 void folksamEV(void);
+void printProgress(int completion);
+
 void sonionRH(void);
 void ip21(void);
 void rtFun(void);
@@ -218,6 +222,250 @@ int main(int argc, char *argv[])
 			{
 				folksamEV();
 				puts("room8");
+				int choice1 = 0;
+				int choice2 = 0;
+				int choice3 = 0;
+				int choice4 = 0;
+				int choice5 = 0;
+
+				printf("You find yourself in a classroom and have to do various challenges including doing math problems. \n");
+				printf("You are now forced to do math problems and at the end you'll get a dice corresponding to how many questions you got right. \n");
+				int quest1Num1 = 1 + rand() % 6;
+				int quest1Num2 = 1 + rand() % 6;
+				int answer1 = quest1Num1 + quest1Num2;
+				int userAnswer = 0;
+				int correct = 0;
+				printf("What is the sum of %d and %d? \n", quest1Num1, quest1Num2);
+				scanf("%d", &userAnswer);
+
+				if (answer1 == userAnswer)
+				{
+					printf("Correct! The answer was %d! \n", answer1); 
+					correct++;
+				}
+				else 
+				{
+					printf("Incorrect. You are given a chance to roll a die but has to get a value greater than 3 to win. \n");
+					printf("Enter 1 to roll a die or Enter any other number to pass \n");
+					scanf("%d", &choice1);
+
+					if (choice1 == 1)
+					{
+						int dieChoice1 = 1 + rand() % 6;
+
+						if (dieChoice1 > 3)
+						{
+							printf("You get the point for getting a value greater than 3! \n");
+							correct++;
+						}
+						else
+						{
+							printf("Did not win this round but you trying demonstrated your devotion. \n");
+						}
+					}
+				}
+
+				printf("Would you like to have a printed version of the amount of correct guesses you have? \n");
+				printf("Enter 1 for Yes, otherwise enter another number. \n");
+				scanf("%d", &choice2);
+
+				if (choice2 == 1)
+				{
+					printProgress(correct);
+				}
+
+				int quest2Num1 = 1 + rand() % 6;
+                                int quest2Num2 = 1 + rand() % 6;
+                                int answer2 = quest2Num1 + quest2Num2;
+                                printf("What is the sum of %d and %d? \n", quest2Num1, quest2Num2);
+                                scanf("%d", &userAnswer);
+
+                                if (answer2 == userAnswer)
+                                {
+                                        printf("Correct! The answer was %d! \n", answer2);
+                                        correct++;
+                                }
+                                else
+                                {
+                                        printf("Incorrect. You'll be given more chances coming up. \n");
+				}
+
+				printf("Progress so far: ");
+				printProgress(correct);
+
+				printf("You are given the option to sleep in or wander around... \n");
+				printf("Enter 1 to sleep in or any other number to wander around... \n");
+				scanf("%d", &choice3);
+
+				if (choice3 == 1)
+				{
+					printf("You get the well deserved sleep with %d correct challenges/questions \n", correct);
+				}
+				
+				else 
+				{
+					printf("You found a silver chest and it granted you another challenge completion \n");
+					correct++;
+				}
+
+				printProgress(correct);
+
+				int quest3Num1 = 1 + rand() % 60;
+                                int quest3Num2 = 1 + rand() % 60;
+                                int answer3 = quest3Num1 + quest3Num2;
+                                printf("What is the sum of %d and %d? \n", quest3Num1, quest3Num2);
+                                scanf("%d", &userAnswer);
+
+				if (answer3 == userAnswer)
+                                {
+                                        printf("Correct! The answer was %d! \n", answer3);
+                                        correct++;
+                                }
+                                else
+                                {
+                                        printf("Tought one. You'll be given more chances coming up. \n");
+                                }
+
+				int dice[2];
+				dice[0] = 1 + rand() % 6;
+				dice[1] = 1 + rand() % 6;
+				int diceSum = dice[0] + dice[1];
+				int attempts = 0;
+				printf("You roll dice and you will do so until you get 12. \n");
+				while (diceSum != 12)
+				{
+					printf("You rolled %d and %d, totaling %d \n", dice[0], dice[1], diceSum);
+					attempts++;
+					dice[0] = 1 + rand() % 6;
+                                	dice[1] = 1 + rand() % 6;
+					diceSum = dice[0] + dice[1];
+				}
+
+				correct++;
+				printProgress(correct);
+				int points = attempts * 15;
+				printf("You can spend either 65 points to gain progress or 80 points to open a door to choose between two chests \n");
+				if (points >= 80)
+				{
+					printf("Enter 1 to spend 65 points to get another progress bar or Enter 2 to spend 80 points choosing between two chests \n");
+					scanf("%d", &choice4);
+
+					if (choice4 == 1)
+					{
+						points = points - 65;
+						printf("You gain another completion bar and are left with %d points \n", points);
+						correct++;
+					}
+					else
+					{
+						points = points - 80;
+						printf("Now left with %d points, you are presented two doors, the blue door or the red door... \n", points);
+						printf("Enter 1 for the blue door or any other number for the red door \n");
+						scanf("%d", &choice5);
+
+						if (choice5 == 1)
+						{
+							printf("You obtain another progress bar! \n");
+							correct++;
+						}
+						
+						else
+						{
+							printf("You get two progress bars! \n");
+							correct++;
+						}
+					}
+				}
+
+				else
+				{
+					printf("It seems you either have enough to form my name or have less than the points needed for a transcation. \n");
+				}
+				
+				printProgress(correct);
+				int choice6 = 0;
+				if (correct >= 5)
+				{
+					printf("You are led to the door to escape but you have the option to see printed dice of how many correct guess and/or challenges completed \n");
+					printf("Enter 6 for dice to be printed out before you \n");
+					scanf("%d", &choice6);
+
+					if (choice6 == 6)
+					{
+						printProgress(correct);
+						if (correct == 1)
+						{
+							printf("======= \n");
+							printf("|     | \n");
+							printf("|     | \n");
+							printf("|  o  | \n");
+							printf("|     | \n");
+							printf("|     | \n");
+							printf("======= \n");
+						}
+
+						else if (correct == 2)
+						{
+							printf("======= \n");
+                                                        printf("|o    | \n");
+                                                        printf("|     | \n");
+                                                        printf("|     | \n");
+                                                        printf("|     | \n");
+                                                        printf("|    o| \n");
+                                                        printf("======= \n");
+						}
+
+						else if (correct == 3)
+                                                {
+                                                        printf("======= \n");
+                                                        printf("|o    | \n");
+                                                        printf("|     | \n");
+                                                        printf("|  o  | \n");
+                                                        printf("|     | \n");
+                                                        printf("|    o| \n");
+                                                        printf("======= \n");
+                                                }
+
+						else if (correct == 4)
+                                                {
+                                                        printf("======= \n");
+                                                        printf("|o   o| \n");
+                                                        printf("|     | \n");
+                                                        printf("|     | \n");
+                                                        printf("|     | \n");
+                                                        printf("|o   o| \n");
+                                                        printf("======= \n");
+                                                }
+
+						else if (correct == 5)
+                                                {
+                                                        printf("======= \n");
+                                                        printf("|o   o| \n");
+                                                        printf("|     | \n");
+                                                        printf("|  o  | \n");
+                                                        printf("|     | \n");
+                                                        printf("|o   o| \n");
+                                                        printf("======= \n");
+                                                }
+
+						else if (correct >= 6)
+						{
+							printf("======= \n");
+                                                        printf("|o   o| \n");
+                                                        printf("|     | \n");
+                                                        printf("|o   o| \n");
+                                                        printf("|     | \n");
+                                                        printf("|o   o| \n");
+                                                        printf("======= \n");
+
+						}
+					}
+					printf("With the progress being full, you are able to escape the room with a printed dice as an achievement of escaping the classroom and putting your effort! \n");
+					
+				}
+
+					
+
 				break;
 			}
 			case 9:
@@ -4042,6 +4290,35 @@ void dGMyName(void)
 void folksamEV(void) 
 {
 	printf("EV\n");
+}
+
+void printProgress(int completion)
+{
+	if (completion == 1)
+	{
+		printf("Challenge Completetion Progress: [E] [] [] [] [] \n");
+	}
+
+	else if (completion == 2)
+        {
+                printf("Challenge Completetion Progress: [E] [L] [] [] [] \n");
+        }
+
+	else if (completion == 3)
+        {
+                printf("Challenge Completetion Progress: [E] [L] [M] [] [] \n");
+        }
+
+	else if (completion == 4)
+        {
+                printf("Challenge Completetion Progress: [E] [L] [M] [E] [] \n");
+        }
+
+	else if (completion >= 5)
+        {
+                printf("Challenge Completetion Progress: [E] [L] [M] [E] [R] \n");
+		printf("Congrats You were able to print out my name! \n");
+        }
 }
 
 void sonionRH(void) 
