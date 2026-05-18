@@ -717,6 +717,362 @@ int main(int argc, char *argv[])
 			{
 				GuckMan();
 				puts("room26");
+				void room_moria(int *score)
+{
+    int choice = 0;
+    int randomEvent = 0;
+
+    printf("\n=== THE MINES OF MORIA ===\n");
+    printf("You step into the echoing dark of Khazad-dum.\n");
+    printf("Three tunnels branch before you.\n\n");
+
+    printf("1. Take the left tunnel\n");
+    printf("2. Take the center tunnel\n");
+    printf("3. Take the right tunnel\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    randomEvent = rand() % 2;
+
+    if (choice == 1)
+    {
+        if (randomEvent == 0)
+        {
+            printf("You find a mithril shard. +20 points.\n");
+            *score += 20;
+        }
+        else
+        {
+            printf("A cave-in! You barely escape. -10 points.\n");
+            *score -= 10;
+        }
+    }
+    else if (choice == 2)
+    {
+        printf("You cross an underground river safely. +15 points.\n");
+        *score += 15;
+    }
+    else if (choice == 3)
+    {
+        printf("You ambush an Orc sentry and find a map. +25 points.\n");
+        *score += 25;
+    }
+    else
+    {
+        printf("You freeze. The drums grow louder. -5 points.\n");
+        *score -= 5;
+    }
+
+    printf("Score: %d\n", *score);
+    printf("\nYou return to the hallway.\n");
+}
+
+void room_shelob(int *score)
+{
+    int choice = 0;
+    int randomEvent = 0;
+
+    printf("\n=== SHELOB'S LAIR ===\n");
+    printf("Massive webs cling to every wall.\n");
+    printf("Eight enormous eyes catch the faint light of Sting.\n\n");
+
+    printf("1. Use the Phial of Galadriel\n");
+    printf("2. Creep silently along the wall\n");
+    printf("3. Lay a false trail with lembas crumbs\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    randomEvent = rand() % 4;
+
+    if (choice == 1)
+    {
+        printf("Brilliant light floods the tunnel. Shelob recoils. +30 points.\n");
+        *score += 30;
+    }
+    else if (choice == 2)
+    {
+        if (randomEvent == 3)
+        {
+            printf("Shelob senses you! You slash free with Sting. -10 points.\n");
+            *score -= 10;
+        }
+        else
+        {
+            printf("Perfect stealth. Shelob never stirs. +25 points.\n");
+            *score += 25;
+        }
+    }
+    else if (choice == 3)
+    {
+        if (randomEvent == 3)
+        {
+            printf("She follows your scent instead! You sprint away. -5 points.\n");
+            *score -= 5;
+        }
+        else
+        {
+            printf("Shelob takes the bait. You slip past. +20 points.\n");
+            *score += 20;
+        }
+    }
+    else
+    {
+        printf("Shelob's web snares your ankle. -15 points.\n");
+        *score -= 15;
+    }
+
+    printf("Score: %d\n", *score);
+    printf("\nYou return to the hallway.\n");
+}
+
+void room_tower(int *score)
+{
+    int choice = 0;
+    int randomEvent = 0;
+
+    printf("\n=== TOWER OF CIRITH UNGOL ===\n");
+    printf("Two Orc factions fight each other below.\n");
+    printf("You must reach the roof before they come for you.\n\n");
+
+    printf("1. Fight up the main staircase\n");
+    printf("2. Disguise yourself in Orc armor\n");
+    printf("3. Climb the outer wall in darkness\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    randomEvent = rand() % 6;
+
+    if (choice == 1)
+    {
+        if (randomEvent == 5)
+        {
+            printf("Reinforcements arrive! Hard-fought battle. +10 points.\n");
+            *score += 10;
+        }
+        else
+        {
+            printf("The Orcs fall to infighting. You slip through. +25 points.\n");
+            *score += 25;
+        }
+    }
+    else if (choice == 2)
+    {
+        if (randomEvent == 5)
+        {
+            printf("An Uruk-hai sees through your disguise! -10 points.\n");
+            *score -= 10;
+        }
+        else
+        {
+            printf("The Orcs ignore you. You walk straight out. +30 points.\n");
+            *score += 30;
+        }
+    }
+    else if (choice == 3)
+    {
+        printf("The Orcs never look up. You scale the wall. +20 points.\n");
+        *score += 20;
+    }
+    else
+    {
+        printf("An Orc patrol spots you. -15 points.\n");
+        *score -= 15;
+    }
+
+    printf("Score: %d\n", *score);
+    printf("\nYou return to the hallway.\n");
+}
+
+void room_blackgate(int *score)
+{
+    int choice = 0;
+    int randomEvent = 0;
+
+    printf("\n=== THE BLACK GATE ===\n");
+    printf("Ten thousand Orcs stand at Sauron's call.\n");
+    printf("You must buy time for the Ringbearer.\n\n");
+
+    printf("1. Challenge Sauron's herald as the King of Gondor\n");
+    printf("2. Unfurl the banner of Anduril\n");
+    printf("3. Lead the cavalry charge\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    randomEvent = rand() % 8;
+
+    if (choice == 1)
+    {
+        if (randomEvent == 7)
+        {
+            printf("The Eye locks onto you instantly. -5 points.\n");
+            *score -= 5;
+        }
+        else
+        {
+            printf("The herald balks. You buy precious minutes. +30 points.\n");
+            *score += 30;
+        }
+    }
+    else if (choice == 2)
+    {
+        printf("The banner catches the wind. Chaos erupts at the gate. +25 points.\n");
+        *score += 25;
+    }
+    else if (choice == 3)
+    {
+        printf("The cavalry thunders forward. Sauron's gaze shifts. +20 points.\n");
+        *score += 20;
+    }
+    else
+    {
+        printf("You falter at the sight of the Eye. -10 points.\n");
+        *score -= 10;
+    }
+
+    printf("Score: %d\n", *score);
+    printf("\nYou return to the hallway.\n");
+}
+
+void room_mountdoom(int *score)
+{
+    int choice = 0;
+    int randomEvent = 0;
+
+    printf("\n=== MOUNT DOOM ===\n");
+    printf("Orodruin blazes around you.\n");
+    printf("The Crack of Doom yawns before you.\n\n");
+
+    printf("1. Cast the Ring into the fire yourself\n");
+    printf("2. Let Gollum take it -- fate decides the rest\n");
+    printf("3. Turn back (the Ring breaks your will)\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    randomEvent = rand() % 10;
+
+    if (choice == 1)
+    {
+        if (randomEvent >= 8)
+        {
+            printf("Your hand wavers. Gollum bites off your finger.\n");
+            printf("The Ring falls into the fire. It is done. +20 points.\n");
+            *score += 20;
+        }
+        else
+        {
+            printf("You hurl the Ring into the fire! Sauron's tower crumbles. +50 points!\n");
+            *score += 50;
+        }
+    }
+    else if (choice == 2)
+    {
+        printf("Gollum takes the Ring and tumbles into the fire. +40 points.\n");
+        *score += 40;
+    }
+    else if (choice == 3)
+    {
+        printf("The Ring claims you. The Eye finds you. All is lost. -30 points.\n");
+        *score -= 30;
+    }
+    else
+    {
+        printf("You stand frozen at the edge. -10 points.\n");
+        *score -= 10;
+    }
+
+    printf("Score: %d\n", *score);
+    printf("\nYou return to the hallway.\n");
+}
+
+void save_log(int score)
+{
+    FILE *fp = fopen("quest_log.txt", "w");
+    if (fp == NULL)
+    {
+        printf("Could not save quest log.\n");
+        return;
+    }
+    fprintf(fp, "Score: %d\n", score);
+    fclose(fp);
+    printf("Quest log saved.\n");
+}
+
+int main(void)
+{
+    srand(time(NULL));
+
+    int choice = 0;
+    int score = 0;
+    int cleared[5] = {0, 0, 0, 0, 0};
+
+    printf("\n=== THE DARK FELLOWSHIP ===\n");
+    printf("A quest through the shadows of Mordor.\n");
+    printf("Five trials stand between you and Mount Doom.\n\n");
+
+    FILE *fp = fopen("quest_log.txt", "r");
+    if (fp != NULL)
+    {
+        int saved = 0;
+        printf("--- Previous Quest Log ---\n");
+        fscanf(fp, "Score: %d\n", &saved);
+        printf("Previous score: %d\n", saved);
+        printf("--------------------------\n\n");
+        fclose(fp);
+    }
+
+    while (1)
+    {
+        printf("\n--- WHERE DO YOU GO? ---\n");
+        printf("1. The Mines of Moria     %s\n", cleared[0] ? "[CLEARED]" : "");
+        printf("2. Shelob's Lair          %s\n", cleared[1] ? "[CLEARED]" : "");
+        printf("3. Tower of Cirith Ungol  %s\n", cleared[2] ? "[CLEARED]" : "");
+        printf("4. The Black Gate         %s\n", cleared[3] ? "[CLEARED]" : "");
+        printf("5. Mount Doom             %s\n", cleared[4] ? "[CLEARED]" : "");
+        printf("6. Save and Quit\n");
+        printf("------------------------\n");
+        printf("Score: %d\n", score);
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            room_moria(&score);
+            cleared[0] = 1;
+        }
+        else if (choice == 2)
+        {
+            room_shelob(&score);
+            cleared[1] = 1;
+        }
+        else if (choice == 3)
+        {
+            room_tower(&score);
+            cleared[2] = 1;
+        }
+        else if (choice == 4)
+        {
+            room_blackgate(&score);
+            cleared[3] = 1;
+        }
+        else if (choice == 5)
+        {
+            room_mountdoom(&score);
+            cleared[4] = 1;
+        }
+        else if (choice == 6)
+        {
+            save_log(score);
+            printf("Farewell, brave soul.\n\n");
+            break;
+        }
+        else
+        {
+            printf("Invalid choice.\n");
+        }
+    }
+
+    return 0;
+}
 				break;
 			}
 			case 27:
