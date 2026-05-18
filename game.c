@@ -45,6 +45,9 @@
 #include <stdbool.h>
 #include <unistd.h>
 
+void jbInit(void);
+void ip21(void);
+void folksamEV(void);
 
 //place function prototypes here
 void khprinter(void);
@@ -103,6 +106,9 @@ void rtFun(void);
 void JLeyva(void);
 void fish(void);
 void printStudent30(void);
+void printInitialsAjewett(void);
+void jgFun(void);
+void playRoom1(void);
 void gameroom30(void);
 void JCgame(void);
 void printInitialsAjewett(void);
@@ -198,6 +204,10 @@ int main(int argc, char *argv[])
 		{
 			case 1:
 			{
+				playRoom1();
+				break;
+			}
+			case 70:
 				puts("room1");
 				break;
 			}
@@ -1106,33 +1116,38 @@ int main(int argc, char *argv[])
 			}
 			case 50:
 			{
-				puts("room50");
+				puts("room70");
 				break;
 			}
-			case 51:
+			case 71:
 			{
-				puts("room51");
+				puts("room71");
 				break;
 			}
-			case 52:
+			case 72:
 			{
+				puts("room72");
 				afFun();
 				puts("room52");
 				break;
 			}
-			case 53:
+			case 73:
 			{
+				puts("room73");
 				jpbFun();
 				puts("room53");
 				break;
 			}
-			case 54:
+			case 74:
 			{
-				puts("room54");
+				puts("room74");
 				break;
 			}
-			case 55:
+			case 75:
 			{
+				puts("room75");
+				break;
+			}
 				jmItsGameTime();
 				puts("You have entered Room 55!\n");
 				break;
@@ -1611,11 +1626,79 @@ int main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
+void playRoom1(void) 
+{
+	int i, decision, rNum;
+	char inventory[3][20] = {"Sword", "Shield", "Potion"};
+	int hasItem = 0;
+
+	rNum = rand() % 10 + 1;
+
+	printf("You enter a dusty room. You see a glint in the corner.\n");
+	printf("1. Inspect the glint\n2. Ignore it and walk forward\nChoice: ");
+	scanf("%d", &decision);
+
+	if (decision == 1) {
+		printf("You found a %s! But it crumbles to dust.\n", inventory[0]);
+	} else {
+		printf("You step carefully.\n");
+	}
+
+	printf("A goblin drops from the ceiling! It rolled a %d for initiative.\n", rNum);
+	printf("1. Attack\n2. Defend\nChoice: ");
+	scanf("%d", &decision);
+
+	if (decision == 1) {
+		printf("You attack the goblin!\n");
+	} else {
+		printf("You block the goblin's strike!\n");
+	}
+
+	printf("The goblin drops a chest.\n");
+	printf("1. Open it\n2. Leave it\nChoice: ");
+	scanf("%d", &decision);
+
+	if (decision == 1) {
+		for (i = 0; i < 3; i++) {
+			printf("Checking compartment %d...\n", i + 1);
+		}
+		printf("You found a %s!\n", inventory[2]);
+		hasItem = 1;
+	} else {
+		printf("You walk past the chest.\n");
+	}
+
+	printf("A large door blocks your path with a riddle.\n");
+	printf("1. Try to solve it\n2. Try to smash the door\nChoice: ");
+	scanf("%d", &decision);
+
+	if (decision == 1) {
+		printf("You speak the password and the door opens.\n");
+	} else {
+		printf("You bounce off the heavy iron door and eventually figure out the password.\n");
+	}
+
+	printf("You reach the end of the room.\n");
+	printf("1. Return to the main hall\n2. Search the room one last time\nChoice: ");
+	scanf("%d", &decision);
+
+	if (decision == 2 && hasItem == 0) {
+		printf("You find nothing else.\n");
+	}
+	
+	printf("You leave the room.\n");
+}
+
+void folksamEV(void) 
 //place function definitions below this comment
 void hauntedHouse(void)
 {
 	srand(time(NULL));
 
+void jbInit(void)
+{
+	puts("jbRoom17");
+}
 	while(1)
     {
         char choice;
@@ -1888,6 +1971,8 @@ void callHouse(void)
     "\n"
         );
 }
+
+void printInitialsAjewett(void)
 void callEyes(void)
 {
 	  printf(
