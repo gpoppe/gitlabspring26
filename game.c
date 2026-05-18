@@ -1106,32 +1106,33 @@ int main(int argc, char *argv[])
 			}
 			case 50:
 			{
-				puts("room50");
+				puts("room70");
 				break;
 			}
-			case 51:
+			case 71:
 			{
-				puts("room51");
+				puts("room71");
 				break;
 			}
-			case 52:
+			case 72:
 			{
 				afFun();
 				puts("room52");
 				break;
 			}
-			case 53:
+			case 73:
 			{
+				puts("room73");
 				jpbFun();
 				puts("room53");
 				break;
 			}
-			case 54:
+			case 74:
 			{
-				puts("room54");
+				puts("room74");
 				break;
 			}
-			case 55:
+			case 75:
 			{
 				jmItsGameTime();
 				puts("You have entered Room 55!\n");
